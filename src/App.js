@@ -1,7 +1,7 @@
 /** @format */
 
-import { Helloworld1, Helloworld2 } from "./Helloworld1";
-
+import { Helloworld1 } from "./Helloworld1";
+import { Helloworld2 } from "./helloworld2";
 import logo from "./logo.svg";
 import "./App.css";
 
