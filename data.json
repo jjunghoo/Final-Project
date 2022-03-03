@@ -16,21 +16,26 @@
       "body": "나중엔 redux-saga를 사용해서 비동기 작업을 처리하는 방법도 배워볼 거예요."
     }
   ],
-  "example": [
+  "employee": [
     {
       "id": 1,
-      "title": "ddd 미들웨어를 배워봅시다",
-      "body": "ddd 미들웨어를 직접 만들어보면 이해하기 쉽죠."
+      "employeeInfo": { "이름": "이장훈" },
+      "resume": { "이력서양식": "이력서양식1" }
     },
     {
       "id": 2,
-      "title": "ddd-thunk를 사용해봅시다",
-      "body": "ddd-thunk를 사용해서 비동기 작업을 처리해봅시다!"
+      "employeeInfo": { "이름": "서장훈" },
+      "resume": { "이력서양식": "이력서양식2" }
     },
     {
       "id": 3,
-      "title": "rddd-saga도 사용해봅시다",
-      "body": " redux-saga를 사용해서 비동기 작업을 처리하는 방법도 배워볼 거예요."
+      "employeeInfo": { "이름": "박장훈" },
+      "resume": { "이력서양식": "이력서양식3" }
+    },
+    {
+      "id": 4,
+      "employeeInfo": { "이름": "김장훈" },
+      "resume": { "이력서양식": "이력서양식4" }
     }
   ]
 }

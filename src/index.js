@@ -5,12 +5,21 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import rootReducer from "./redux/reducers/index";
-import { createStore } from "redux";
+import rootReducer, { rootSage } from "./redux/reducers/index";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension"; // 리덕스 개발자 도구
+import createSagaMiddleware from "redux-saga";
+import rootSaga, { helloSaga } from "./redux/sagas/index";
 
-const store = createStore(rootReducer, composeWithDevTools());
+const sagaMiddleware = createSagaMiddleware();
+export const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(sagaMiddleware))
+);
+
+sagaMiddleware.run(rootSaga);
+
 console.log(store.getState());
 
 ReactDOM.render(
