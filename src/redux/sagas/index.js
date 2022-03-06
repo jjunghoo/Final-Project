@@ -1,8 +1,10 @@
 /** @format */
 
 import { all, call, delay, fork, put, takeEvery } from "redux-saga/effects";
-import { EMPLOYEE_ID_GET_REQUEST, EMPLOYEE_ID_GET_SUCCESS } from "../type";
-import { postsSaga } from "./employeeSaga";
+import { employeeSaga } from "./employeeSaga";
+import { employerSaga } from "./employerSaga";
+import { teacherSaga } from "./teacherSaga";
+import { projectSaga } from "./projectSaga";
 
 // export function* helloSaga() {
 //   console.log("Hello Saga!");
@@ -10,5 +12,10 @@ import { postsSaga } from "./employeeSaga";
 
 // single entry point to start all Sagas at once
 export default function* rootSaga() {
-  yield all([fork(postsSaga)]);
+  yield all([
+    fork(employeeSaga),
+    fork(employerSaga),
+    fork(teacherSaga),
+    fork(projectSaga),
+  ]);
 }

@@ -6,6 +6,15 @@ import {
   TEACHER_COMMENT_EDIT,
   TEACHER_COMMENT_ADD,
   TEACHER_COMMENT_REMOVE,
+  TEACHER_INFO_GET_REQUEST,
+  TEACHER_INFO_GET_SUCCESS,
+  TEACHER_INFO_GET_FAILURE,
+  TEACHER_COMMENT_GET_REQUEST,
+  TEACHER_COMMENT_GET_SUCCESS,
+  TEACHER_COMMENT_GET_FAILURE,
+  TEACHER_LECTURE_GET_REQUEST,
+  TEACHER_LECTURE_GET_SUCCESS,
+  TEACHER_LECTURE_GET_FAILURE,
 } from "../type";
 
 /* 초기 상태 선언 */
@@ -15,10 +24,65 @@ const initialState = {
   teacherInfo: { initialInfo: "initial" },
   lectureInfo: { initialInfo: "initial" },
   commentInfo: { initialInfo: "initial" },
+  errmsg: "",
 };
 
 export default function employerReducer(state = initialState, action) {
   switch (action.type) {
+    ////시작~~~
+    case TEACHER_INFO_GET_REQUEST:
+      return {
+        ...state,
+      };
+    case TEACHER_INFO_GET_SUCCESS:
+      // console.log("likedinfosuccess");
+
+      return {
+        ...state,
+        ...action.payload,
+      };
+    case TEACHER_INFO_GET_FAILURE:
+      return {
+        ...state,
+        errmsg: action.payload.errmsg,
+      };
+
+    case TEACHER_COMMENT_GET_REQUEST:
+      return {
+        ...state,
+        errmsg: "",
+      };
+    case TEACHER_COMMENT_GET_SUCCESS:
+      // console.log("likedinfosuccess");
+
+      return {
+        ...state,
+        commentInfo: action.payload.commentInfo,
+      };
+    case TEACHER_COMMENT_GET_FAILURE:
+      return {
+        ...state,
+        errmsg: action.payload.errmsg,
+      };
+
+    case TEACHER_LECTURE_GET_REQUEST:
+      return {
+        ...state,
+        errmsg: "",
+      };
+    case TEACHER_LECTURE_GET_SUCCESS:
+      // console.log("likedinfosuccess");
+
+      return {
+        ...state,
+        lectureInfo: action.payload.lectureInfo,
+      };
+    case TEACHER_LECTURE_GET_FAILURE:
+      return {
+        ...state,
+        errmsg: action.payload.errmsg,
+      };
+
     //////////////////LIKED
 
     case TEACHER_INFO_GET: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.

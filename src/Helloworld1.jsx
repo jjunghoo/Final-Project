@@ -9,11 +9,23 @@ import {
   employeeIDGet,
   employeeInfoGet,
 } from "./redux/actions/employeeActions";
-import { EMPLOYEE_INFO_GET, EMPLOYEE_RESUME_GET } from "./redux/type";
+import {
+  EMPLOYEE_INFO_GET,
+  EMPLOYEE_RESUME_GET,
+  EMPLOYER_BOOKMARK_GET_REQUEST,
+  EMPLOYER_INFO_GET_REQUEST,
+  EMPLOYER_LIKED_GET_REQUEST,
+  PROJECT_INFO_GET_REQUEST,
+  PROJECT_STAGE_GET_REQUEST,
+  PROJECT_STUDENT_GET_REQUEST,
+  TEACHER_COMMENT_GET_REQUEST,
+  TEACHER_INFO_GET_REQUEST,
+  TEACHER_LECTURE_GET_REQUEST,
+} from "./redux/type";
 import { store } from "./index";
 
 export const Helloworld1 = () => {
-  const reduxvalue = useSelector((state) => state.employeeReducer);
+  const reduxvalue = useSelector((state) => state.projectReducer);
   const dispatch = useDispatch();
 
   const onClickE = (e) => {
@@ -41,35 +53,21 @@ export const Helloworld1 = () => {
     >
       <div
         onClick={() => {
-          dispatch({ type: EMPLOYEE_INFO_GET, payload: 1 });
+          dispatch({ type: PROJECT_INFO_GET_REQUEST, payload: "p1" });
+        }}
+      >
+        EMPLOYER_LIKED_GET_REQUEST
+      </div>
+      <div
+        onClick={() => {
+          dispatch({ type: PROJECT_INFO_GET_REQUEST, payload: "p2" });
         }}
       >
         클릭
       </div>
       <div
         onClick={() => {
-          dispatch({ type: EMPLOYEE_INFO_GET, payload: 2 });
-        }}
-      >
-        클릭
-      </div>
-      <div
-        onClick={() => {
-          dispatch({ type: EMPLOYEE_INFO_GET, payload: 3 });
-        }}
-      >
-        클릭
-      </div>
-      <div
-        onClick={() => {
-          dispatch({ type: EMPLOYEE_INFO_GET, payload: 4 });
-        }}
-      >
-        클릭
-      </div>
-      <div
-        onClick={() => {
-          dispatch({ type: EMPLOYEE_INFO_GET, payload: 5 });
+          dispatch({ type: PROJECT_INFO_GET_REQUEST, payload: "p3" });
         }}
       >
         클릭
@@ -86,12 +84,25 @@ export const Helloworld1 = () => {
 
       <div
         onClick={() => {
-          dispatch({ type: EMPLOYEE_RESUME_GET, payload: reduxvalue.id });
+          dispatch({
+            type: PROJECT_STAGE_GET_REQUEST,
+            payload: "p2",
+          });
         }}
       >
-        클릭
+        stage 클릭
       </div>
 
+      <div
+        onClick={() => {
+          dispatch({
+            type: PROJECT_STUDENT_GET_REQUEST,
+            payload: "p2",
+          });
+        }}
+      >
+        PROJECT_STUDENT_GET_REQUEST 클릭
+      </div>
       {reduxvalue.id}
     </div>
   );

@@ -110,7 +110,7 @@ function* watchEmployeeResumeGet() {
   yield takeEvery(EMPLOYEE_RESUME_GET, employeeResumeGetSaga);
 }
 
-export function* postsSaga() {
+export function* employeeSaga() {
   yield all([
     fork(watchEmployeeInfoGet),
     fork(watchEmployeeIDGet),
