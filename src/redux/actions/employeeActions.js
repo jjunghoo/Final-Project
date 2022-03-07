@@ -4,7 +4,13 @@ import {
   EMPLOYEE_INFO_GET,
   EMPLOYEE_RESUME_GET,
   EMPLOYEE_RESUME_EDIT,
+  EMPLOYEE_ID_GET_REQUEST,
 } from "../type";
+
+export const employeeIDGet = (TestPayload) => ({
+  type: EMPLOYEE_ID_GET_REQUEST,
+  payload: "테스트중입니다.",
+});
 
 export const employeeInfoGet = (EmployeeInfo) => ({
   type: EMPLOYEE_INFO_GET,
