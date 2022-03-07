@@ -53,7 +53,7 @@ export const Helloworld1 = () => {
     >
       <div
         onClick={() => {
-          dispatch({ type: PROJECT_INFO_GET_REQUEST, payload: "p1" });
+          dispatch({ type: PROJECT_INFO_GET_REQUEST, payload: "p1" }); // UI dispatch를 함 ->>>
         }}
       >
         PROJECT_INFO_GET_REQUEST
