@@ -19,7 +19,74 @@ import {
 const initialState = {
   employeeInfo: { initialInfo: "initial" },
   id: 0,
-  resume: { initialInfo: "initial" },
+  resume: [
+    {
+      id: "1",
+      name: "학력",
+      list: [
+        {
+          id: "1",
+          education: "한양대학교 대학원",
+          department: "디자인학부",
+          startDate: "2017-02-16",
+          endDate: "2021-02-10",
+          state: "졸업",
+        },
+      ],
+    },
+    {
+      id: "2",
+      name: "경력",
+      list: [
+        {
+          id: "1",
+          company: "패스트캠퍼스",
+          department: "기획디자인팀",
+          position: "UXUI 디자이너",
+          startDate: "2019-03-15",
+          endDate: "2022-03-07",
+          state: "재직중",
+        },
+      ],
+    },
+    {
+      id: "3",
+      name: "자격증",
+      list: [
+        {
+          id: "1",
+          certificate: "컬러리스트기사",
+          HostOrganization: "한국산업인력공단",
+          endDate: "2019.11",
+        },
+      ],
+    },
+    {
+      id: "4",
+      name: "교육",
+      list: [
+        {
+          id: "1",
+          company: "패스트캠퍼스",
+          educationName: "한번에 끝내는 UXUI 디자인",
+          startDate: "2021-02",
+          endDate: "2021-05",
+          state: "수강 완료",
+        },
+      ],
+    },
+    {
+      id: "5",
+      name: "수상경력",
+      list: [
+        {
+          id: "1",
+          Awards: "2021 서울시 공모디자인 공모전 선정",
+          endDate: "2021-05",
+        },
+      ],
+    },
+  ],
   errmsg: "",
 };
 

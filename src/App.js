@@ -3,7 +3,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { Helloworld1 } from "./Helloworld1";
-import { Helloworld2 } from "./helloworld2";
+import { Resume } from "./Resume";
 import { Routes, Route } from "react-router-dom";
 import { MainPage } from "./Component/Mainpage/MainPage";
 import { UserPage } from "./Component/Userpage/UserPage";
@@ -15,6 +15,7 @@ function App() {
       <Routes className="routes">
         <Route path="/UserPage" element={<UserPage />} />
         <Route path="/*" element={<MainPage />} />
+        <Route path="/resume" element={<Resume />} />
       </Routes>
     </div>
   );
