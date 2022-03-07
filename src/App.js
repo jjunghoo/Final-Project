@@ -3,24 +3,18 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { Helloworld1 } from "./Helloworld1";
+import { Routes, Route } from "react-router-dom";
+import { MainPage } from "./Component/Mainpage/MainPage";
+import { UserPage } from "./Component/Userpage/UserPage";
 
 function App() {
   return (
     <div className="App">
-      <nav>
-        <section>
-          <h1>Redux Fundamentals Example</h1>
-
-          <div className="navContent">
-            <div className="navLinks"></div>
-          </div>
-        </section>
-      </nav>
-      <section>
-        <h2>Welcome to the Redux Fundamentals example app!</h2>
-      </section>
-      <Helloworld1></Helloworld1>
-      {/* <div>잘 보이시나요?? 그럼요</div> */}
+      흠....
+      <Routes className="routes">
+        <Route path="/UserPage" element={<UserPage />} />
+        <Route path="/*" element={<MainPage />} />
+      </Routes>
     </div>
   );
 }
