@@ -3,9 +3,9 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { Helloworld1 } from "./Helloworld1";
-import { Resume } from "./Resume";
+import { Resume } from "./Component/Resume/Resume";
 import { Routes, Route } from "react-router-dom";
-import { MainPage } from "./Component/Mainpage/MainPage";
+import { MainPage } from "./Component/Mainpage/Mainpage";
 import { UserPage } from "./Component/Userpage/UserPage";
 
 function App() {
@@ -14,8 +14,8 @@ function App() {
       흠....
       <Routes className="routes">
         <Route path="/UserPage" element={<UserPage />} />
-        <Route path="/*" element={<MainPage />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/*" element={<MainPage />} />
       </Routes>
     </div>
   );
