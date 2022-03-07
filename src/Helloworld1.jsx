@@ -53,10 +53,10 @@ export const Helloworld1 = () => {
     >
       <div
         onClick={() => {
-          dispatch({ type: PROJECT_INFO_GET_REQUEST, payload: "p1" });
+          dispatch({ type: PROJECT_INFO_GET_REQUEST, payload: "p1" }); // UI dispatch를 함 ->>>
         }}
       >
-        EMPLOYER_LIKED_GET_REQUEST
+        PROJECT_INFO_GET_REQUEST
       </div>
       <div
         onClick={() => {

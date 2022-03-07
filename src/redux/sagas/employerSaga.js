@@ -151,7 +151,10 @@ function* employerSupermatchingGetSaga(action) {
 }
 
 function* watchEmployerSupermachingGet() {
-  yield takeEvery(EMPLOYER_SUPERMATCHING_GET_REQUEST, employerBookmarkGetSaga);
+  yield takeEvery(
+    EMPLOYER_SUPERMATCHING_GET_REQUEST,
+    employerSupermatchingGetSaga
+  );
 }
 
 // END //

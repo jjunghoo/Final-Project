@@ -29,14 +29,14 @@ export default function employeeReducer(state = initialState, action) {
 
     case EMPLOYEE_INFO_GET: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.
       return {
-        ...initialState,
+        ...state,
         employeeInfo: {},
         id: "",
       };
     case EMPLOYEE_INFO_SUCCESS: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.
       console.log(action.payload);
       return {
-        ...initialState,
+        ...state,
         employeeInfo: action.payload.employeeInfo,
         id: action.payload.id,
         errmsg: "",
@@ -44,7 +44,7 @@ export default function employeeReducer(state = initialState, action) {
     case EMPLOYEE_INFO_FAILURE: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.
       console.log(action.payload.errmsg);
       return {
-        ...initialState,
+        ...state,
         employeeInfo: {},
         id: "",
         errmsg: action.payload.errmsg,
