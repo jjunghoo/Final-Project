@@ -133,6 +133,7 @@ function* employerSupermatchingGetSaga(action) {
   try {
     console.log("try");
     const posts = yield call(axiosEmployerSupermachingGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
+    // 위에서 서버 값을 받아옴
     yield console.log(posts.data);
     console.log("bookmarkget");
     // yield console.log(action.payload);

@@ -17,7 +17,6 @@ Saga를 쓰는 이유 -> 비동기적 프로세스 처리를 위해서!!! -> 서
 
 서울 -> 대전-> (사실 여행 계획이 없었음) 토의 후 어디로 갈지 정함 이게 서버와의 통신-> 부산
                                                                               -> 광주
-
 사가가 없으면
 
 서울 -> 대전
@@ -27,3 +26,26 @@ Saga를 쓰는 이유 -> 비동기적 프로세스 처리를 위해서!!! -> 서
 
     ->>> 아씨 어디로가라고???? 회의는 한거야??? 
                                                               
+
+
+
+employeeReducer initialState
+const initialState = {
+  employeeInfo: { initialInfo: "i드ㅐnitial" },
+  id: 0,
+  resume: {이력서 정보가 저장되어 있는 상태 employeeReducer.js  폴더 안에
+    
+  },
+  errmsg: "",
+};
+
+employeeReducer.resume -> 넣으면 바로 나타나는 식으로 
+
+
+
+
+
+요소 추가하고 제거하고 쓰는건 결국 employee가 해야하는거고
+현제 저희가 해야하는건 결국 employer가 사용할 수 있도록 이력서를 봐야하는 것이니까
+그냥 data 넣으면 짜르륵 나오는 식으로 하는 것이 좋지 않을까요???
+추후 추가하는 기능 넣고
