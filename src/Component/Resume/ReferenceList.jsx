@@ -1,26 +1,45 @@
 import styled from "@emotion/styled";
 
 const StyleDiv = styled.div`
-  display: flex;
-  border-top: 1px solid rgba(0, 0, 0, 0.23);
-  padding: 5px 0;
+  padding: 32px 40px 16px;
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div:last-child {
+      width: 85%;
+      height: 2px;
+      background-color: rgba(57, 199, 97, 0.15);
+    }
+    :last-child {
+      display: block;
+    }
+  }
 `;
 
 const ListNameDiv = styled.div`
-  font-size: 29px;
-  font-weight: bold;
-  padding: 24px 52px 24px 0;
-  border: none;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(57, 199, 97, 1);
 `;
 
 const InnerListWrapDiv = styled.div`
-  display: block;
-  width: 61%;
-  padding: 30px 0;
-  font-weight: 600;
-  font-size: 21px;
+  font-family: Pretendard Variable;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  padding-left: 24px;
+  padding-top: 16px;
   a {
-    padding-right: 28px;
+    padding-right: 30px;
     color: rgba(17, 192, 203, 1);
     text-decoration: none;
   }
@@ -30,7 +49,10 @@ export const ReferenceList = ({ referenceInfo }) => {
   const { name, list } = referenceInfo;
   return (
     <StyleDiv>
-      <ListNameDiv>{name}</ListNameDiv>
+      <div>
+        <ListNameDiv>{name}</ListNameDiv>
+        <div></div>
+      </div>
       <InnerListWrapDiv>
         {list.map((item) => (
           <a href={item.url} key={item.id} target="_blank" rel="noreferrer">
