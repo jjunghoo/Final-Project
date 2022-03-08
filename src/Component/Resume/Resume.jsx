@@ -11,9 +11,13 @@ import { ReferenceList } from "./ReferenceList";
 
 const UlWrap = styled.ul`
   border: 1px solid black;
-  margin: 0 23%;
-  padding: 32px 40px;
+  margin: 0 29%;
+  padding: 0;
   text-align: start;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", sans-serif;
+  background-color: white;
 `;
 
 export const Resume = () => {
