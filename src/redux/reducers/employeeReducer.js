@@ -19,157 +19,209 @@ import {
 const initialState = {
   employeeInfo: { initialInfo: "initial" },
   id: 0,
-  resume: [
-    {
-      id: "1",
-      name: "학력",
-      list: [
-        {
-          id: "1",
-          education: "한양대학교 대학원",
-          department: "디자인학부",
-          startDate: "2017.02",
-          endDate: "2021.08",
-          state: "졸업",
-        },
-        {
-          id: "2",
-          education: "한양대학교",
-          department: "디자인학부",
-          startDate: "2011.02",
-          endDate: "2016.02",
-          state: "졸업",
-        },
-      ],
+  resume: {
+    title: "협력하는 디자이너 Eugene입니다",
+    profile: {
+      name: "김유진",
+      photo: "./images/profile_photo.png",
+      age: "93년생, 30세",
+      phone: "010-8111-1111",
+      email: "asdfgh@gmail.com",
+      address: "경기 성남시 분당동",
     },
-    {
-      id: "2",
-      name: "경력",
-      list: [
-        {
-          id: "1",
-          company: "패스트캠퍼스",
-          department: "기획디자인팀",
-          position: "UXUI 디자이너",
-          startDate: "2019.03",
-          endDate: "현재",
-          state: "재직중",
-        },
-        {
-          id: "2",
-          company: "패스트캠퍼스",
-          department: "기획디자인팀",
-          position: "UXUI 디자이너",
-          startDate: "2015.01",
-          endDate: "2018.03",
-          state: "퇴사",
-        },
-        {
-          id: "3",
-          company: "패스트캠퍼스",
-          department: "기획디자인팀",
-          position: "UXUI 디자이너",
-          startDate: "2014.02",
-          endDate: "2014.11",
-          state: "계약만료",
-        },
-      ],
-    },
-    {
-      id: "3",
-      name: "자격증",
-      list: [
-        {
-          id: "1",
-          certificate: "컬러리스트기사",
-          hostOrganization: "한국산업인력공단",
-          endDate: "2019.11",
-        },
-        {
-          id: "2",
-          certificate: "웹디자인기능사",
-          hostOrganization: "한국산업인력공단",
-          endDate: "2017.11",
-        },
-      ],
-    },
-    {
-      id: "4",
-      name: "교육",
-      list: [
-        {
-          id: "1",
-          company: "패스트캠퍼스",
-          educationName: "데이터 기반 마케팅 올인원 패키지",
-          endDate: "2021.07",
-          state: "수강중",
-        },
-        {
-          id: "2",
-          company: "원티드",
-          educationName: "쉽게 유저의 마음을 여는 UX writing의 비밀",
-          endDate: "2021.06",
-          state: "수강중",
-        },
-        {
-          id: "3",
-          company: "패스트캠퍼스",
-          educationName: "한번에 끝내는 UXUI 디자인",
-          endDate: "2021.05",
-          state: "수강 완료",
-        },
-      ],
-    },
-    {
-      id: "5",
-      name: "수상경력",
-      list: [
-        {
-          id: "1",
-          awards: "2021 서울시 공모디자인 공모전 선정",
-          endDate: "2021.07",
-        },
-        {
-          id: "2",
-          awards: "제3회 생성마케팅 공모전 대상",
-          endDate: "2021.03",
-        },
-        {
-          id: "3",
-          awards: "2021년 제16회 유니버설디자인공모전 최우수상",
-          endDate: "2021.12",
-        },
-      ],
-    },
-    {
-      id: "6",
-      name: "외국어",
-      list: [
-        {
-          id: "1",
-          language: "중국어",
-          level: "작문(중)",
-        },
-        {
-          id: "2",
-          language: "영어",
-          level: "(일상회화 가능 또는 비즈니스 회화 가능)",
-        },
-      ],
-    },
-    {
-      id: "7",
-      name: "스킬",
-      list: [
-        "Figma",
-        "중국어",
-        "UI 디자인",
-        "AdobeXD",
-        "Adobe Photoshop",
-        "Adobe Illustrator",
-      ],
-    },
-  ],
+    list: [
+      {
+        id: "1",
+        name: "학력",
+        list: [
+          {
+            id: "1",
+            education: "한양대학교 대학원",
+            department: "디자인학부",
+            thesis: "디자인시스템 구축론(2019)",
+            startDate: "2019",
+            endDate: "2022",
+            state: "졸업예정",
+          },
+          {
+            id: "2",
+            education: "한양대학교",
+            department: "뉴미디어디자인학과",
+            subDepartment: "심리상담학과",
+            credit: "4.3",
+            totalCredit: "4.5",
+            startDate: "2019",
+            endDate: "2022",
+            state: "졸업",
+          },
+        ],
+      },
+      {
+        id: "2",
+        name: "경력",
+        list: [
+          {
+            id: "1",
+            company: "패스트캠퍼스",
+            department: "기획디자인팀",
+            position: "프로덕트 디자이너",
+            startDate: "2021",
+            endDate: "현재",
+            duties: ["UI리서치", "프로토타이핑", "UI/GUI 디자인"],
+          },
+          {
+            id: "2",
+            company: "삼성바이오",
+            department: "건강증진팀",
+            position: "UX/UI 디자이너",
+            startDate: "2020",
+            endDate: "2021",
+            duties: ["UI디자인", "온라인이벤트 기획 및 운영디자인"],
+          },
+          {
+            id: "3",
+            company: "아이필로",
+            department: "브랜드사업부 디자인팀",
+            position: "그래픽 디자이너",
+            startDate: "2019",
+            endDate: "2022",
+            duties: [
+              "자사몰 운영관리",
+              "웹페이지·뷰페이지· 컨텐츠 디자인",
+              "기획전·브로슈어·회사소개서 디자인",
+            ],
+          },
+        ],
+      },
+      {
+        id: "3",
+        name: "스킬",
+        list: [
+          "Figma",
+          "중국어",
+          "Adobe Illustrator",
+          "Adobe Photoshop",
+          "UI 디자인",
+          "AdobeXD",
+          "웹 디자인",
+        ],
+      },
+      {
+        id: "4",
+        name: "교육",
+        list: [
+          {
+            id: "1",
+            company: "패스트캠퍼스",
+            educationName: "데이터 기반 마케팅 올인원 패키지",
+            endDate: "2021.07",
+            state: "수강중",
+          },
+          {
+            id: "2",
+            company: "원티드",
+            educationName: "쉽게 유저의 마음을 여는 UX writing의 비밀",
+            endDate: "2021.06",
+            state: "수강중",
+          },
+          {
+            id: "3",
+            company: "패스트캠퍼스",
+            educationName: "한번에 끝내는 UXUI 디자인",
+            endDate: "2021.05",
+            state: "수강 완료",
+          },
+        ],
+      },
+      {
+        id: "5",
+        name: "외국어",
+        list: [
+          {
+            id: "1",
+            language: "중국어",
+            level: "작문(중급)",
+          },
+          {
+            id: "2",
+            language: "영어",
+            level: "일상회화, 비즈니스 회화 가능(상급)",
+          },
+        ],
+      },
+      {
+        id: "6",
+        name: "수상경력",
+        list: [
+          {
+            id: "1",
+            awards: "2021 서울시 공모디자인 공모전 선정",
+            endDate: "2021.07",
+          },
+          {
+            id: "2",
+            awards: "제3회 생성마케팅 공모전 대상",
+            endDate: "2021.03",
+          },
+          {
+            id: "3",
+            awards: "해커톤 대상",
+            endDate: "2019.02",
+          },
+          {
+            id: "4",
+            awards: "2021년 제16회 유니버설디자인공모전 최우수상",
+            endDate: "2021.12",
+          },
+        ],
+      },
+      {
+        id: "7",
+        name: "자격증",
+        list: [
+          {
+            id: "1",
+            certificate: "컬러리스트기사",
+            hostOrganization: "한국산업인력공단",
+            endDate: "2019.11",
+          },
+          {
+            id: "2",
+            certificate: "웹디자인기능사",
+            hostOrganization: "한국산업인력공단",
+            endDate: "2017.11",
+          },
+        ],
+      },
+      {
+        id: "8",
+        name: "참조링크",
+        list: [
+          {
+            id: "1",
+            name: "인스타그램",
+            url: "https://www.instagram.com/?hl=ko",
+          },
+          {
+            id: "2",
+            name: "블로그",
+            url: "https://section.blog.naver.com",
+          },
+          {
+            id: "3",
+            name: "노트폴리오",
+            url: "https://notefolio.net",
+          },
+          {
+            id: "4",
+            name: "깃허브",
+            url: "https://github.com",
+          },
+        ],
+      },
+    ],
+  },
+
   errmsg: "",
 };
 

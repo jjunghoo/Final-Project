@@ -7,6 +7,7 @@ import { ClassList } from "./ClassList";
 import { LanguageList } from "./LanguageList";
 import { AwardsList } from "./AwardsList";
 import { CertificateList } from "./CertificateList";
+import { ReferenceList } from "./ReferenceList";
 
 const UlWrap = styled.ul`
   border: 1px solid black;
@@ -21,7 +22,8 @@ export const Resume = () => {
   console.log(resume);
   return (
     <UlWrap>
-      {resume.map((item) => {
+      <div></div>
+      {resume.list.map((item) => {
         switch (item.name) {
           case "학력":
             return <EducationList key={item.id} educationInfo={item} />;
@@ -38,7 +40,7 @@ export const Resume = () => {
           case "자격증":
             return <CertificateList key={item.id} certificateInfo={item} />;
           default:
-            break;
+            return <ReferenceList key={item.id} referenceInfo={item} />;
         }
       })}
     </UlWrap>
