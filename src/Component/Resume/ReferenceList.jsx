@@ -1,13 +1,14 @@
 import styled from "@emotion/styled";
 
 const StyleDiv = styled.div`
+  background-color: rgba(57, 199, 97, 0.02);
   padding: 32px 40px 16px;
   > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     div:last-child {
-      width: 85%;
+      width: 81%;
       height: 2px;
       background-color: rgba(57, 199, 97, 0.15);
     }

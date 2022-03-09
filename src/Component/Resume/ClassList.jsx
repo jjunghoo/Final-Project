@@ -1,13 +1,14 @@
 import styled from "@emotion/styled";
 
 const StyleDiv = styled.div`
+  background-color: rgba(57, 199, 97, 0.02);
   padding: 32px 40px 16px;
   > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     div:last-child {
-      width: 91%;
+      width: 89%;
       height: 2px;
       background-color: rgba(57, 199, 97, 0.15);
     }
@@ -18,10 +19,6 @@ const StyleDiv = styled.div`
 `;
 
 const ListNameDiv = styled.div`
-  // font-size: 29px;
-  // font-weight: bold;
-  // padding: 24px 96px 24px 0;
-  // border: none;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -32,9 +29,6 @@ const ListNameDiv = styled.div`
 `;
 
 const InnerListWrapDiv = styled.div`
-  // display: block;
-  // padding: 15px 0;
-
   font-size: 18px;
   font-style: normal;
   font-weight: 400;

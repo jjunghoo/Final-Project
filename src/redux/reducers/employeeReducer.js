@@ -23,7 +23,8 @@ const initialState = {
     title: "협력하는 디자이너 Eugene입니다",
     profile: {
       name: "김유진",
-      photo: "./images/profile_photo.png",
+      photo: "",
+      job: "UX/UI Designer",
       age: "93년생, 30세",
       phone: "010-8111-1111",
       email: "asdfgh@gmail.com",

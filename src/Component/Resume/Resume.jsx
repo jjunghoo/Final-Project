@@ -8,6 +8,7 @@ import { LanguageList } from "./LanguageList";
 import { AwardsList } from "./AwardsList";
 import { CertificateList } from "./CertificateList";
 import { ReferenceList } from "./ReferenceList";
+import { Profile } from "./Profile";
 
 const UlWrap = styled.ul`
   border: 1px solid black;
@@ -23,10 +24,10 @@ const UlWrap = styled.ul`
 export const Resume = () => {
   const resume = useSelector((state) => state.employeeReducer.resume);
 
-  console.log(resume);
+  // console.log(resume);
   return (
     <UlWrap>
-      <div></div>
+      <Profile />
       {resume.list.map((item) => {
         switch (item.name) {
           case "학력":
