@@ -21,10 +21,6 @@ const ProfileWrapDiv = styled.div`
   display: flex;
 `;
 
-const ImgDiv = styled.div`
-  //   border: 1px solid black;
-`;
-
 const ProfileDiv = styled.div`
   margin-left: 18px;
   span {

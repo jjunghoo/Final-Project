@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
 
 const StyleDiv = styled.div`
-  // display: flex;
-  // padding: 5px 0;
   padding: 32px 40px 16px;
 `;
 
@@ -16,15 +14,7 @@ const ListNameDiv = styled.div`
   color: rgba(57, 199, 97, 1);
 `;
 
-const InnerListWrapDiv = styled.div`
-  // display: block;
-  // padding: 15px 0;
-  // border: 1px solid black;
-`;
-
 const InnerListDiv = styled.div`
-  // padding: 15px;
-  // border: 1px solid red;
   padding-bottom: 16px;
   margin-top: 24px;
 `;
@@ -118,7 +108,7 @@ export const EducationList = ({ educationInfo }) => {
   return (
     <StyleDiv>
       <ListNameDiv>{name}</ListNameDiv>
-      <InnerListWrapDiv>
+      <div>
         {list.map((item) => (
           <InnerListDiv key={item.id}>
             <StyleDiv2>
@@ -145,7 +135,7 @@ export const EducationList = ({ educationInfo }) => {
             </StyleDepartmentDiv>
           </InnerListDiv>
         ))}
-      </InnerListWrapDiv>
+      </div>
     </StyleDiv>
   );
 };
