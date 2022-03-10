@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { useSelector } from "react-redux";
 
 const StyleDiv = styled.div`
-  padding: 32px 40px 16px;
+  padding: 110px 40px 32px;
 `;
 
 const ListNameDiv = styled.div`

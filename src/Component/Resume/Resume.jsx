@@ -28,45 +28,30 @@ export const Resume = () => {
 
   // console.log(resume);
   return (
-    <>
-      <details>
-        <summary>이력서</summary>
-        <UlWrap>
-          <Profile />
-          {resume.list.map((item) => {
-            switch (item.name) {
-              case "학력":
-                return <EducationList key={item.id} educationInfo={item} />;
-              case "경력":
-                return <CareerList key={item.id} careerListInfo={item} />;
-              case "스킬":
-                return <SkillsList key={item.id} skillListInfo={item} />;
-              case "교육":
-                return <ClassList key={item.id} classInfo={item} />;
-              case "외국어":
-                return <LanguageList key={item.id} languageInfo={item} />;
-              case "수상경력":
-                return <AwardsList key={item.id} awardsInfo={item} />;
-              case "자격증":
-                return <CertificateList key={item.id} certificateInfo={item} />;
-              default:
-                return <ReferenceList key={item.id} referenceInfo={item} />;
-            }
-          })}
-        </UlWrap>
-      </details>
-      <details>
-        <summary>경력 기술서</summary>
-        <UlWrap>
-          <CurriculumVitae />
-        </UlWrap>
-      </details>
-      <details>
-        <summary>자기소개서</summary>
-        <UlWrap>
-          <CoverLetter />
-        </UlWrap>
-      </details>
-    </>
+    <UlWrap>
+      <Profile />
+      {resume.list.map((item) => {
+        switch (item.name) {
+          case "학력":
+            return <EducationList key={item.id} educationInfo={item} />;
+          case "경력":
+            return <CareerList key={item.id} careerListInfo={item} />;
+          case "스킬":
+            return <SkillsList key={item.id} skillListInfo={item} />;
+          case "교육":
+            return <ClassList key={item.id} classInfo={item} />;
+          case "외국어":
+            return <LanguageList key={item.id} languageInfo={item} />;
+          case "수상경력":
+            return <AwardsList key={item.id} awardsInfo={item} />;
+          case "자격증":
+            return <CertificateList key={item.id} certificateInfo={item} />;
+          default:
+            return <ReferenceList key={item.id} referenceInfo={item} />;
+        }
+      })}
+      <CurriculumVitae />
+      <CoverLetter />
+    </UlWrap>
   );
 };
