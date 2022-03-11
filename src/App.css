@@ -1,3 +1,5 @@
+/** @format */
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,39 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#random-match-card1 {
+  height: 670px;
+  width: 470px;
+  background-color: grey;
+  box-sizing: border-box;
+  position: absolute;
+  left: -50%;
+  /* left: ${card1Location}%; */
+  transform: translate(-50%, 0);
+  transition: all ease 2s 0s;
+}
+
+#random-match-card2 {
+  height: 670px;
+  width: 470px;
+  background-color: tomato;
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  /* left: ${card1Location}%; */
+  transform: translate(-50%, 0);
+  transition: all ease 2s 0s;
+}
+#random-match-card3 {
+  height: 670px;
+  width: 470px;
+  background-color: purple;
+  box-sizing: border-box;
+  position: absolute;
+  left: 150%;
+  /* left: ${card1Location}%; */
+  transform: translate(-50%, 0);
+  transition: all ease 2s 0s;
 }

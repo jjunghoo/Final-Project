@@ -16,6 +16,9 @@ import {
   EMPLOYER_SUPERMATCHING_GET_SUCCESS,
   EMPLOYER_SUPERMATCHING_GET_FAILURE,
   EMPLOYER_SUPERMATCHING_GET_REQUEST,
+  EMPLOYER_BOOKMARK_EDIT_REQUEST,
+  EMPLOYER_BOOKMARK_EDIT_FAILURE,
+  EMPLOYER_BOOKMARK_EDIT_SUCCESS,
 } from "../type";
 /** @format */
 
@@ -123,6 +126,54 @@ function* watchEmployerBookmarkGet() {
   yield takeEvery(EMPLOYER_BOOKMARK_GET_REQUEST, employerBookmarkGetSaga);
 }
 
+const axiosEmployerBookmarkEditSaga = (action) => {
+  console.log(action);
+
+  return axios.put(`/employer/${action.id}`, action);
+};
+
+///BOOKMARK EDIT////
+
+function* employerBookmarkEditSaga(action) {
+  //   console.log("saga진입");
+  //    action.payload는 기업측 id 입력 필요
+  try {
+    console.log(action.payload);
+    let posts = yield call(
+      axiosEmployerBookmarkGetSaga,
+      action.payload.employerReducer.id
+    ); //특정부분 ID 확인용
+    yield console.log(posts.data.likedInfo);
+    let index = yield posts.data.likedInfo.indexOf(action.payload.userID);
+    if (index > -1) {
+      posts.data.likedInfo.splice(index, 1);
+    } else {
+      posts.data.likedInfo.push(action.payload.userID);
+    }
+    console.log(posts.data.likedInfo);
+    console.log(posts.data);
+
+    posts = yield call(axiosEmployerBookmarkEditSaga, posts.data);
+    console.log("bookmarkget");
+    // yield console.log(action.payload);
+    yield put({
+      type: EMPLOYER_BOOKMARK_EDIT_SUCCESS,
+      payload: { bookmarkInfo: posts.data.bookmarkInfo },
+    }); // 성공 액션 디스패치
+  } catch (e) {
+    // console.log(e);
+    yield put({
+      type: EMPLOYER_BOOKMARK_EDIT_FAILURE,
+      error: true,
+      payload: { errmsg: e },
+    }); // 실패 액션 디스패치
+  }
+}
+
+function* watchEmployerBookmarkEdit() {
+  yield takeEvery(EMPLOYER_BOOKMARK_EDIT_REQUEST, employerBookmarkEditSaga);
+}
+
 const axiosEmployerSupermachingGetSaga = (action) => {
   return axios.get(`/employer/${action}`);
 };
@@ -165,6 +216,7 @@ export function* employerSaga() {
     fork(watchEmployerInfoGet),
     fork(watchEmployerLikedGet),
     fork(watchEmployerBookmarkGet),
+    fork(watchEmployerBookmarkEdit),
     fork(watchEmployerSupermachingGet),
   ]);
 }

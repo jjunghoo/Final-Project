@@ -10,7 +10,6 @@ import { UserPage } from "./Component/Userpage/UserPage";
 function App() {
   return (
     <div className="App">
-      흠....
       <Routes className="routes">
         <Route path="/UserPage" element={<UserPage />} />
         <Route path="/*" element={<MainPage />} />

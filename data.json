@@ -1,9 +1,8 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "리덕스 미들웨어를 배워봅시다",
-      "body": "리덕스 미들웨어를 직접 만들어보면 이해하기 쉽죠."
+      "title": "bye",
+      "id": 1
     },
     {
       "id": 2,
@@ -18,72 +17,318 @@
   ],
   "employee": [
     {
-      "id": 1,
-      "employeeInfo": { "이름": "이장훈" },
-      "resume": { "이력서양식": "이력서양식1" }
+      "id": "e1",
+      "employeeInfo": {
+        "이름": "이장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식1"
+      }
     },
     {
-      "id": 2,
-      "employeeInfo": { "이름": "서장훈" },
-      "resume": { "이력서양식": "이력서양식2" }
+      "id": "e2",
+      "employeeInfo": {
+        "이름": "서장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식2"
+      }
     },
     {
-      "id": 3,
-      "employeeInfo": { "이름": "박장훈" },
-      "resume": { "이력서양식": "이력서양식3" }
+      "id": "e3",
+      "employeeInfo": {
+        "이름": "박장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식3"
+      }
     },
     {
-      "id": 4,
-      "employeeInfo": { "이름": "김장훈" },
-      "resume": { "이력서양식": "이력서양식4" }
+      "id": "e4",
+      "employeeInfo": {
+        "이름": "김장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식4"
+      }
     },
     {
-      "id": 600,
-      "employeeInfo": { "이름": "최장훈" },
-      "resume": { "이력서양식": "이력서양식5" }
+      "id": "e5",
+      "employeeInfo": {
+        "이름": "이장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식1"
+      }
+    },
+    {
+      "id": "e6",
+      "employeeInfo": {
+        "이름": "서장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식2"
+      }
+    },
+    {
+      "id": "e7",
+      "employeeInfo": {
+        "이름": "박장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식3"
+      }
+    },
+    {
+      "id": "e8",
+      "employeeInfo": {
+        "이름": "김장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식4"
+      }
+    },
+    {
+      "id": "e9",
+      "employeeInfo": {
+        "이름": "이장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식1"
+      }
+    },
+    {
+      "id": "e10",
+      "employeeInfo": {
+        "이름": "서장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식2"
+      }
+    },
+    {
+      "id": "e11",
+      "employeeInfo": {
+        "이름": "박장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식3"
+      }
+    },
+    {
+      "id": "e12",
+      "employeeInfo": {
+        "이름": "김장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식4"
+      }
+    },
+    {
+      "id": "e13",
+      "employeeInfo": {
+        "이름": "이장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식1"
+      }
+    },
+    {
+      "id": "e14",
+      "employeeInfo": {
+        "이름": "서장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식2"
+      }
+    },
+    {
+      "id": "e15",
+      "employeeInfo": {
+        "이름": "박장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식3"
+      }
+    },
+    {
+      "id": "e16",
+      "employeeInfo": {
+        "이름": "김장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식4"
+      }
+    },
+    {
+      "id": "e17",
+      "employeeInfo": {
+        "이름": "이장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식1"
+      }
+    },
+    {
+      "id": "e18",
+      "employeeInfo": {
+        "이름": "서장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식2"
+      }
+    },
+    {
+      "id": "e19",
+      "employeeInfo": {
+        "이름": "박장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식3"
+      }
+    },
+    {
+      "id": "e20",
+      "employeeInfo": {
+        "이름": "김장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식4"
+      }
+    },
+    {
+      "id": "e21",
+      "employeeInfo": {
+        "이름": "이장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식1"
+      }
+    },
+    {
+      "id": "e22",
+      "employeeInfo": {
+        "이름": "서장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식2"
+      }
+    },
+    {
+      "id": "e23",
+      "employeeInfo": {
+        "이름": "박장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식3"
+      }
+    },
+    {
+      "id": "e24",
+      "employeeInfo": {
+        "이름": "김장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식4"
+      }
+    },
+    {
+      "id": "e25",
+      "employeeInfo": {
+        "이름": "최장훈"
+      },
+      "resume": {
+        "이력서양식": "이력서양식5"
+      }
     }
   ],
   "employer": [
     {
-      "id": 1,
-      "likedInfo": [1, 2, 3, 4, 600],
-      "emloyerInfo": { "이름": "이장훈" },
-
-      "bookmarkInfo": [1, 2, 3, 4, 600],
-      "superMachingInfo": [1, 2, 600],
+      "id": "em1",
+      "likedInfo": [
+        "e2",
+        "e3",
+        "e4",
+        "e25",
+        "e1",
+        "e6",
+        "e9"
+      ],
+      "emloyerInfo": {
+        "이름": "이장훈"
+      },
+      "bookmarkInfo": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e25"
+      ],
+      "superMachingInfo": [
+        "e1",
+        "e2",
+        "e600"
+      ],
       "superMachedInfo": []
     },
     {
-      "id": 2,
-      "likedInfo": [1, 2, 3, 4, 600],
-      "emloyerInfo": { "이름": "팍장훈" },
-      "bookmarkInfo": [1, 2, 4, 600],
-      "superMachingInfo": [1, 600],
+      "id": "em2",
+      "likedInfo": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e25"
+      ],
+      "emloyerInfo": {
+        "이름": "팍장훈"
+      },
+      "bookmarkInfo": [
+        "e1",
+        "e2",
+        "e4",
+        "e25"
+      ],
+      "superMachingInfo": [
+        "e1",
+        "e25"
+      ],
       "superMachedInfo": []
     },
     {
-      "id": 3,
-      "likedInfo": [1, 2, 3, 4, 600],
-      "emloyerInfo": { "이름": "오장훈" },
-      "bookmarkInfo": [1, 600],
-      "superMachingInfo": [1, 600],
-      "superMachedInfo": []
-    },
-    {
-      "id": 4,
-      "likedInfo": [1, 2, 3, 4, 600],
-      "emloyerInfo": { "이름": "제갈장훈" },
-      "bookmarkInfo": [1, 2, 3, 4, 600],
-      "superMachingInfo": [],
+      "id": "em3",
+      "likedInfo": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e25"
+      ],
+      "emloyerInfo": {
+        "이름": "오장훈"
+      },
+      "bookmarkInfo": [
+        "e1",
+        "e25"
+      ],
+      "superMachingInfo": [
+        "e1",
+        "e25"
+      ],
       "superMachedInfo": []
     }
   ],
   "teacher": [
     {
       "id": "t1",
-      "teacherInfo": { "이름": "박을수" },
-
-      "lectureInfo": ["a", "b", "e"],
+      "teacherInfo": {
+        "이름": "박을수"
+      },
+      "lectureInfo": [
+        "a",
+        "b",
+        "e"
+      ],
       "commentInfo": {
         "1": "이 학생은 good",
         "2": "이 학생은 good",
@@ -92,8 +337,13 @@
     },
     {
       "id": "t2",
-      "teacherInfo": { "이름": "정을수" },
-      "lectureInfo": ["d", "e"],
+      "teacherInfo": {
+        "이름": "정을수"
+      },
+      "lectureInfo": [
+        "d",
+        "e"
+      ],
       "commentInfo": {
         "1": "이 학생은 별로다",
         "2": "이 학생은 진짜 별로다",
@@ -102,9 +352,16 @@
     },
     {
       "id": "t3",
-      "teacherInfo": { "이름": "차을수" },
-
-      "lectureInfo": ["a", "b", "c", "d", "e"],
+      "teacherInfo": {
+        "이름": "차을수"
+      },
+      "lectureInfo": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
       "commentInfo": {
         "1": "이 학생은 대단하다",
         "2": "이 학생은 진짜 대단하다",
@@ -115,15 +372,40 @@
   "project": [
     {
       "id": "p1",
-
-      "studentInfo": ["1", "2", "3", "4", "5"],
-      "stageInfo": ["미니프로젝트p1-1", "미니프로젝트p1-2", "미니프로젝트p1-3"]
+      "studentInfo": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "stageInfo": [
+        "미니프로젝트p1-1",
+        "미니프로젝트p1-2",
+        "미니프로젝트p1-3"
+      ]
     },
     {
       "id": "p2",
-
-      "studentInfo": ["6", "7", "8", "9", "10"],
-      "stageInfo": ["미니프로젝트p2-1", "미니프로젝트p2-2", "미니프로젝트p2-3"]
+      "studentInfo": [
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "stageInfo": [
+        "미니프로젝트p2-1",
+        "미니프로젝트p2-2",
+        "미니프로젝트p2-3"
+      ]
     }
-  ]
+  ],
+  "matching": {
+    "matching": {
+      "123": 123,
+      "456": 456
+    },
+    "matching2": "123"
+  }
 }

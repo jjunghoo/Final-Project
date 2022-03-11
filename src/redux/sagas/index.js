@@ -5,6 +5,7 @@ import { employeeSaga } from "./employeeSaga";
 import { employerSaga } from "./employerSaga";
 import { teacherSaga } from "./teacherSaga";
 import { projectSaga } from "./projectSaga";
+import { matchingSaga } from "./matchingSaga";
 
 // export function* helloSaga() {
 //   console.log("Hello Saga!");
@@ -17,5 +18,6 @@ export default function* rootSaga() {
     fork(employerSaga),
     fork(teacherSaga),
     fork(projectSaga),
+    fork(matchingSaga),
   ]);
 }
