@@ -25,7 +25,7 @@ import {
 import { store } from "./index";
 
 export const Helloworld1 = () => {
-  const reduxvalue = useSelector((state) => state.projectReducer);
+  const reduxvalue = useSelector((state) => state.employeeReducer.resume);
   const dispatch = useDispatch();
 
   const onClickE = (e) => {
@@ -46,64 +46,65 @@ export const Helloworld1 = () => {
     return response.data;
   };
   return (
-    <div
-      style={{ backgroundColor: "tomato" }}
-      className="job-wrap"
-      onClick={onClickE}
-    >
-      <div
-        onClick={() => {
-          dispatch({ type: PROJECT_INFO_GET_REQUEST, payload: "p1" }); // UI dispatch를 함 ->>>
-        }}
-      >
-        PROJECT_INFO_GET_REQUEST
-      </div>
-      <div
-        onClick={() => {
-          dispatch({ type: PROJECT_INFO_GET_REQUEST, payload: "p2" });
-        }}
-      >
-        클릭
-      </div>
-      <div
-        onClick={() => {
-          dispatch({ type: PROJECT_INFO_GET_REQUEST, payload: "p3" });
-        }}
-      >
-        클릭
-      </div>
+    <div>{reduxvalue}</div>
+    // <div
+    //   style={{ backgroundColor: "tomato" }}
+    //   className="job-wrap"
+    //   onClick={onClickE}
+    // >
+    //   <div
+    //     onClick={() => {
+    //       dispatch({ type: PROJECT_INFO_GET_REQUEST, payload: "p1" }); // UI dispatch를 함 ->>>
+    //     }}
+    //   >
+    //     PROJECT_INFO_GET_REQUEST
+    //   </div>
+    //   <div
+    //     onClick={() => {
+    //       dispatch({ type: PROJECT_INFO_GET_REQUEST, payload: "p2" });
+    //     }}
+    //   >
+    //     클릭
+    //   </div>
+    //   <div
+    //     onClick={() => {
+    //       dispatch({ type: PROJECT_INFO_GET_REQUEST, payload: "p3" });
+    //     }}
+    //   >
+    //     클릭
+    //   </div>
 
-      <div
-        onClick={() => {
-          console.log(store.getState());
-        }}
-      >
-        {" "}
-        스토어 확인
-      </div>
+    //   <div
+    //     onClick={() => {
+    //       console.log(store.getState());
+    //     }}
+    //   >
+    //     {" "}
+    //     스토어 확인
+    //   </div>
 
-      <div
-        onClick={() => {
-          dispatch({
-            type: PROJECT_STAGE_GET_REQUEST,
-            payload: "p2",
-          });
-        }}
-      >
-        stage 클릭
-      </div>
+    //   <div
+    //     onClick={() => {
+    //       dispatch({
+    //         type: PROJECT_STAGE_GET_REQUEST,
+    //         payload: "p2",
+    //       });
+    //     }}
+    //   >
+    //     stage 클릭
+    //   </div>
 
-      <div
-        onClick={() => {
-          dispatch({
-            type: PROJECT_STUDENT_GET_REQUEST,
-            payload: "p2",
-          });
-        }}
-      >
-        PROJECT_STUDENT_GET_REQUEST 클릭
-      </div>
-      {reduxvalue.id}
-    </div>
+    //   <div
+    //     onClick={() => {
+    //       dispatch({
+    //         type: PROJECT_STUDENT_GET_REQUEST,
+    //         payload: "p2",
+    //       });
+    //     }}
+    //   >
+    //     PROJECT_STUDENT_GET_REQUEST 클릭
+    //   </div>
+    //   {reduxvalue.id}
+    // </div>
   );
 };
