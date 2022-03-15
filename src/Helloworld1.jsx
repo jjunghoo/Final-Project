@@ -2,6 +2,8 @@
 
 import axios from "axios";
 
+import blueStar from "./";
+import styled from "@emotion/styled";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,6 +25,19 @@ import {
   TEACHER_LECTURE_GET_REQUEST,
 } from "./redux/type";
 import { store } from "./index";
+import { FlipCard } from "./Component/Card/FlipCard";
+
+const FlipCardWrap = styled.div`
+  max-width: 1920px;
+  background-color: yellow;
+  display: flex;
+  position: relative;
+  left: 50vw;
+  transform: translate(-50%, 0%);
+  justify-content: center;
+  margin: 50px 0px 50px 0px;
+  padding: 50px 0px 50px 0px;
+`;
 
 export const Helloworld1 = () => {
   const reduxvalue = useSelector((state) => state.employeeReducer.resume);
@@ -36,17 +51,29 @@ export const Helloworld1 = () => {
     // dispatch(employeeIDGet({ ...reduxvalue }));
   };
 
-  const getPosts = async () => {
-    const response = await axios.get("/example");
-    return response.data;
-  };
+  // const getPosts = async () => {
+  //   await axios
+  //     .get(
+  //       `https://docs.google.com/spreadsheets/d/1Di7pkSxTor17eTRY25wRF8hlYBw73ExAVRkO2RB8Xa8/gviz/tq?&sheet=test&tq=Select%20*`
+  //     )
+  //     .then((res) => {
+  //       console.log(res);
+  //     });
+  //   // return response.data;
+  // };
 
   const getPostById = async (id) => {
     const response = await axios.get(`/posts/${id}`);
     return response.data;
   };
   return (
-    <div>{reduxvalue}</div>
+    <FlipCardWrap>
+      <FlipCard color={"#FFA800"}></FlipCard>
+      <FlipCard color={"#FF5050"}></FlipCard>
+      <FlipCard color={"#11C0CB"}></FlipCard>
+      <FlipCard color={"#BA6DF6"}></FlipCard>
+    </FlipCardWrap>
+    // <div onClick={() => getPosts()}>{"helllllloo"}</div>
     // <div
     //   style={{ backgroundColor: "tomato" }}
     //   className="job-wrap"
@@ -99,6 +126,7 @@ export const Helloworld1 = () => {
     //       dispatch({
     //         type: PROJECT_STUDENT_GET_REQUEST,
     //         payload: "p2",
+    //         hamberger:"cheese"
     //       });
     //     }}
     //   >

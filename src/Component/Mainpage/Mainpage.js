@@ -3,7 +3,10 @@
 import { RandomMatching } from "./RandomMatching.jsx";
 import styled from "@emotion/styled";
 import { useDispatch } from "react-redux";
-import { EMPLOYER_INFO_GET_REQUEST } from "../../redux/type.js";
+import {
+  EMPLOYER_BOOKMARK_EDIT_REQUEST,
+  EMPLOYER_INFO_GET_REQUEST,
+} from "../../redux/type.js";
 /** @format */
 
 // import { Link } from "react-router-dom";
@@ -29,15 +32,6 @@ const GetEmployerIDbutton = styled.div`
   transform: translate(-50%, 0);
 `;
 
-const EditEmployerBookmarkButton = styled.div`
-  width: 200px;
-  height: 200px;
-  //   width: 100%;
-  background-color: red;
-  position: relative;
-  //   left: 50vw;
-  transform: translate(-50%, 0);
-`;
 export const MainPage = () => {
   const dispatch = useDispatch();
 
@@ -51,9 +45,6 @@ export const MainPage = () => {
           dispatch({ type: EMPLOYER_INFO_GET_REQUEST, payload: "em1" });
         }}
       ></GetEmployerIDbutton>
-      <EditEmployerBookmarkButton
-        onClick={() => {}}
-      ></EditEmployerBookmarkButton>
     </MainPage_Div>
   );
 };

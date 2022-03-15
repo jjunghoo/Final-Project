@@ -129,7 +129,7 @@ function* watchEmployerBookmarkGet() {
 const axiosEmployerBookmarkEditSaga = (action) => {
   console.log(action);
 
-  return axios.put(`/employer/${action.id}`, action);
+  return axios.put(`/employer/${action.id}`);
 };
 
 ///BOOKMARK EDIT////

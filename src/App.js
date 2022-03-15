@@ -7,6 +7,7 @@ import { Resume } from "./Component/Resume/Resume";
 import { Routes, Route } from "react-router-dom";
 import { MainPage } from "./Component/Mainpage/Mainpage";
 import { UserPage } from "./Component/Userpage/UserPage";
+import { FlipCardWrapJSX } from "./Component/Card/FlipCardWrap";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes className="routes">
         <Route path="/UserPage" element={<UserPage />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/test" element={<FlipCardWrapJSX />} />
         <Route path="/*" element={<MainPage />} />
       </Routes>
     </div>
