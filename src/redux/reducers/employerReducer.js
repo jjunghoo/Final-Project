@@ -45,10 +45,6 @@ export default function employerReducer(state = initialState, action) {
     case EMPLOYER_INFO_GET_REQUEST: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.
       return {
         ...state,
-        companyInfo: [],
-        likedInfo: [],
-        bookmarkInfo: [],
-        superMachingInfo: [],
       };
     case EMPLOYER_INFO_GET_SUCCESS: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.
       return { ...action.payload };
@@ -58,7 +54,6 @@ export default function employerReducer(state = initialState, action) {
     case EMPLOYER_LIKED_GET_REQUEST:
       return {
         ...state,
-        likedInfo: "",
       };
     case EMPLOYER_LIKED_GET_SUCCESS:
       // console.log("likedinfosuccess");
@@ -76,7 +71,6 @@ export default function employerReducer(state = initialState, action) {
     case EMPLOYER_BOOKMARK_GET_REQUEST:
       return {
         ...state,
-        bookmarkInfo: "",
       };
     case EMPLOYER_BOOKMARK_GET_SUCCESS:
       // console.log("likedinfosuccess");
@@ -94,7 +88,6 @@ export default function employerReducer(state = initialState, action) {
     case EMPLOYER_SUPERMATCHING_GET_REQUEST:
       return {
         ...state,
-        superMachingInfo: "",
       };
     case EMPLOYER_SUPERMATCHING_GET_SUCCESS:
       // console.log("likedinfosuccess");
@@ -162,7 +155,7 @@ export default function employerReducer(state = initialState, action) {
     case EMPLOYER_BOOKMARK_EDIT_REQUEST:
       return {
         ...state,
-        bookmarkInfo: "",
+        // bookmarkInfo: "",
       };
     case EMPLOYER_BOOKMARK_EDIT_SUCCESS:
       return {

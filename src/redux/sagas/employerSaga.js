@@ -39,9 +39,9 @@ function* employerInfoGetSaga(action) {
   //   console.log("saga진입");
   //    action.payload는 기업측 id 입력 필요
   try {
-    console.log("try");
+    // console.log("try");
     const posts = yield call(axiosEmployerInfoGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
-    yield console.log(posts.data);
+    // yield console.log(posts.data);
     // yield console.log(action.payload);
     yield put({
       type: EMPLOYER_INFO_GET_SUCCESS,
@@ -71,7 +71,7 @@ function* employerLikedGetSaga(action) {
   //   console.log("saga진입");
   //    action.payload는 기업측 id 입력 필요
   try {
-    console.log("try");
+    // console.log("try");
     const posts = yield call(axiosEmployerLikedGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
     yield console.log(posts.data.likedInfo);
     // yield console.log(action.payload);
@@ -103,7 +103,7 @@ function* employerBookmarkGetSaga(action) {
   //   console.log("saga진입");
   //    action.payload는 기업측 id 입력 필요
   try {
-    console.log("try");
+    // console.log("try");
     const posts = yield call(axiosEmployerBookmarkGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
     yield console.log(posts.data);
     console.log("bookmarkget");
@@ -126,42 +126,38 @@ function* watchEmployerBookmarkGet() {
   yield takeEvery(EMPLOYER_BOOKMARK_GET_REQUEST, employerBookmarkGetSaga);
 }
 
-const axiosEmployerBookmarkEditSaga = (action) => {
-  console.log(action);
-
-  return axios.put(`/employer/${action.id}`);
-};
-
 ///BOOKMARK EDIT////
 
+const axiosEmployerBookmarkEditSaga = (action) => {
+  console.log(action);
+  // return 0;
+  return axios.put(`/employer/${action.id}`, action);
+};
 function* employerBookmarkEditSaga(action) {
   //   console.log("saga진입");
   //    action.payload는 기업측 id 입력 필요
   try {
     console.log(action.payload);
-    let posts = yield call(
-      axiosEmployerBookmarkGetSaga,
-      action.payload.employerReducer.id
-    ); //특정부분 ID 확인용
-    yield console.log(posts.data.likedInfo);
-    let index = yield posts.data.likedInfo.indexOf(action.payload.userID);
+    let posts = yield call(axiosEmployerBookmarkGetSaga, action.payload.id); //특정부분 ID 확인용
+    yield console.log(posts.data.bookmarkInfo);
+    let index = yield posts.data.bookmarkInfo.indexOf(action.payload.userID);
     if (index > -1) {
-      posts.data.likedInfo.splice(index, 1);
+      posts.data.bookmarkInfo.splice(index, 1);
     } else {
-      posts.data.likedInfo.push(action.payload.userID);
+      posts.data.bookmarkInfo.push(action.payload.userID);
     }
-    console.log(posts.data.likedInfo);
+    console.log(posts.data.bookmarkInfo);
     console.log(posts.data);
 
     posts = yield call(axiosEmployerBookmarkEditSaga, posts.data);
-    console.log("bookmarkget");
-    // yield console.log(action.payload);
+    // console.log("bookmarkget");
+    yield console.log(posts.data);
     yield put({
       type: EMPLOYER_BOOKMARK_EDIT_SUCCESS,
       payload: { bookmarkInfo: posts.data.bookmarkInfo },
     }); // 성공 액션 디스패치
   } catch (e) {
-    // console.log(e);
+    console.log(e);
     yield put({
       type: EMPLOYER_BOOKMARK_EDIT_FAILURE,
       error: true,

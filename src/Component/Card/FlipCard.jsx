@@ -13,7 +13,8 @@ import { AvartarIcon } from "./CardComponent/AvatarIcon";
 import { BadgeBox } from "./CardComponent/BadgeBox";
 import { FlipCardBack } from "./FlipCardBack";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { EMPLOYER_BOOKMARK_EDIT_REQUEST } from "../../redux/type";
 
 const FlipCardDesign = styled.div`
   height: 590px;
@@ -109,9 +110,18 @@ const Badge = styled.div`
 `;
 
 export const FlipCard = ({ cardInfo, cardNum, color }) => {
+  const [bookmarkedInfo, setBookmarkedInfo] = useState(0);
+  const employerInfo = useSelector((state) => state.employerReducer);
+  const cardBookmarkInfo = useSelector(
+    (state) => state.employerReducer.bookmarkInfo
+  );
+  const employer = useSelector((state) => state.employerReducer);
+
+  const dispatch = useDispatch();
+
   const roleSelect = (cardInfo, color) => {
     // console.log(cardInfo, color);
-    console.log(cardInfo.programming);
+    // console.log(cardInfo.programming);
     if (parseInt(cardInfo.programming) === 1) {
       // console.log("1");
       return <Role color={color}>프로그래머</Role>;
@@ -125,41 +135,32 @@ export const FlipCard = ({ cardInfo, cardNum, color }) => {
       // console.log("4");
       return <Role color={color}>데이터 사이언스</Role>;
     } else {
-      console.log(cardInfo);
+      // console.log(cardInfo);
       return 0;
     }
   };
 
-  const [bookmarkedInfo, setBookmarkedInfo] = useState(0);
-  const employerInfo = useSelector((state) => state.employerReducer);
-  useEffect(() => {
-    if (employerInfo.bookmarkInfo.indexOf(cardInfo.id) !== -1) {
-      console.log("안에 들어있는데 음 왜지??");
-      setBookmarkedInfo(1);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (employerInfo.bookmarkInfo.indexOf(cardInfo.id) !== -1) {
-      console.log("안에 들어있는데 음 왜지??");
-      setBookmarkedInfo(1);
-    }
-  }, []);
-
   const onClickedEvent = () => {
-    console.log("작동중");
-    // if (bookmarkedInfo === 0) {
-    if (employerInfo.bookmarkInfo.indexOf(cardInfo.id)) {
-      setBookmarkedInfo(1);
-    } else {
-      setBookmarkedInfo(0);
-    }
+    dispatch({
+      type: EMPLOYER_BOOKMARK_EDIT_REQUEST,
+      payload: { id: employer.id, userID: cardInfo.id },
+    });
   };
 
   useEffect(() => {
-    if (employerInfo.bookmarkInfo.indexOf(cardInfo.id) !== -1) {
-      console.log("안에 들어있는데 음 왜지??");
-      setBookmarkedInfo(1);
+    console.log(employerInfo.bookmarkInfo);
+    if (employerInfo.bookmarkInfo) {
+      if (employerInfo.bookmarkInfo.indexOf(cardInfo.id) > -1) {
+        // console.log(employerInfo.bookmarkInfo);
+        // console.log(cardInfo.id);
+        // console.log("안에 들어있는데 음 왜지??");
+        setBookmarkedInfo(1);
+      } else {
+        // console.log(employerInfo.bookmarkInfo);
+        // console.log("안에 없음");
+        setBookmarkedInfo(0);
+      }
+      console.log("test");
     }
   }, [employerInfo.bookmarkInfo]);
 
@@ -167,7 +168,7 @@ export const FlipCard = ({ cardInfo, cardNum, color }) => {
     <FlipCardcase
       onClick={() => {
         console.log(cardInfo);
-        console.log(bookmarkedInfo);
+        // console.log(bookmarkedInfo);
       }}
     >
       <FlipCardDesign color={color} className="flip-card-inner">
@@ -179,10 +180,14 @@ export const FlipCard = ({ cardInfo, cardNum, color }) => {
         <NameInfo>{cardInfo.employeeInfo.이름}</NameInfo>
         {roleSelect(cardInfo, color)}
         <Badge>
-          <BadgeBox></BadgeBox>
+          <BadgeBox cardInfo={cardInfo}></BadgeBox>
         </Badge>
       </FlipCardDesign>
-      <FlipCardBack className="flip-back-card"></FlipCardBack>
+      <FlipCardBack
+        color={color}
+        cardInfo={cardInfo}
+        className="flip-back-card"
+      ></FlipCardBack>
     </FlipCardcase>
   );
 };
