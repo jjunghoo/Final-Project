@@ -32,7 +32,7 @@ import {
 const initialState = {
   employerInfo: { initialInfo: "initial" }, // 기업 정보
   likedInfo: { initialInfo: "initial" }, // 기업이 고용하고 싶은 회원 정보
-  bookmarkInfo: { initialInfo: "initial" }, // 기업이 고용은 안했고 눈여겨보는 회원 정보
+  bookmarkInfo: "", // 기업이 고용은 안했고 눈여겨보는 회원 정보
   superMachingInfo: { initialInfo: "initial" }, // 기업의 매칭된 상태의 정보
   superMachedInfo: { initialInfo: "initial" }, // 왜넣었지 ;;;
   errmsg: "",

@@ -9,16 +9,31 @@ import { MainPage } from "./Component/Mainpage/Mainpage";
 import { UserPage } from "./Component/Userpage/UserPage";
 import { FlipCardWrapJSX } from "./Component/Card/FlipCardWrap";
 
+import styled from "@emotion/styled";
+import { MainPageHeader } from "./Component/Mainpage/Header";
+import { CategoryMenu } from "./Component/Mainpage/CategoryMenu";
+
+const AppDiv = styled.div`
+  // width: 100%;
+  // max-width: 1920px;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  flex-direction: column;
+`;
+
 function App() {
   return (
-    <div className="App">
+    <AppDiv className="App">
+      <MainPageHeader />
+      <CategoryMenu />
       <Routes className="routes">
         <Route path="/UserPage" element={<UserPage />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/test" element={<FlipCardWrapJSX />} />
         <Route path="/*" element={<MainPage />} />
       </Routes>
-    </div>
+    </AppDiv>
   );
 }
 

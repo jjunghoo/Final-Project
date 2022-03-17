@@ -21,17 +21,14 @@ const FlipCardDesign = styled.div`
   width: 372px;
   min-width: 372px;
   background-color: #f8f8f8;
-  margin: 0px 5px 0px 5px;
   box-sizing: border-box;
   border: 10px solid ${(props) => props.color};
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  position: relative;
+  // position: relative;
   display: flex;
-  // justify-content: center;
   flex-direction: column;
   position: absolute;
-  // opacity: 0.5;
 
   backface-visibility: hidden;
   transition: transform 0.8s;
@@ -39,11 +36,8 @@ const FlipCardDesign = styled.div`
 `;
 
 const FlipCardcase = styled.div`
-  // height: 590px;
-  // width: 372px;
-  // min-width: 372px;
   position: relative;
-  // background-color: blue;
+  margin: 0px 20px 40px 20px;
   perspective: 1000px;
   &:hover > .flip-card-inner {
     transform: rotateY(180deg);
@@ -148,7 +142,7 @@ export const FlipCard = ({ cardInfo, cardNum, color }) => {
   };
 
   useEffect(() => {
-    console.log(employerInfo.bookmarkInfo);
+    // console.log(employerInfo.bookmarkInfo);
     if (employerInfo.bookmarkInfo) {
       if (employerInfo.bookmarkInfo.indexOf(cardInfo.id) > -1) {
         // console.log(employerInfo.bookmarkInfo);
