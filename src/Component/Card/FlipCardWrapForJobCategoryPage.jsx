@@ -26,7 +26,7 @@ const FlipCardWrap = styled.div`
   // background-color: yellow;
   display: flex;
   position: relative;
-  justify-content: center;
+  justify-content: start;
   margin: 0px 0px 50px 0px;
   padding: 50px 0px 50px 0px;
   flex-wrap: wrap;
