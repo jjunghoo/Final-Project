@@ -12,6 +12,10 @@ import {
   MATCHING_LIST_ARRAY_GET_REQUEST,
   MATCHING_LIST_ARRAY_GET_SUCCESS,
   MATCHING_LIST_ARRAY_GET_FAILURE,
+  MATCHING_SELECTED_INFO_CATEGORY,
+  MATCHING_MAIN_LIST_ARRAY_GET_FAILURE,
+  MATCHING_MAIN_LIST_ARRAY_GET_SUCCESS,
+  MATCHING_MAIN_LIST_ARRAY_GET_REQUEST,
 } from "../type";
 
 /* 초기 상태 선언 */
@@ -19,17 +23,25 @@ import {
 // 배열이여도 되고, 원시 타입 (숫자, 문자열, 불리언 이여도 상관 없습니다.
 const initialState = {
   allInfo: [],
+  mainPageAllInfo: [],
   programmingInfo: { initialInfo: "initial" },
   designInfo: { initialInfo: "initial" },
   dataScienceInfo: { initialInfo: "initial" },
   marketingInfo: { initialInfo: "initial" },
   randomMatchingInfo: { initialInfo: "initial" },
+  selectedCategoryInfo: "all",
 };
 
 export default function matchingReducer(state = initialState, action) {
   switch (action.type) {
     //////////////////LIKED
-
+    case MATCHING_SELECTED_INFO_CATEGORY:
+      // console.log("testing it work well");
+      // console.log(action.payload);
+      return {
+        ...state,
+        selectedCategoryInfo: action.payload.selectedCategoryInfo,
+      };
     case MATCHING_ALL_INFO_GET: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.
       return { ...state, allInfo: action.payload.allInfo };
     case MATCHING_DATA_SCIENCE_INFO_GET: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.
@@ -56,13 +68,25 @@ export default function matchingReducer(state = initialState, action) {
     case MATCHING_LIST_ARRAY_GET_REQUEST: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.
       return { ...state, allInfo: [], errmsg: "" };
     case MATCHING_LIST_ARRAY_GET_SUCCESS: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.
-      console.log(action.payload.randomMatchingInfo);
+      // console.log(action.payload.randomMatchingInfo);
       return {
         ...state,
         allInfo: action.payload.allInfo,
         errmsg: "",
       };
     case MATCHING_LIST_ARRAY_GET_FAILURE: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.
+      return { ...state, errmsg: action.payload.errmsg };
+
+    case MATCHING_MAIN_LIST_ARRAY_GET_REQUEST: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.
+      return { ...state, errmsg: "" };
+    case MATCHING_MAIN_LIST_ARRAY_GET_SUCCESS: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.
+      // console.log(action.payload.randomMatchingInfo);
+      return {
+        ...state,
+        mainPageAllInfo: action.payload.mainPageAllInfo,
+        errmsg: "",
+      };
+    case MATCHING_MAIN_LIST_ARRAY_GET_FAILURE: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.
       return { ...state, errmsg: action.payload.errmsg };
 
     default:

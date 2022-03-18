@@ -7,6 +7,7 @@ import {
   EMPLOYER_BOOKMARK_EDIT_REQUEST,
   EMPLOYER_INFO_GET_REQUEST,
   MATCHING_LIST_ARRAY_GET_REQUEST,
+  MATCHING_MAIN_LIST_ARRAY_GET_REQUEST,
 } from "../../redux/type.js";
 import { FlipCardWrapJSX } from "../Card/FlipCardWrapFroMainpage";
 import { MainPageHeader } from "./Header.jsx";
@@ -52,7 +53,7 @@ export const MainPage = () => {
 
   useEffect(() => {
     dispatch({
-      type: MATCHING_LIST_ARRAY_GET_REQUEST,
+      type: MATCHING_MAIN_LIST_ARRAY_GET_REQUEST,
       payload: null,
     });
   }, []);

@@ -42,9 +42,7 @@ const GetStudendInfo = styled.div`
 `;
 
 export const FlipCardWrapJSX = () => {
-  const cardArrayInfo = useSelector(
-    (state) => state.matchingReducer.mainPageAllInfo
-  );
+  const cardArrayInfo = useSelector((state) => state.matchingReducer.allInfo);
   const cardBookmarkInfo = useSelector(
     (state) => state.employerReducer.bookmarkInfo
   );

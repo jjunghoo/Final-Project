@@ -37,8 +37,15 @@ const FlipCardDesign = styled.div`
 
 const FlipCardcase = styled.div`
   position: relative;
-  margin: 0px 20px 40px 20px;
+  width: 25%;
+  // background-color: yellow;
+  margin: 0px 0px 40px 0px;
   perspective: 1000px;
+
+  box-sizing: border-box;
+  // border: 1px solid black;
+  display: flex;
+  justify-content: center;
   &:hover > .flip-card-inner {
     transform: rotateY(180deg);
   }
@@ -51,6 +58,7 @@ const Star = styled.img`
   position: absolute;
   right: 20px;
   top: 20px;
+  background: tomato;
 `;
 const returnStarColor = (bookmarkedInfo, color, onClickedEvent) => {
   if (bookmarkedInfo === 0) {
@@ -154,14 +162,14 @@ export const FlipCard = ({ cardInfo, cardNum, color }) => {
         // console.log("안에 없음");
         setBookmarkedInfo(0);
       }
-      console.log("test");
+      // console.log("test");
     }
   }, [employerInfo.bookmarkInfo]);
 
   return (
     <FlipCardcase
       onClick={() => {
-        console.log(cardInfo);
+        // console.log(cardInfo);
         // console.log(bookmarkedInfo);
       }}
     >
@@ -178,6 +186,7 @@ export const FlipCard = ({ cardInfo, cardNum, color }) => {
         </Badge>
       </FlipCardDesign>
       <FlipCardBack
+        bookmarkedInfo={bookmarkedInfo}
         color={color}
         cardInfo={cardInfo}
         className="flip-back-card"
