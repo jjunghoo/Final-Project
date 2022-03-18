@@ -14,6 +14,8 @@ import { BadgeBox } from "./CardComponent/BadgeBox";
 import { useEffect, useState } from "react";
 
 import bgimg from "./image/card-back-bgimg.svg";
+import showDetailImg from "./image/show_Detail_Img.svg";
+import { Link } from "react-router-dom";
 
 const FlipCardBackJsx = styled.div`
   height: 590px;
@@ -32,9 +34,12 @@ const FlipCardBackJsx = styled.div`
   display: flex;
   flex-direction: column;
   backface-visibility: hidden;
-  transform: rotateY(180deg);
+  // transform: rotateY(180deg);
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  a {
+    z-index: 999;
+  }
 `;
 
 const BgImg = styled.img`
@@ -96,6 +101,14 @@ const CommentNameJsx = styled.div`
   color: #ffffff;
 
   color: ${(props) => props.color};
+`;
+
+const StyledShowDetailImg = styled.img`
+  width: 143px;
+  height: 26px;
+  position: absolute;
+  right: 40px;
+  bottom: 24.83px;
 `;
 const teamEvaluate = (num, index, color) => {
   //   console.log(num);
@@ -263,6 +276,12 @@ export const FlipCardBack = ({ bookmarkedInfo, cardInfo, cardNum, color }) => {
       <CommentJsx> {cardInfo.comment[0][2]}</CommentJsx>
       <CommentNameJsx>{cardInfo.comment[0][1]}</CommentNameJsx>
       <BgImg src={bgimg} />
+      <Link to={`/detailPage/${cardInfo.id}`}>
+        <StyledShowDetailImg
+          src={showDetailImg}
+          alt="상세 페이지 이동 이미지"
+        />
+      </Link>
     </FlipCardBackJsx>
   );
 };
