@@ -242,7 +242,7 @@ const Star = styled.img`
   position: absolute;
   right: 20px;
   top: 20px;
-  background: tomato;
+  // background: tomato;
 `;
 const returnStarColor = (bookmarkedInfo, color, onClickedEvent) => {
   if (bookmarkedInfo === 0) {
