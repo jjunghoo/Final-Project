@@ -12,11 +12,8 @@ import { FlipCardWrapJSX } from "./Component/Card/FlipCardWrap";
 import styled from "@emotion/styled";
 import { MainPageHeader } from "./Component/Mainpage/Header";
 import { CategoryMenu } from "./Component/Mainpage/CategoryMenu";
-<<<<<<< HEAD
 import { DetailPage } from "./Component/Detailpage/DetailPage";
-=======
 import { RoleCategoryPage } from "./Component/RoleCategoryPage/RoleCategoryPage";
->>>>>>> 70f73fb7c55d4815d1ced88cec187b2dcaf1ec71
 
 const AppDiv = styled.div`
   // width: 100%;
@@ -38,11 +35,8 @@ function App() {
         <Route path="/UserPage" element={<UserPage />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/test" element={<FlipCardWrapJSX />} />
-<<<<<<< HEAD
         <Route path="detailPage/:id" element={<DetailPage />} />
-=======
         <Route path="/category/:id" element={<RoleCategoryPage />} />
->>>>>>> 70f73fb7c55d4815d1ced88cec187b2dcaf1ec71
         <Route path="/*" element={<MainPage />} />
       </Routes>
     </AppDiv>

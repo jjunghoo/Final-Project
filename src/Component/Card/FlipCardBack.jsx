@@ -15,13 +15,10 @@ import { BadgeBox } from "./CardComponent/BadgeBox";
 import { useEffect, useState } from "react";
 
 import bgimg from "./image/card-back-bgimg.svg";
-<<<<<<< HEAD
 import showDetailImg from "./image/show_Detail_Img.svg";
 import { Link } from "react-router-dom";
-=======
 import { useDispatch, useSelector } from "react-redux";
 import { EMPLOYER_BOOKMARK_EDIT_REQUEST } from "../../redux/type";
->>>>>>> 70f73fb7c55d4815d1ced88cec187b2dcaf1ec71
 
 const FlipCardBackJsx = styled.div`
   height: 590px;
