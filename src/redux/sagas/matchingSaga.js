@@ -10,6 +10,9 @@ import {
   MATCHING_LIST_ARRAY_GET_REQUEST,
   MATCHING_LIST_ARRAY_GET_SUCCESS,
   MATCHING_LIST_ARRAY_GET_FAILURE,
+  MATCHING_MAIN_LIST_ARRAY_GET_REQUEST,
+  MATCHING_MAIN_LIST_ARRAY_GET_SUCCESS,
+  MATCHING_MAIN_LIST_ARRAY_GET_FAILURE,
 } from "../type";
 /** @format */
 
@@ -70,10 +73,10 @@ function* watchMatchingListGetSaga(action) {
   try {
     console.log("try");
     const posts = yield call(axiosWatchMatchingListGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
-    yield console.log(posts.data);
+    // yield console.log(posts.data);
 
     yield shuffle(posts.data);
-    yield console.log(posts.data);
+    // yield console.log(posts.data);
     yield put({
       type: MATCHING_LIST_ARRAY_GET_SUCCESS,
       payload: { allInfo: posts.data },
@@ -92,8 +95,47 @@ function* watchMatchingListGet() {
   yield takeEvery(MATCHING_LIST_ARRAY_GET_REQUEST, watchMatchingListGetSaga);
 }
 
+////////매인리스트
+
+const axiosWatchMatchingMainListGetSaga = (action) => {
+  return axios.get(`/employee`);
+  // http://localhost:4000/employee?programming=1
+};
+
+function* watchMatchingMainListGetSaga(action) {
+  //   console.log("saga진입");
+
+  try {
+    console.log("try");
+    const posts = yield call(axiosWatchMatchingMainListGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
+    yield console.log(posts.data);
+    yield put({
+      type: MATCHING_MAIN_LIST_ARRAY_GET_SUCCESS,
+      payload: { mainPageAllInfo: posts.data },
+    }); // 성공 액션 디스패치
+  } catch (e) {
+    // console.log(e);
+    yield put({
+      type: MATCHING_MAIN_LIST_ARRAY_GET_FAILURE,
+      error: true,
+      payload: { errmsg: e },
+    }); // 실패 액션 디스패치
+  }
+}
+
+function* watchMatchingMainListGet() {
+  yield takeEvery(
+    MATCHING_MAIN_LIST_ARRAY_GET_REQUEST,
+    watchMatchingMainListGetSaga
+  );
+}
+
 //최종 사가
 
 export function* matchingSaga() {
-  yield all([fork(watchMatchingRandomMatchingGet), fork(watchMatchingListGet)]);
+  yield all([
+    fork(watchMatchingRandomMatchingGet),
+    fork(watchMatchingListGet),
+    fork(watchMatchingMainListGet),
+  ]);
 }

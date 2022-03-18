@@ -8,12 +8,15 @@ import yellowStar from "./image/yellow-star.svg";
 import greyStar from "./image/grey-star.svg";
 import redStar from "./image/red-star.svg";
 import purpleStar from "./image/purple-star.svg";
+import whiteStar from "./image/white-star.svg";
 import styled from "@emotion/styled";
 import { AvartarIcon } from "./CardComponent/AvatarIcon";
 import { BadgeBox } from "./CardComponent/BadgeBox";
 import { useEffect, useState } from "react";
 
 import bgimg from "./image/card-back-bgimg.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { EMPLOYER_BOOKMARK_EDIT_REQUEST } from "../../redux/type";
 
 const FlipCardBackJsx = styled.div`
   height: 590px;
@@ -222,28 +225,71 @@ const teamEvaluate = (num, index, color) => {
   }
 };
 
-export const FlipCardBack = ({ bookmarkedInfo, cardInfo, cardNum, color }) => {
+const Star = styled.img`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: tomato;
+`;
+const returnStarColor = (bookmarkedInfo, color, onClickedEvent) => {
+  if (bookmarkedInfo === 0) {
+    return <Star onClick={onClickedEvent} src={whiteStar} />;
+  } else if (color === "#FFA800") {
+    return <Star onClick={onClickedEvent} src={yellowStar} />;
+  } else if (color === "#FF5050") {
+    return <Star onClick={onClickedEvent} src={redStar} />;
+  } else if (color === "#11C0CB") {
+    return <Star onClick={onClickedEvent} src={blueStar} />;
+  } else if (color === "#BA6DF6") {
+    return <Star onClick={onClickedEvent} src={purpleStar} />;
+  }
+};
+export const FlipCardBack = ({ cardInfo, cardNum, color }) => {
+  const [bookmarkedInfo, setBookmarkedInfo] = useState(0);
   const [testArray, setTestArray] = useState([]);
+  const cardBookmarkInfo = useSelector(
+    (state) => state.employerReducer.bookmarkInfo
+  );
+  const employer = useSelector((state) => state.employerReducer);
+
+  const employerInfo = useSelector((state) => state.employerReducer);
+  const dispatch = useDispatch();
   useEffect(() => {
-    console.log(cardInfo);
-    console.log(cardInfo.comment);
     let arr = [];
 
     for (let number in cardInfo.teamEvaluate) {
       arr.push([number, cardInfo.teamEvaluate[number]]);
     }
-    // console.log(arr);
 
     arr.sort(function (a, b) {
       return b[1] - a[1];
     });
-    // console.log(arr);
     arr = arr.slice(0, 4);
     setTestArray(arr);
   }, []);
+
+  const onClickedEvent = () => {
+    dispatch({
+      type: EMPLOYER_BOOKMARK_EDIT_REQUEST,
+      payload: { id: employer.id, userID: cardInfo.id },
+    });
+  };
+  useEffect(() => {
+    // console.log(employerInfo.bookmarkInfo);
+    if (employerInfo.bookmarkInfo) {
+      if (employerInfo.bookmarkInfo.indexOf(cardInfo.id) > -1) {
+        setBookmarkedInfo(1);
+      } else {
+        setBookmarkedInfo(0);
+      }
+    }
+  }, [employerInfo.bookmarkInfo]);
+
   return (
     <FlipCardBackJsx color={color} className="flip-back-card">
       <TeamEvaluateWrap>
+        {returnStarColor(bookmarkedInfo, color, onClickedEvent)}
+
         {testArray.map((item, index) => {
           let textColor = "white";
           if (color === "#11C0CB") {

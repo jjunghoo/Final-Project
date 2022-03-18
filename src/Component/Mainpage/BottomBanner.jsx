@@ -11,7 +11,7 @@ import bottomBannerImg3 from "./img/bottomBanner3.svg";
 
 const BottomBannerJsx = styled.div`
   min-height: 100px;
-  //   background-color: blue;
+  background-color: blue;
   display: flex;
 
   box-sizing: border-box;
@@ -30,7 +30,7 @@ const BannerImg2Wrap = styled.div`
   margin-top: 40px;
   width: 100%;
   display: flex;
-  //   background-color: red;
+  background-color: red;
   justify-content: space-between;
 `;
 

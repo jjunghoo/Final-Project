@@ -38,7 +38,7 @@ const BadgeImg = styled.img`
 
 export const BadgeBox = ({ cardInfo }) => {
   useEffect(() => {
-    console.log(cardInfo);
+    // console.log(cardInfo);
   }, []);
   return (
     <BadgeBoxJsxWrap>

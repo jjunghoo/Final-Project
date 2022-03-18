@@ -7,6 +7,9 @@ import styled from "@emotion/styled";
 import homeLogo from "./img/LOGO-CMPLTD.svg";
 import logIn from "./img/logIn.svg";
 import issue from "./img/issue.svg";
+import { useDispatch } from "react-redux";
+import { EMPLOYER_INFO_GET_REQUEST } from "../../redux/type";
+import { Link } from "react-router-dom";
 
 const HeaderDiv = styled.div`
   height: 128px;
@@ -31,17 +34,34 @@ const HomeLogo = styled.img`
 const LogInWrap = styled.div`
   margin-right: 152px;
 `;
+
+const LoginLink = styled(Link)`
+  // width: 80px;
+  // margin-right: 8px;
+`;
 const LoginImg = styled.img`
   width: 80px;
   margin-right: 8px;
 `;
 export const MainPageHeader = () => {
+  const dispatch = useDispatch();
   return (
     <HeaderDiv id="main-page-header">
-      <HomeLogo src={homeLogo} />
+      <LoginLink to="/">
+        <HomeLogo src={homeLogo} />
+      </LoginLink>
       <LogInWrap>
         <LoginImg src={issue} />
-        <LoginImg src={logIn} />
+        <LoginImg
+          onClick={() => {
+            console.log("hello");
+            dispatch({
+              type: EMPLOYER_INFO_GET_REQUEST,
+              payload: "em1",
+            });
+          }}
+          src={logIn}
+        />
       </LogInWrap>
     </HeaderDiv>
   );

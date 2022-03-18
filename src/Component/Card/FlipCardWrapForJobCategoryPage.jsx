@@ -26,7 +26,7 @@ const FlipCardWrap = styled.div`
   // background-color: yellow;
   display: flex;
   position: relative;
-  justify-content: start;
+  justify-content: center;
   margin: 0px 0px 50px 0px;
   padding: 50px 0px 50px 0px;
   flex-wrap: wrap;
@@ -42,9 +42,7 @@ const GetStudendInfo = styled.div`
 `;
 
 export const FlipCardWrapJSX = () => {
-  const cardArrayInfo = useSelector(
-    (state) => state.matchingReducer.mainPageAllInfo
-  );
+  const cardArrayInfo = useSelector((state) => state.matchingReducer.allInfo);
   const cardBookmarkInfo = useSelector(
     (state) => state.employerReducer.bookmarkInfo
   );
@@ -53,7 +51,7 @@ export const FlipCardWrapJSX = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // console.log(cardArrayInfo.length);
+    console.log(cardArrayInfo.length);
     let localColorArray = [];
     for (let cnt = 0; cnt < cardArrayInfo.length; cnt++) {
       let rand = Math.floor(Math.random() * 4);
@@ -75,34 +73,39 @@ export const FlipCardWrapJSX = () => {
     setColorArray(localColorArray);
   }, [cardArrayInfo]);
 
+  useEffect(() => {
+    if (!cardArrayInfo) {
+      dispatch({
+        type: MATCHING_LIST_ARRAY_GET_REQUEST,
+        payload: null,
+      });
+    }
+  }, []);
+
   // const dispatch=useDispatch();
 
   return (
     <FlipCardWrap>
       {cardArrayInfo.map((item, index, array) => {
-        if (index > array.length - 16 - 1) {
-          if (colorArray.length > index)
-            return (
-              <FlipCard
-                key={index}
-                cardInfo={item}
-                bookmarkedInfo={0}
-                cardNum={0}
-                color={colorArray[index]}
-              ></FlipCard>
-            );
-          else
-            return (
-              <FlipCard
-                key={index}
-                cardInfo={item}
-                bookmarkedInfo={0}
-                cardNum={0}
-              ></FlipCard>
-            );
-        } else {
-          return "";
-        }
+        if (colorArray.length > index)
+          return (
+            <FlipCard
+              key={index}
+              cardInfo={item}
+              bookmarkedInfo={0}
+              cardNum={0}
+              color={colorArray[index]}
+            ></FlipCard>
+          );
+        else
+          return (
+            <FlipCard
+              key={index}
+              cardInfo={item}
+              bookmarkedInfo={0}
+              cardNum={0}
+            ></FlipCard>
+          );
       })}
     </FlipCardWrap>
   );
