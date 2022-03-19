@@ -96,13 +96,13 @@ const StyledJobDiv = styled.div`
 
 const StyledBadgeWrap = styled.div`
   border-top: 1px dashed rgba(153, 153, 153, 1);
-  padding: 30px 20px;
+  padding: 30px 40px;
   > div {
     :first-of-type {
       width: 296px;
       text-align: center;
       img {
-        padding: 3px;
+        padding: 2px 6px;
       }
     }
   }
@@ -144,7 +144,24 @@ export const DetailPage = () => {
   for (let key in badge) {
     badge[key] > 0 && getBadge.push(key);
   }
-  console.log(getBadge);
+  console.log("getBadge", getBadge);
+
+  // teamEvaluate 높은 순으로 정렬
+  const sortTeamEvaluate = [];
+  for (let key in teamEvaluate) {
+    sortTeamEvaluate.push([key, teamEvaluate[key]]);
+  }
+
+  sortTeamEvaluate.sort(function (a, b) {
+    return b[1] - a[1];
+  });
+
+  const sortedTeamEvaluate = [];
+  sortTeamEvaluate.forEach((item, index) => {
+    if (index > 4) return;
+    sortedTeamEvaluate.push(item[0]);
+  });
+  console.log("sortedTeamEvaluate", sortedTeamEvaluate);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -208,7 +225,9 @@ export const DetailPage = () => {
                       />
                     );
                   case "LogoMento":
-                    return <img src={LogoMento} alt="멘토 뱃지 이미지" />;
+                    return (
+                      <img src={LogoMento} alt="멘토 뱃지 이미지" key={item} />
+                    );
                   case "LogoMinority":
                     return (
                       <img

@@ -37,7 +37,7 @@ const FlipCardBackJsx = styled.div`
   display: flex;
   flex-direction: column;
   backface-visibility: hidden;
-  // transform: rotateY(180deg);
+  transform: rotateY(180deg);
   transition: transform 0.8s;
   transform-style: preserve-3d;
   a {
