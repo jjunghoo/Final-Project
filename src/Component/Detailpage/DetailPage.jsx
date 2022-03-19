@@ -4,16 +4,12 @@ import { useParams } from "react-router";
 import { EMPLOYEE_INFO_GET } from "../../redux/type";
 import styled from "@emotion/styled";
 
-import characterImg from "./images/character1_img.png";
-import LogoAttendance from "./images/LogoAttendance.svg";
-import LogoCollector from "./images/LogoCollector.svg";
-import LogoComplete from "./images/LogoComplete.svg";
-import LogoExperienced from "./images/LogoExperienced.svg";
-import LogoHackathon from "./images/LogoHackathon.svg";
-import LogoMento from "./images/LogoMento.svg";
-import LogoMinority from "./images/LogoMinority.svg";
-import LogoRecommanded from "./images/LogoRecommanded.svg";
-import LogoSnsStar from "./images/LogoSnsStar.svg";
+import { DetailPageCardFront } from "./DetailPageCardFront";
+import { DetailPageCardBack } from "./DetailPageCardBack";
+
+import fireImg from "./images/fireImg.svg";
+import teacherImg from "./images/teacherImg.svg";
+import teacherBadgeImg from "./images/teacherBadgeImg.svg";
 
 const StyledWrap = styled.div`
   text-align: left;
@@ -43,72 +39,103 @@ const StyledCardWrap = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid black;
+  margin-bottom: 80px;
 `;
 
-const StyledCardFront = styled.div`
+const TeacherCommentWrapDiv = styled.div`
+  // display: flex;
+  // align-items: center;
+  // border: 1px solid black;
+  // border-radius: 10px;
+  // padding: 21px 0;
+  // background: rgba(244, 246, 251, 1);
+  // > img {
+  //   // margin-left: 4.25px;
+  //   // margin-right: 36.25px;
+  //   margin: 0 16px;
+  // }
+  // > span {
+  //   font-size: 32px;
+  //   font-style: normal;
+  //   font-weight: 700;
+  //   line-height: 38px;
+  //   letter-spacing: 0em;
+  //   text-align: left;
+  //   padding-top: 1px;
+  //   color: rgba(0, 0, 0, 1);
+  // }
+`;
+
+const TeacherCommentHeader = styled.div`
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 21px 0;
+  background: rgba(244, 246, 251, 1);
   > img {
-    :first-of-type {
-      margin-top: 80px;
-      margin-bottom: 29.19px;
-    }
+    // margin-left: 4.25px;
+    // margin-right: 36.25px;
+    margin: 0 16px;
   }
-  margin-right: 51px;
-  background: rgba(248, 248, 248, 1);
-  text-align: center;
-  box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  ${({ state }) => {
-    switch (state) {
-      case "dataScience":
-        return `border: 10px solid rgba(17, 192, 203, 1)`;
-      case "design":
-        return `border: 10px solid rgba(255, 168, 0, 1)`;
-      case "marketing":
-        return `border: 10px solid rgba(255, 80, 80, 1)`;
-      case "programming":
-        return `border: 10px solid rgba(186, 109, 246, 1)`;
-      default:
-        return;
-    }
-  }}
-`;
-
-const StyledNameDiv = styled.div`
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 48px;
-  letter-spacing: -0.03em;
-  text-align: center;
-  color: rgba(34, 34, 34, 1);
-`;
-
-const StyledJobDiv = styled.div`
-  margin: 5px 0 31px;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 38px;
-  letter-spacing: -0.03em;
-  text-align: center;
-  color: rgba(255, 80, 80, 1);
-`;
-
-const StyledBadgeWrap = styled.div`
-  border-top: 1px dashed rgba(153, 153, 153, 1);
-  padding: 30px 40px;
-  > div {
-    :first-of-type {
-      width: 296px;
-      text-align: center;
-      img {
-        padding: 2px 6px;
-      }
-    }
+  > span {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-top: 1px;
+    color: rgba(0, 0, 0, 1);
   }
 `;
 
-const StyledCardBack = styled.div``;
+const CommentWrapDiv = styled.div`
+  padding: 43px 66px 40px;
+  > span {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: rgba(66, 50, 50, 1);
+  }
+`;
+
+const CommentDiv = styled.div`
+  border: 1px solid red;
+  margin-top: 20px;
+  display: flex;
+  > img {
+    margin: 3px 4px 2px 0;
+  }
+  > div > p {
+    margin: 0;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: rgba(0, 0, 0, 1);
+    display: flex;
+    > img {
+      margin-left: 4px;
+    }
+  }
+  > div > span {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(0, 0, 0, 1);
+  }
+`;
 
 export const DetailPage = () => {
   const params = useParams();
@@ -127,6 +154,7 @@ export const DetailPage = () => {
     teamEvaluate,
   } = selector;
 
+  // job 확인
   const selectJob = {
     dataScience: dataScience,
     design: design,
@@ -135,33 +163,11 @@ export const DetailPage = () => {
   };
   console.log("selectJob", selectJob);
 
+  // job 확인
   const getJob = [];
   for (let key in selectJob) {
     selectJob[key] === "1" && getJob.push(key);
   }
-
-  const getBadge = [];
-  for (let key in badge) {
-    badge[key] > 0 && getBadge.push(key);
-  }
-  console.log("getBadge", getBadge);
-
-  // teamEvaluate 높은 순으로 정렬
-  const sortTeamEvaluate = [];
-  for (let key in teamEvaluate) {
-    sortTeamEvaluate.push([key, teamEvaluate[key]]);
-  }
-
-  sortTeamEvaluate.sort(function (a, b) {
-    return b[1] - a[1];
-  });
-
-  const sortedTeamEvaluate = [];
-  sortTeamEvaluate.forEach((item, index) => {
-    if (index > 4) return;
-    sortedTeamEvaluate.push(item[0]);
-  });
-  console.log("sortedTeamEvaluate", sortedTeamEvaluate);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -171,98 +177,40 @@ export const DetailPage = () => {
     <StyledWrap>
       <StyledDetailsTitle>수강생 상세정보</StyledDetailsTitle>
       <StyledCardWrap>
-        <StyledCardFront state={getJob[0]}>
-          <img src={characterImg} alt="캐릭터 이미지" />
-          <StyledNameDiv>{employeeInfo.이름}</StyledNameDiv>
-          <StyledJobDiv>
-            {getJob[0] === "dataScience" && "데이터 엔지니어"}
-            {getJob[0] === "design" && "UXUI 디자이너"}
-            {getJob[0] === "marketing" && "콘텐츠 마케터"}
-            {getJob[0] === "programming" && "백앤드 개발자"}
-          </StyledJobDiv>
-          <StyledBadgeWrap>
-            <div>
-              {getBadge.map((item) => {
-                switch (item) {
-                  case "LogoAttendance":
-                    return (
-                      <img
-                        src={LogoAttendance}
-                        alt="개근왕 뱃지 이미지"
-                        key={item}
-                      />
-                    );
-                  case "LogoCollector":
-                    return (
-                      <img
-                        src={LogoCollector}
-                        alt="컬렉터 뱃지 이미지"
-                        key={item}
-                      />
-                    );
-                  case "LogoComplete":
-                    return (
-                      <img
-                        src={LogoComplete}
-                        alt="컴플리트 뱃지 이미지"
-                        key={item}
-                      />
-                    );
-                  case "LogoExperienced":
-                    return (
-                      <img
-                        src={LogoExperienced}
-                        alt="중고신입 뱃지 이미지"
-                        key={item}
-                      />
-                    );
-                  case "LogoHackathon":
-                    return (
-                      <img
-                        src={LogoHackathon}
-                        alt="해커톤 뱃지 이미지"
-                        key={item}
-                      />
-                    );
-                  case "LogoMento":
-                    return (
-                      <img src={LogoMento} alt="멘토 뱃지 이미지" key={item} />
-                    );
-                  case "LogoMinority":
-                    return (
-                      <img
-                        src={LogoMinority}
-                        alt="일기당천 뱃지 이미지"
-                        key={item}
-                      />
-                    );
-                  case "LogoRecommanded":
-                    return (
-                      <img
-                        src={LogoRecommanded}
-                        alt="추천받음 뱃지 이미지"
-                        key={item}
-                      />
-                    );
-                  case "LogoSnsStar":
-                    return (
-                      <img
-                        src={LogoSnsStar}
-                        alt="SNS_STAR 뱃지 이미지"
-                        key={item}
-                      />
-                    );
-                  default:
-                    break;
-                }
-              })}
-            </div>
-          </StyledBadgeWrap>
-        </StyledCardFront>
-        <StyledCardBack state={"dataScience"}>
-          <div>능숙한 발표왕</div>
-        </StyledCardBack>
+        <DetailPageCardFront
+          getJob={getJob}
+          badge={badge}
+          employeeInfo={employeeInfo}
+        />
+        <DetailPageCardBack
+          teamEvaluate={teamEvaluate}
+          getJob={getJob}
+          comment={comment}
+        />
       </StyledCardWrap>
+      {/* 강사 추천사 */}
+      <TeacherCommentWrapDiv>
+        <TeacherCommentHeader>
+          <img src={fireImg} alt="강사 추천사 로고 이미지" />
+          <span>메가바이트 강사님 추천사에요</span>
+        </TeacherCommentHeader>
+        {comment &&
+          comment.map((item) => (
+            <CommentWrapDiv key={item}>
+              <span>{item[2]}</span>
+              <CommentDiv>
+                <img src={teacherImg} alt="강사 프로필 이미지" />
+                <div>
+                  <p>
+                    {item[1]}님{" "}
+                    <img src={teacherBadgeImg} alt="강사 인증 뱃지 이미지" />
+                  </p>
+                  <span>{`현) UI/UX 디렉터, Front-end 개발 강사`}</span>
+                </div>
+              </CommentDiv>
+            </CommentWrapDiv>
+          ))}
+      </TeacherCommentWrapDiv>
     </StyledWrap>
   );
 };
