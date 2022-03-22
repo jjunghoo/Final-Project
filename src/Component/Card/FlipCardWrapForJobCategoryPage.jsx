@@ -51,25 +51,25 @@ export const FlipCardWrapJSX = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(cardArrayInfo.length);
+    console.log(cardArrayInfo);
     let localColorArray = [];
     for (let cnt = 0; cnt < cardArrayInfo.length; cnt++) {
-      let rand = Math.floor(Math.random() * 4);
       let color = "#000000";
-
-      if (rand === 0) {
+      // console.log(cardArrayInfo[cnt]);
+      console.log(cardArrayInfo[cnt]);
+      if (cardArrayInfo[cnt].design === "1") {
         color = "#FFA800";
-      } else if (rand === 1) {
+      } else if (cardArrayInfo[cnt].marketing === "1") {
         color = "#FF5050";
-      } else if (rand === 2) {
+      } else if (cardArrayInfo[cnt].programming === "1") {
         color = "#BA6DF6";
-      } else if (rand === 3) {
+      } else if (cardArrayInfo[cnt].dataScience === "1") {
         // eslint-disable-next-line no-unused-vars
         color = "#11C0CB";
       }
       localColorArray.push(color);
     }
-
+    console.log(localColorArray);
     setColorArray(localColorArray);
   }, [cardArrayInfo]);
 

@@ -5,6 +5,9 @@ import {
   PROJECT_INFO_GET_FAILURE,
   PROJECT_INFO_GET_REQUEST,
   PROJECT_INFO_GET_SUCCESS,
+  PROJECT_SHEET_INFO_GET_FAILURE,
+  PROJECT_SHEET_INFO_GET_REQUEST,
+  PROJECT_SHEET_INFO_GET_SUCCESS,
   PROJECT_STAGE_GET_FAILURE,
   PROJECT_STAGE_GET_REQUEST,
   PROJECT_STAGE_GET_SUCCESS,
@@ -16,7 +19,7 @@ import {
 const initialState = {
   id: "",
   studentInfo: { initialInfo: "initial" },
-  stageInfo: { initialInfo: "initial" },
+  lectureInfo: { initialInfo: "initial" },
   errmsg: "",
 };
 
@@ -77,6 +80,26 @@ export default function projectReducer(state = initialState, action) {
       return {
         ...state,
         stageInfo: action.payload.errmsg,
+      };
+
+    case PROJECT_SHEET_INFO_GET_REQUEST:
+      return {
+        ...state,
+        errmsg: "",
+      };
+    case PROJECT_SHEET_INFO_GET_SUCCESS:
+      console.log(action.payload);
+
+      return {
+        ...state,
+        id: action.payload.id,
+        lectureInfo: action.payload.lectureInfo,
+        studentInfo: action.payload.studentList,
+      };
+    case PROJECT_SHEET_INFO_GET_FAILURE:
+      return {
+        ...state,
+        errmsg: "",
       };
 
     default:

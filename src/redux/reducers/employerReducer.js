@@ -24,18 +24,31 @@ import {
   EMPLOYER_BOOKMARK_EDIT_REQUEST,
   EMPLOYER_BOOKMARK_EDIT_SUCCESS,
   EMPLOYER_BOOKMARK_EDIT_FAILURE,
+  EMPLOYER_SUPERMATCHING_EDIT_REQUEST,
+  EMPLOYER_SUPERMATCHING_EDIT_SUCCESS,
+  EMPLOYER_SUPERMATCHING_EDIT_FAILURE,
 } from "../type";
 
 /* 초기 상태 선언 */
 // 리듀서의 초기 상태는 꼭 객체타입일 필요 없습니다.
 // 배열이여도 되고, 원시 타입 (숫자, 문자열, 불리언 이여도 상관 없습니다.
 const initialState = {
-  employerInfo: { initialInfo: "initial" }, // 기업 정보
-  likedInfo: { initialInfo: "initial" }, // 기업이 고용하고 싶은 회원 정보
+  employerInfo: [], // 기업 정보
+  likedInfo: [], // 기업이 고용하고 싶은 회원 정보
   bookmarkInfo: "", // 기업이 고용은 안했고 눈여겨보는 회원 정보
-  superMachingInfo: { initialInfo: "initial" }, // 기업의 매칭된 상태의 정보
-  superMachedInfo: { initialInfo: "initial" }, // 왜넣었지 ;;;
+  superMachingInfo: [], // 기업의 매칭된 상태의 정보
+  superMachedInfo: [], // 왜넣었지 ;;;
   errmsg: "",
+  id: "",
+  comment: "",
+  teamEvaluate: "",
+  programming: "0",
+  design: "0",
+  dataScience: "0",
+  marketing: "0",
+  badge: {},
+  resume: {},
+  lectureInfo: [],
 };
 
 export default function employerReducer(state = initialState, action) {
@@ -90,7 +103,7 @@ export default function employerReducer(state = initialState, action) {
         ...state,
       };
     case EMPLOYER_SUPERMATCHING_GET_SUCCESS:
-      // console.log("likedinfosuccess");
+      console.log("likedinfosuccess");
 
       return {
         ...state,
@@ -164,6 +177,25 @@ export default function employerReducer(state = initialState, action) {
       };
     // EMPLOYER_ADD 를 통해 달라진 객체 적용 가능 중간 SAGA 를 통해서 이 부분들 전부 고쳐야할 필요가 있음
     case EMPLOYER_BOOKMARK_EDIT_FAILURE:
+      return {
+        ...state,
+        errmsg: action.payload.errmsg,
+      };
+    // EMPLOYER_REMOVE 를 통해 달라진 객체 적용 가능 중간 SAGA 를 통해서 이 부분들 전부 고쳐야할 필요가 있음
+
+    case EMPLOYER_SUPERMATCHING_EDIT_REQUEST:
+      return {
+        ...state,
+        errmsg: action.payload.errmsg,
+        // SUPERMATCHINGInfo: "",
+      };
+    case EMPLOYER_SUPERMATCHING_EDIT_SUCCESS:
+      return {
+        ...state,
+        superMachingInfo: action.payload.superMachingInfo,
+      };
+    // EMPLOYER_ADD 를 통해 달라진 객체 적용 가능 중간 SAGA 를 통해서 이 부분들 전부 고쳐야할 필요가 있음
+    case EMPLOYER_SUPERMATCHING_EDIT_FAILURE:
       return {
         ...state,
         errmsg: action.payload.errmsg,

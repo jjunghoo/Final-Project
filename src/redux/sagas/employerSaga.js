@@ -19,6 +19,9 @@ import {
   EMPLOYER_BOOKMARK_EDIT_REQUEST,
   EMPLOYER_BOOKMARK_EDIT_FAILURE,
   EMPLOYER_BOOKMARK_EDIT_SUCCESS,
+  EMPLOYER_SUPERMATCHING_EDIT_REQUEST,
+  EMPLOYER_SUPERMATCHING_EDIT_FAILURE,
+  EMPLOYER_SUPERMATCHING_EDIT_SUCCESS,
 } from "../type";
 /** @format */
 
@@ -170,7 +173,63 @@ function* watchEmployerBookmarkEdit() {
   yield takeEvery(EMPLOYER_BOOKMARK_EDIT_REQUEST, employerBookmarkEditSaga);
 }
 
-const axiosEmployerSupermachingGetSaga = (action) => {
+//// SUPERMATCHING EDIT
+
+const axiosEmployerSupermatchingEditSaga = (action) => {
+  console.log(action);
+  // return 0;
+  return axios.put(`/employer/${action.id}`, action);
+};
+
+function* employerSupermatchingEditSaga(action) {
+  //   console.log("saga진입");
+  //    action.payload는 기업측 id 입력 필요
+  try {
+    console.log(action.payload);
+    let posts = yield call(
+      axiosEmployerSupermatchingGetSaga,
+      action.payload.id
+    ); //특정부분 ID 확인용
+    yield console.log(posts.data);
+    yield console.log(posts.data.superMachingInfo);
+    let index = yield posts.data.superMachingInfo.indexOf(
+      action.payload.userID
+    );
+    if (index > -1) {
+      posts.data.superMachingInfo.splice(index, 1);
+    } else {
+      posts.data.superMachingInfo.push(action.payload.userID);
+    }
+    console.log(posts.data.superMachingInfo);
+    console.log(posts.data);
+
+    posts = yield call(axiosEmployerSupermatchingEditSaga, posts.data);
+    // console.log("Supermatchingget");
+    yield console.log(posts.data);
+    yield put({
+      type: EMPLOYER_SUPERMATCHING_EDIT_SUCCESS,
+      payload: { superMachingInfo: posts.data.superMachingInfo },
+    }); // 성공 액션 디스패치
+  } catch (e) {
+    console.log(e);
+    yield put({
+      type: EMPLOYER_SUPERMATCHING_EDIT_FAILURE,
+      error: true,
+      payload: { errmsg: e },
+    }); // 실패 액션 디스패치
+  }
+}
+
+function* watchEmployerSupermatchingEdit() {
+  yield takeEvery(
+    EMPLOYER_SUPERMATCHING_EDIT_REQUEST,
+    employerSupermatchingEditSaga
+  );
+}
+
+/// SUPERMATCHING EDIT DONE
+
+const axiosEmployerSupermatchingGetSaga = (action) => {
   return axios.get(`/employer/${action}`);
 };
 
@@ -179,7 +238,7 @@ function* employerSupermatchingGetSaga(action) {
   //    action.payload는 기업측 id 입력 필요
   try {
     console.log("try");
-    const posts = yield call(axiosEmployerSupermachingGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
+    const posts = yield call(axiosEmployerSupermatchingGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
     // 위에서 서버 값을 받아옴
     yield console.log(posts.data);
     console.log("bookmarkget");
@@ -214,5 +273,6 @@ export function* employerSaga() {
     fork(watchEmployerBookmarkGet),
     fork(watchEmployerBookmarkEdit),
     fork(watchEmployerSupermachingGet),
+    fork(watchEmployerSupermatchingEdit),
   ]);
 }

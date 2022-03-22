@@ -33,11 +33,12 @@ const FlipCardBackJsx = styled.div`
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   backface-visibility: hidden;
   transform: rotateY(180deg);
   transition: transform 0.8s;
-  transform-style: preserve-3d;
+  // transform-style: preserve-3d;
 `;
 
 const BgImg = styled.img`
@@ -291,6 +292,7 @@ export const FlipCardBack = ({ cardInfo, cardNum, color }) => {
         {returnStarColor(bookmarkedInfo, color, onClickedEvent)}
 
         {testArray.map((item, index) => {
+          console.log(testArray);
           let textColor = "white";
           if (color === "#11C0CB") {
             textColor = "#005358";
@@ -306,8 +308,13 @@ export const FlipCardBack = ({ cardInfo, cardNum, color }) => {
           return teamEvaluate(item[0], index, textColor);
         })}
       </TeamEvaluateWrap>
-      {/* <CommentJsx> {cardInfo.comment[0][2]}</CommentJsx> */}
-      {/* <CommentNameJsx>{cardInfo.comment[0][1]}</CommentNameJsx> */}
+      <CommentJsx>
+        {console.log(cardInfo.comment)}
+        {cardInfo.comment[0] ? cardInfo.comment[0][2] : ""}
+      </CommentJsx>
+      <CommentNameJsx>
+        {cardInfo.comment[0] ? cardInfo.comment[0][1] : ""}
+      </CommentNameJsx>
       <BgImg src={bgimg} />
     </FlipCardBackJsx>
   );

@@ -13,6 +13,8 @@ import styled from "@emotion/styled";
 import { MainPageHeader } from "./Component/Mainpage/Header";
 import { CategoryMenu } from "./Component/Mainpage/CategoryMenu";
 import { RoleCategoryPage } from "./Component/RoleCategoryPage/RoleCategoryPage";
+import { RandomMatching } from "./Component/RandomMatching/RandomMatching";
+import { GetDataFromSpreadSheet } from "./Component/GetDataFromSpreadSheet/GetDataFromSpreadSheet";
 
 const AppDiv = styled.div`
   // width: 100%;
@@ -33,8 +35,9 @@ function App() {
       <Routes className="routes">
         <Route path="/UserPage" element={<UserPage />} />
         <Route path="/resume" element={<Resume />} />
-        <Route path="/test" element={<FlipCardWrapJSX />} />
+        <Route path="/test" element={<GetDataFromSpreadSheet />} />
         <Route path="/category/:id" element={<RoleCategoryPage />} />
+        <Route path="/randommatching" element={<RandomMatching />} />
         <Route path="/*" element={<MainPage />} />
       </Routes>
     </AppDiv>

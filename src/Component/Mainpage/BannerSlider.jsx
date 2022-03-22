@@ -7,9 +7,6 @@ import styled from "@emotion/styled";
 import { useState } from "react";
 import bannerImg1 from "./img/bannerImg1.svg";
 import bannerImg2 from "./img/bannerImg2.svg";
-import { Slide1 } from "./Slide1";
-import { Slide2 } from "./Slide2";
-import { Slide3 } from "./Slide3";
 
 const SliderArea = styled.div`
   height: 720px;

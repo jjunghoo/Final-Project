@@ -54,6 +54,7 @@ export const FlipCardWrapJSX = () => {
 
   useEffect(() => {
     console.log(cardArrayInfo.length);
+    console.log("helloworld");
     let localColorArray = [];
     for (let cnt = 0; cnt < cardArrayInfo.length; cnt++) {
       let rand = Math.floor(Math.random() * 4);
@@ -79,86 +80,6 @@ export const FlipCardWrapJSX = () => {
 
   return (
     <FlipCardWrap>
-      {1 ? (
-        <GetStudendInfo>
-          <div>
-            <div
-              onClick={() => {
-                console.log(store.getState());
-                console.log(cardBookmarkInfo);
-              }}
-              key="getState"
-            >
-              {" "}
-              bookmarkinfo
-            </div>
-            <div
-              onClick={() => {
-                dispatch({
-                  type: EMPLOYER_INFO_GET_REQUEST,
-                  payload: "em1",
-                });
-              }}
-            >
-              login
-            </div>
-
-            <div>bookmarkset</div>
-            <div
-              onClick={() => {
-                dispatch({
-                  type: MATCHING_LIST_ARRAY_GET_REQUEST,
-                  payload: "programming",
-                });
-              }}
-            >
-              programming
-            </div>
-            <div
-              onClick={() => {
-                dispatch({
-                  type: MATCHING_LIST_ARRAY_GET_REQUEST,
-                  payload: "dataScience",
-                });
-              }}
-            >
-              dataScience
-            </div>
-            <div
-              onClick={() => {
-                dispatch({
-                  type: MATCHING_LIST_ARRAY_GET_REQUEST,
-                  payload: "design",
-                });
-              }}
-            >
-              design
-            </div>
-            <div
-              onClick={() => {
-                dispatch({
-                  type: MATCHING_LIST_ARRAY_GET_REQUEST,
-                  payload: "marketing",
-                });
-              }}
-            >
-              marketing
-            </div>
-            <div
-              onClick={() => {
-                dispatch({
-                  type: MATCHING_LIST_ARRAY_GET_REQUEST,
-                  payload: null,
-                });
-              }}
-            >
-              all
-            </div>
-          </div>
-        </GetStudendInfo>
-      ) : (
-        ""
-      )}
       {cardArrayInfo.map((item, index) => {
         if (colorArray.length > index)
           return (

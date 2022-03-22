@@ -16,6 +16,7 @@ import {
   MATCHING_MAIN_LIST_ARRAY_GET_FAILURE,
   MATCHING_MAIN_LIST_ARRAY_GET_SUCCESS,
   MATCHING_MAIN_LIST_ARRAY_GET_REQUEST,
+  MATCHING_SET_RANDOMMATCHING_INDEX,
 } from "../type";
 
 /* 초기 상태 선언 */
@@ -30,6 +31,7 @@ const initialState = {
   marketingInfo: { initialInfo: "initial" },
   randomMatchingInfo: { initialInfo: "initial" },
   selectedCategoryInfo: "all",
+  randommatchingIndex: 0,
 };
 
 export default function matchingReducer(state = initialState, action) {
@@ -88,6 +90,11 @@ export default function matchingReducer(state = initialState, action) {
       };
     case MATCHING_MAIN_LIST_ARRAY_GET_FAILURE: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.
       return { ...state, errmsg: action.payload.errmsg };
+    case MATCHING_SET_RANDOMMATCHING_INDEX:
+      return {
+        ...state,
+        randommatchingIndex: action.payload.randommatchingIndex,
+      };
 
     default:
       return state;
