@@ -64,7 +64,6 @@ const StyledJobDiv = styled.div`
 
 const StyledBadgeWrap = styled.div`
   border-top: 1px dashed rgba(153, 153, 153, 1);
-  // padding: 30px 34px;
   padding: 28px 0px 5px;
   > div {
     :first-of-type {

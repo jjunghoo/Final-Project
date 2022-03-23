@@ -26,13 +26,10 @@ const PeerReviewWrapDiv = styled.div``;
 const PeerReviewHeader = styled.div`
   display: flex;
   align-items: center;
-  // border: 1px solid black;
   border-radius: 10px;
   padding: 21px 0;
   background: rgba(244, 246, 251, 1);
   > img {
-    // margin-left: 4.25px;
-    // margin-right: 36.25px;
     margin: 0 16px;
   }
   > span {

@@ -52,14 +52,6 @@ const StyleDiv2 = styled.div`
 `;
 
 const StyleDepartmentDiv = styled.div`
-  // color: rgba(0, 0, 0, 0.56);
-  // margin-top: 4px;
-  // font-weight: 500;
-  // span {
-  //   font-weight: 600;
-  //   font-size: 14px;
-  //   padding-left: 10px;
-  // }
   > span {
     font-size: 40px;
     font-style: normal;

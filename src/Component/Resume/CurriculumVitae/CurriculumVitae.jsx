@@ -74,7 +74,6 @@ const CareerListDiv = styled.div`
       display: flex;
       width: 100%;
       height: 1px;
-      //   border: 1px solid rgba(215, 215, 215, 1);
       background-color: rgba(215, 215, 215, 1);
       margin: 6px 0 16px;
     }

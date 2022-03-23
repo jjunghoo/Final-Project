@@ -45,7 +45,6 @@ const StyledWrap = styled.div`
 `;
 
 const StyledDetailsTitle = styled.div`
-  // border: 1px solid black;
   text-align: center;
   font-family: Pretendard;
   font-size: 48px;
@@ -70,13 +69,10 @@ const ProjectListWrapDiv = styled.div``;
 const ProjectListHeaderDiv = styled.div`
   display: flex;
   align-items: center;
-  // border: 1px solid black;
   border-radius: 10px;
   padding: 21px 0;
   background: rgba(244, 246, 251, 1);
   > img {
-    // margin-left: 4.25px;
-    // margin-right: 36.25px;
     margin: 0 16px;
   }
   > span {
@@ -92,13 +88,9 @@ const ProjectListHeaderDiv = styled.div`
 `;
 
 const MatchAndLikeWrap = styled.div`
-  // display: flex;
   width: max-content;
   margin: 44px auto 34px;
-  // display: flex;
   justify-content: center;
-  // border: 1px solid red;
-  // margin: 44px 0 34px;
   span {
     display: inline-block;
     margin: 0 20px;

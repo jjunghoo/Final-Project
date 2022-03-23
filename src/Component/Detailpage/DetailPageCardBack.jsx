@@ -25,7 +25,6 @@ import SubtractRed from "./images/Subtract_red.svg";
 const StyledCardBack = styled.div`
   position: relative;
   border-radius: 20.78px;
-  //   padding: 80px 32px;
   box-shadow: 2.077683448791504px 4.155366897583008px 4.155366897583008px 0px
     rgba(0, 0, 0, 0.25);
   img {
@@ -62,7 +61,6 @@ const StyledCardBack = styled.div`
 `;
 
 const TeamEvaluateWrap = styled.div`
-  //   border: 1px solid black;
   width: fit-content;
   margin: 0 auto;
   padding: 80px 42px 54px;
@@ -72,14 +70,11 @@ const TeamEvaluateWrap = styled.div`
 `;
 
 const CommentsWrapDiv = styled.div`
-  //   border: 1px solid black;
-  //   margin-top: 54px;
   margin: 0 auto;
   width: 306px;
 `;
 
 const CommentWrapDiv = styled.div`
-  //   border: 1px solid red;
   margin-bottom: 80px;
   padding: 2px 0;
   p {

@@ -12,7 +12,6 @@ import { CurriculumVitae } from "./CurriculumVitae/CurriculumVitae";
 import { CoverLetter } from "./CoverLetter/CoverLetter";
 
 const UlWrap = styled.ul`
-  // border: 1px solid black;
   margin: 80px 371px 63px;
   padding: 0 0 162.03px;
   text-align: start;

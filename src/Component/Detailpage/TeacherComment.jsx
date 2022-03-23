@@ -8,13 +8,10 @@ const TeacherCommentWrapDiv = styled.div``;
 const TeacherCommentHeader = styled.div`
   display: flex;
   align-items: center;
-  // border: 1px solid black;
   border-radius: 10px;
   padding: 21px 0;
   background: rgba(244, 246, 251, 1);
   > img {
-    // margin-left: 4.25px;
-    // margin-right: 36.25px;
     margin: 0 16px;
   }
   > span {
@@ -43,7 +40,6 @@ const CommentWrapDiv = styled.div`
 `;
 
 const CommentDiv = styled.div`
-  // border: 1px solid red;
   margin-top: 20px;
   display: flex;
   > img {
