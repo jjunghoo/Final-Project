@@ -12,6 +12,7 @@ import { FlipCardWrapJSX } from "./Component/Card/FlipCardWrap";
 import styled from "@emotion/styled";
 import { MainPageHeader } from "./Component/Mainpage/Header";
 import { CategoryMenu } from "./Component/Mainpage/CategoryMenu";
+import { DetailPage } from "./Component/Detailpage/DetailPage";
 import { RoleCategoryPage } from "./Component/RoleCategoryPage/RoleCategoryPage";
 import { RandomMatching } from "./Component/RandomMatching/RandomMatching";
 import { GetDataFromSpreadSheet } from "./Component/GetDataFromSpreadSheet/GetDataFromSpreadSheet";
@@ -44,6 +45,8 @@ function App() {
         <Route path="/UserPage" element={<UserPage />} />
         <Route path="/teacherMyPage/:id" element={<TeacherMyPage />} />
 
+        {/* <Route path="/resume" element={<Resume />} /> */}
+        <Route path="detailPage/:id" element={<DetailPage />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/test" element={<GetDataFromSpreadSheet />} />
         <Route path="/category/:id" element={<RoleCategoryPage />} />

@@ -1,17 +1,17 @@
 import styled from "@emotion/styled";
 
 const StyleDiv = styled.div`
-  padding: 32px 40px 16px;
+padding: 63px 79px 32px;
 `;
 
 const ListNameDiv = styled.div`
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 29px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: rgba(57, 199, 97, 1);
+font-size: 47px;
+font-style: normal;
+font-weight: 700;
+line-height: 57px;
+letter-spacing: 0em;
+text-align: left;
+color: rgba(57, 199, 97, 1);
 `;
 
 const InnerListDiv = styled.div`
@@ -28,22 +28,23 @@ const StyleDiv2 = styled.div`
     display: flex;
     align-items: center;
     span:last-child {
-      padding-left: 8px;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 17px;
-      letter-spacing: 0em;
-      text-align: left;
-      color: rgba(0, 0, 0, 0.73);
+      
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.73);
+    padding-left: 15.81px;
     }
   }
   span:first-of-type {
-    font-family: Pretendard Variable;
-    font-size: 24px;
+    
+    font-size: 47px;
     font-style: normal;
     font-weight: 600;
-    line-height: 29px;
+    line-height: 57px;
     letter-spacing: 0em;
     text-align: left;
     color: rgba(0, 0, 0, 1);
@@ -51,35 +52,30 @@ const StyleDiv2 = styled.div`
 `;
 
 const StyleDepartmentDiv = styled.div`
-  // color: rgba(0, 0, 0, 0.56);
-  // margin-top: 4px;
-  // font-weight: 500;
-  // span {
-  //   font-weight: 600;
-  //   font-size: 14px;
-  //   padding-left: 10px;
-  // }
   > span {
-    font-size: 20px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px;
+    line-height: 47px;
     letter-spacing: 0em;
     text-align: left;
     color: rgba(0, 0, 0, 0.73);
-    padding-left: 24px;
+    padding-left: 47px;
     padding-top: 4px;
+    :last-of-type {
+      padding-left: 24px;
+    }
   }
   > div {
-    font-size: 18px;
+    font-size: 36px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 47px;
     letter-spacing: 0em;
     text-align: left;
     color: rgba(0, 0, 0, 0.73);
-    padding-left: 24px;
-    padding-top: 16px;
+    padding-left: 47px;
+    padding-top: 31.63px;
     margin: 0;
     width: 75%;
   }
