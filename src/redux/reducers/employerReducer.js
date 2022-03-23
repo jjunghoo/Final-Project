@@ -201,7 +201,6 @@ export default function employerReducer(state = initialState, action) {
         errmsg: action.payload.errmsg,
       };
     // EMPLOYER_REMOVE 를 통해 달라진 객체 적용 가능 중간 SAGA 를 통해서 이 부분들 전부 고쳐야할 필요가 있음
-
     default:
       return state;
   }

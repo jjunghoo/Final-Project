@@ -38,8 +38,7 @@ export default function employeeReducer(state = initialState, action) {
       console.log(action.payload);
       return {
         ...state,
-        employeeInfo: action.payload.employeeInfo,
-        id: action.payload.id,
+        ...action.payload,
         errmsg: "",
       };
     case EMPLOYEE_INFO_FAILURE: // payload에서 객체에 해당 값이 추가 된 객체를 주도록 한다.

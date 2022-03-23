@@ -20,8 +20,8 @@ import {
   EMPLOYER_BOOKMARK_EDIT_FAILURE,
   EMPLOYER_BOOKMARK_EDIT_SUCCESS,
   EMPLOYER_SUPERMATCHING_EDIT_REQUEST,
-  EMPLOYER_SUPERMATCHING_EDIT_FAILURE,
   EMPLOYER_SUPERMATCHING_EDIT_SUCCESS,
+  EMPLOYER_SUPERMATCHING_EDIT_FAILURE,
 } from "../type";
 /** @format */
 
@@ -132,7 +132,7 @@ function* watchEmployerBookmarkGet() {
 ///BOOKMARK EDIT////
 
 const axiosEmployerBookmarkEditSaga = (action) => {
-  console.log(action);
+  console.log("action", action);
   // return 0;
   return axios.put(`/employer/${action.id}`, action);
 };
