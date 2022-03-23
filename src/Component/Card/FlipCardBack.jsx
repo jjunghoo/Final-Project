@@ -306,8 +306,13 @@ export const FlipCardBack = ({ cardInfo, cardNum, color }) => {
           return teamEvaluate(item[0], index, textColor);
         })}
       </TeamEvaluateWrap>
-      {/* <CommentJsx> {cardInfo.comment[0][2]}</CommentJsx> */}
-      {/* <CommentNameJsx>{cardInfo.comment[0][1]}</CommentNameJsx> */}
+      <CommentJsx>
+        {" "}
+        {cardInfo.comment[0] ? cardInfo.comment[0][2] : ""}
+      </CommentJsx>
+      <CommentNameJsx>
+        {cardInfo.comment[0] ? cardInfo.comment[0][1] : ""}
+      </CommentNameJsx>
       <BgImg src={bgimg} />
     </FlipCardBackJsx>
   );

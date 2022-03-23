@@ -15,6 +15,7 @@ import { CategoryMenu } from "./Component/Mainpage/CategoryMenu";
 import { RoleCategoryPage } from "./Component/RoleCategoryPage/RoleCategoryPage";
 import { RandomMatching } from "./Component/RandomMatching/RandomMatching";
 import { GetDataFromSpreadSheet } from "./Component/GetDataFromSpreadSheet/GetDataFromSpreadSheet";
+import { TeacherMyPage } from "./Component/TeacherMyPage/TeacherMyPage";
 
 const AppDiv = styled.div`
   // width: 100%;
@@ -28,12 +29,21 @@ const AppDiv = styled.div`
 function App() {
   return (
     <AppDiv className="App">
-      <MainPageHeader />
       <Routes>
+        <Route path="/teacherMyPage/:id" element={<div />} />
+
+        <Route path="/*" element={<MainPageHeader />} />
+      </Routes>
+
+      <Routes>
+        <Route path="/teacherMyPage/:id" element={<div />} />
+
         <Route path="/*" element={<CategoryMenu />} />
       </Routes>
       <Routes className="routes">
         <Route path="/UserPage" element={<UserPage />} />
+        <Route path="/teacherMyPage/:id" element={<TeacherMyPage />} />
+
         <Route path="/resume" element={<Resume />} />
         <Route path="/test" element={<GetDataFromSpreadSheet />} />
         <Route path="/category/:id" element={<RoleCategoryPage />} />
