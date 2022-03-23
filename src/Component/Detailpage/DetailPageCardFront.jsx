@@ -82,7 +82,6 @@ export const DetailPageCardFront = ({ getJob, badge, employeeInfo }) => {
   for (let key in badge) {
     badge[key] > 0 && getBadge.push(key);
   }
-  console.log("getBadge", getBadge);
 
   return (
     <StyledCardFront state={getJob[0]}>

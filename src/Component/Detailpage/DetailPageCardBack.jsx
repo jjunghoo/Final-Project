@@ -107,7 +107,6 @@ const CommentWrapDiv = styled.div`
 `;
 
 export const DetailPageCardBack = ({ teamEvaluate, getJob, comment }) => {
-  console.log("comment", comment && comment[0][0]);
   // teamEvaluate 높은 순으로 정렬
   const sortTeamEvaluate = [];
   for (let key in teamEvaluate) {
@@ -123,7 +122,6 @@ export const DetailPageCardBack = ({ teamEvaluate, getJob, comment }) => {
     if (index > 4) return;
     sortedTeamEvaluate.push(item[0]);
   });
-  console.log("sortedTeamEvaluate", sortedTeamEvaluate);
 
   return (
     <StyledCardBack state={getJob[0]}>
