@@ -5,9 +5,8 @@ import { css } from "@emotion/react";
 // import { jsx, css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { useState } from "react";
-import { Slide1 } from "./Slide1";
-import { Slide2 } from "./Slide2";
-import { Slide3 } from "./Slide3";
+import { RandomMatchingleft } from "./RandomMatchingleft";
+import { RandomMatchingUI } from "./RandomMatchingUI";
 
 const SliderArea = styled.div`
   height: 720px;
@@ -15,14 +14,13 @@ const SliderArea = styled.div`
   background-color: white;
   border: 1px solid black;
   position: relative;
-  // overflow: hidden;
   box-sizing: border-box;
+  display: flex;
 `;
 
 const SliderButton = styled.button`
   height: 100px;
   width: 100px;
-  position: absolute;
   background-color: black;
   left: 100%;
   top: 50%;
@@ -42,15 +40,9 @@ export const RandomMatching = () => {
   };
 
   return (
-    <SliderArea className="slider-area">
-      <Slide1 sliderNum={sliderNum}></Slide1>
-      <Slide2 sliderNum={sliderNum}></Slide2>
-      <Slide3 sliderNum={sliderNum}></Slide3>
-      {sliderNum < 2 ? (
-        <SliderButton onClick={ClickButtonEvent}></SliderButton>
-      ) : (
-        ""
-      )}
+    <SliderArea>
+      <RandomMatchingleft></RandomMatchingleft>
+      <RandomMatchingUI className="matching-UI"></RandomMatchingUI>
     </SliderArea>
   );
 };

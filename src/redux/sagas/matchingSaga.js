@@ -19,11 +19,17 @@ import {
 //랜덤매칭겟 사가
 
 const axiosmatchingRandomMatchingGetSaga = (action) => {
-  return axios.get(`/employee`);
+  console.log(action);
+  if (action) {
+    return axios.get(`/employee?${action}=1`);
+  } else {
+    return axios.get(`/employee`);
+  }
 };
 
 function* matchingRandomMatchingGetSaga(action) {
   //   console.log("saga진입");
+  // console.log(action.payload);
   try {
     console.log("try");
     const posts = yield call(
@@ -31,6 +37,7 @@ function* matchingRandomMatchingGetSaga(action) {
       action.payload
     ); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
     yield console.log(posts.data);
+
     // yield console.log(action.payload);
     yield put({
       type: MATCHING_RANDOM_MATCHING_GET_SUCCESS,
@@ -71,15 +78,31 @@ function* watchMatchingListGetSaga(action) {
   }
 
   try {
-    console.log("try");
     const posts = yield call(axiosWatchMatchingListGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
     // yield console.log(posts.data);
 
+    // posts.data.map();
     yield shuffle(posts.data);
-    // yield console.log(posts.data);
+    let goodData = [];
+    posts.data.map((item, index) => {
+      if (action.payload === null) {
+        if (
+          !(
+            item.design === "0" &&
+            item.dataScience === "0" &&
+            item.marketing === "0" &&
+            item.programming === "0"
+          )
+        ) {
+          goodData.push(item);
+        }
+      } else {
+        goodData = posts.data;
+      }
+    });
     yield put({
       type: MATCHING_LIST_ARRAY_GET_SUCCESS,
-      payload: { allInfo: posts.data },
+      payload: { allInfo: goodData },
     }); // 성공 액션 디스패치
   } catch (e) {
     // console.log(e);
@@ -108,10 +131,28 @@ function* watchMatchingMainListGetSaga(action) {
   try {
     console.log("try");
     const posts = yield call(axiosWatchMatchingMainListGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
-    yield console.log(posts.data);
+    // yield posts.data.push(posts.data[0]);
+
+    let goodData = [];
+    posts.data.map((item, index) => {
+      if (action.payload === null) {
+        if (
+          !(
+            item.design === "0" &&
+            item.dataScience === "0" &&
+            item.marketing === "0" &&
+            item.programming === "0"
+          )
+        ) {
+          goodData.push(item);
+        }
+      } else {
+        goodData = posts.data;
+      }
+    });
     yield put({
       type: MATCHING_MAIN_LIST_ARRAY_GET_SUCCESS,
-      payload: { mainPageAllInfo: posts.data },
+      payload: { mainPageAllInfo: goodData },
     }); // 성공 액션 디스패치
   } catch (e) {
     // console.log(e);
