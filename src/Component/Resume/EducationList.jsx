@@ -1,14 +1,14 @@
 import styled from "@emotion/styled";
 
 const StyleDiv = styled.div`
-  padding: 32px 40px 16px;
+  padding: 63px 79px 32px;
 `;
 
 const ListNameDiv = styled.div`
-  font-size: 24px;
+  font-size: 47px;
   font-style: normal;
   font-weight: 700;
-  line-height: 29px;
+  line-height: 57px;
   letter-spacing: 0em;
   text-align: left;
   color: rgba(57, 199, 97, 1);
@@ -16,7 +16,7 @@ const ListNameDiv = styled.div`
 
 const InnerListDiv = styled.div`
   padding-bottom: 16px;
-  margin-top: 24px;
+  margin-top: 47.45px;
 `;
 
 const StyleDiv2 = styled.div`
@@ -28,22 +28,21 @@ const StyleDiv2 = styled.div`
     display: flex;
     align-items: center;
     span:last-child {
-      padding-left: 8px;
-      font-size: 14px;
+      font-size: 28px;
       font-style: normal;
       font-weight: 400;
-      line-height: 17px;
+      line-height: 33px;
       letter-spacing: 0em;
       text-align: left;
       color: rgba(0, 0, 0, 0.73);
+      padding-left: 15.81px;
     }
   }
   span:first-of-type {
-    font-family: Pretendard Variable;
-    font-size: 24px;
+    font-size: 47px;
     font-style: normal;
     font-weight: 600;
-    line-height: 29px;
+    line-height: 57px;
     letter-spacing: 0em;
     text-align: left;
     color: rgba(0, 0, 0, 1);
@@ -52,13 +51,13 @@ const StyleDiv2 = styled.div`
 
 const StyleStateDiv = styled.div`
   color: rgba(255, 255, 255, 1);
-  font-size: 15px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 600;
-  line-height: 18px;
+  line-height: 36px;
   letter-spacing: 0em;
   text-align: center;
-  padding: 4px 16px;
+  padding: 7.91px 31.63px;
   border-radius: 49px;
   ${({ state }) => {
     switch (state) {
@@ -74,14 +73,14 @@ const StyleStateDiv = styled.div`
 
 const StyleDepartmentDiv = styled.div`
   > span {
-    font-size: 20px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px;
+    line-height: 47px;
     letter-spacing: 0em;
     text-align: left;
     color: rgba(0, 0, 0, 0.73);
-    padding-left: 24px;
+    padding-left: 47px;
     padding-top: 4px;
   }
   > p {
@@ -91,14 +90,14 @@ const StyleDepartmentDiv = styled.div`
     padding-top: 16px;
   }
   p {
-    font-size: 18px;
+    font-size: 36px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 47px;
     letter-spacing: 0em;
     text-align: left;
     color: rgba(0, 0, 0, 0.73);
-    padding-left: 24px;
+    padding-left: 47px;
     margin: 0;
   }
 `;

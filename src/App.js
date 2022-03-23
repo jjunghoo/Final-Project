@@ -33,7 +33,7 @@ function App() {
       </Routes>
       <Routes className="routes">
         <Route path="/UserPage" element={<UserPage />} />
-        <Route path="/resume" element={<Resume />} />
+        {/* <Route path="/resume" element={<Resume />} /> */}
         <Route path="/test" element={<FlipCardWrapJSX />} />
         <Route path="detailPage/:id" element={<DetailPage />} />
         <Route path="/category/:id" element={<RoleCategoryPage />} />

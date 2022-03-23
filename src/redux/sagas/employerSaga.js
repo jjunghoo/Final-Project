@@ -19,6 +19,9 @@ import {
   EMPLOYER_BOOKMARK_EDIT_REQUEST,
   EMPLOYER_BOOKMARK_EDIT_FAILURE,
   EMPLOYER_BOOKMARK_EDIT_SUCCESS,
+  EMPLOYER_SUPERMATCHING_EDIT_REQUEST,
+  EMPLOYER_SUPERMATCHING_EDIT_SUCCESS,
+  EMPLOYER_SUPERMATCHING_EDIT_FAILURE,
 } from "../type";
 /** @format */
 
@@ -129,7 +132,7 @@ function* watchEmployerBookmarkGet() {
 ///BOOKMARK EDIT////
 
 const axiosEmployerBookmarkEditSaga = (action) => {
-  console.log(action);
+  console.log("action", action);
   // return 0;
   return axios.put(`/employer/${action.id}`, action);
 };
@@ -205,6 +208,59 @@ function* watchEmployerSupermachingGet() {
   );
 }
 
+// 이 아래 작업중
+
+const axiosEmployerSupermatchingEditSaga = (action) => {
+  console.log("action", action);
+  // return 0;
+  return axios.put(`/employer/${action.id}`, action);
+};
+
+const axiosEmployerSupermatchingGetSaga = (action) => {
+  return axios.get(`/employer/${action}`);
+};
+
+function* employerSupermatchingEditSaga(action) {
+  try {
+    console.log(action.payload);
+    let posts = yield call(
+      axiosEmployerSupermatchingGetSaga,
+      action.payload.id
+    ); //특정부분 ID 확인용
+
+    let index = yield posts.data.superMachingInfo.indexOf(
+      action.payload.userID
+    );
+    if (index > -1) {
+      posts.data.superMachingInfo.splice(index, 1);
+    } else {
+      posts.data.superMachingInfo.push(action.payload.userID);
+    }
+
+    posts = yield call(axiosEmployerSupermatchingEditSaga, posts.data);
+
+    yield console.log(posts.data);
+    yield put({
+      type: EMPLOYER_SUPERMATCHING_EDIT_SUCCESS,
+      payload: { superMachingInfo: posts.data.superMachingInfo },
+    }); // 성공 액션 디스패치
+  } catch (e) {
+    console.log(e);
+    yield put({
+      type: EMPLOYER_SUPERMATCHING_EDIT_FAILURE,
+      error: true,
+      payload: { errmsg: e },
+    }); // 실패 액션 디스패치
+  }
+}
+
+function* watchEmplyerSupermachingEdit() {
+  yield takeEvery(
+    EMPLOYER_SUPERMATCHING_EDIT_REQUEST,
+    employerSupermatchingEditSaga
+  );
+}
+
 // END //
 
 export function* employerSaga() {
@@ -214,5 +270,6 @@ export function* employerSaga() {
     fork(watchEmployerBookmarkGet),
     fork(watchEmployerBookmarkEdit),
     fork(watchEmployerSupermachingGet),
+    fork(watchEmplyerSupermachingEdit),
   ]);
 }

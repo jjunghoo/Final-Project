@@ -24,6 +24,9 @@ import {
   EMPLOYER_BOOKMARK_EDIT_REQUEST,
   EMPLOYER_BOOKMARK_EDIT_SUCCESS,
   EMPLOYER_BOOKMARK_EDIT_FAILURE,
+  EMPLOYER_SUPERMATCHING_EDIT_REQUEST,
+  EMPLOYER_SUPERMATCHING_EDIT_SUCCESS,
+  EMPLOYER_SUPERMATCHING_EDIT_FAILURE,
 } from "../type";
 
 /* 초기 상태 선언 */
@@ -169,7 +172,20 @@ export default function employerReducer(state = initialState, action) {
         errmsg: action.payload.errmsg,
       };
     // EMPLOYER_REMOVE 를 통해 달라진 객체 적용 가능 중간 SAGA 를 통해서 이 부분들 전부 고쳐야할 필요가 있음
-
+    case EMPLOYER_SUPERMATCHING_EDIT_REQUEST:
+      return {
+        ...state,
+      }
+    case EMPLOYER_SUPERMATCHING_EDIT_SUCCESS:
+      return {
+        ...state,
+        superMachingInfo: action.payload.superMachingInfo
+      }
+    case EMPLOYER_SUPERMATCHING_EDIT_FAILURE:
+      return {
+        ...state,
+        errmsg: action.payload.errmsg
+      }  
     default:
       return state;
   }
