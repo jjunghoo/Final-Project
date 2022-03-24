@@ -36,7 +36,7 @@ function App() {
       <Routes className="routes">
         <Route path="/UserPage" element={<UserPage />} />
         {/* <Route path="/resume" element={<Resume />} /> */}
-        <Route path="/test" element={<FlipCardWrapJSX />} />
+        {/* <Route path="/test" element={<FlipCardWrapJSX />} /> */}
         <Route path="detailPage/:id" element={<DetailPage />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/test" element={<GetDataFromSpreadSheet />} />

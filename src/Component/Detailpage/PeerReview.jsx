@@ -60,6 +60,7 @@ export const PeerReview = ({ employeeInfo, teamEvaluate }) => {
   sortTeamEvaluate.sort(function (a, b) {
     return b[1] - a[1];
   });
+  // console.log('sortTeamEvaluate', sortTeamEvaluate)
 
   const sortedTeamEvaluate = [];
   sortTeamEvaluate.forEach((item) => {

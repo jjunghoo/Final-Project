@@ -19,14 +19,24 @@ import { OurManager } from "./TeamEvaluate/OurManager";
 import { QuietResearcher } from "./TeamEvaluate/QuietResearcher";
 import { RichInIdeas } from "./TeamEvaluate/RichInIdeas";
 import { SelfDirectedLearner } from "./TeamEvaluate/SelfDirectedLearner";
-
 import SubtractRed from "./images/Subtract_red.svg";
+import BackUnlikeStar from "./images/backUnlikeStar.svg";
+
+import BackRedLikeStar from "./images/backRedLikeStar.svg";
+import BackYellowLikeStar from "./images/backYellowLikeStar.svg";
+import BackGreenLikeStar from "./images/backGreenLikeStar.svg";
+import BackPurpleLikeStar from "./images/backPurpleLikeStar.svg";
 
 const StyledCardBack = styled.div`
   position: relative;
   border-radius: 20.78px;
   box-shadow: 2.077683448791504px 4.155366897583008px 4.155366897583008px 0px
     rgba(0, 0, 0, 0.25);
+  object {
+    position: absolute;
+    right: 13.5px;
+    top: 13.97px;
+  }
   img {
     position: absolute;
     bottom: -10px;
@@ -101,7 +111,12 @@ const CommentWrapDiv = styled.div`
   }
 `;
 
-export const DetailPageCardBack = ({ teamEvaluate, getJob, comment }) => {
+export const DetailPageCardBack = ({
+  teamEvaluate,
+  getJob,
+  comment,
+  liked,
+}) => {
   // teamEvaluate 높은 순으로 정렬
   const sortTeamEvaluate = [];
   for (let key in teamEvaluate) {
@@ -117,9 +132,20 @@ export const DetailPageCardBack = ({ teamEvaluate, getJob, comment }) => {
     if (index > 4) return;
     sortedTeamEvaluate.push(item[0]);
   });
-
   return (
     <StyledCardBack state={getJob[0]}>
+      {getJob[0] === "marketing" && (
+        <object data={liked ? BackRedLikeStar : BackUnlikeStar}>''</object>
+      )}
+      {getJob[0] === "design" && (
+        <object data={liked ? BackYellowLikeStar : BackUnlikeStar}>''</object>
+      )}
+      {getJob[0] === "dataScience" && (
+        <object data={liked ? BackGreenLikeStar : BackUnlikeStar}>''</object>
+      )}
+      {getJob[0] === "programming" && (
+        <object data={liked ? BackPurpleLikeStar : BackUnlikeStar}>''</object>
+      )}
       <TeamEvaluateWrap>
         {sortedTeamEvaluate.map((item) => {
           switch (item) {
@@ -169,13 +195,12 @@ export const DetailPageCardBack = ({ teamEvaluate, getJob, comment }) => {
         })}
       </TeamEvaluateWrap>
       <CommentsWrapDiv>
-        {comment &&
-          comment.map((item) => (
-            <CommentWrapDiv key={item}>
-              <p>{item[2]}</p>
-              <span>{item[1]}</span>
-            </CommentWrapDiv>
-          ))}
+        {comment && (
+          <CommentWrapDiv>
+            <p>{comment[0].title}</p>
+            <span>{comment[0].name}</span>
+          </CommentWrapDiv>
+        )}
       </CommentsWrapDiv>
       <img src={SubtractRed} alt="스탬프 이미지" />
     </StyledCardBack>
