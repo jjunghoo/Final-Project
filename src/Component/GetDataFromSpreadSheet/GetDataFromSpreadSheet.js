@@ -21,13 +21,6 @@ const GetDataSheetBox = styled.div`
 export const GetDataFromSpreadSheet = () => {
   const dispatch = useDispatch();
   return (
-    <GetDataSheetBox
-      onClick={() => {
-        dispatch({ type: PROJECT_SHEET_INFO_GET_REQUEST });
-      }}
-      className="User-Page"
-    >
-      데이터를 받아오자
-    </GetDataSheetBox>
+    <GetDataSheetBox className="User-Page">데이터를 받아오자</GetDataSheetBox>
   );
 };

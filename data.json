@@ -17,12 +17,16 @@
   ],
   "employee": [
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1112",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1112",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -52,7 +56,7 @@
         "마케팅마스터": 0
       },
       "programming": "0",
-      "design": "1",
+      "design": "0",
       "dataScience": "0",
       "marketing": "0",
       "badge": {
@@ -69,20 +73,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [38],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            38
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            38
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1113",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1113",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -129,20 +167,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [59],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1114",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1114",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -189,20 +261,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [59],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1115",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1115",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -249,20 +355,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [59],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1116",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1116",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -309,20 +449,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [57],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            57
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            57
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "이장훈010-1111-1117",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "이장훈010-1111-1117",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "이장훈",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -369,20 +543,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [57],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            57
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            57
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1118",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1118",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -429,20 +637,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [56],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            56
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            56
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1119",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1119",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -489,20 +731,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [56],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            56
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            56
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1120",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1120",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -549,20 +825,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [58],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            58
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            58
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1121",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1121",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -609,20 +919,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [58],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            58
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            58
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1122",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1122",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -669,20 +1013,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [59],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1123",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1123",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -729,20 +1107,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [57],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            57
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            57
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1124",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1124",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -789,20 +1201,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [59],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1125",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1125",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -849,20 +1295,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [58],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            58
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            58
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1126",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1126",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -909,20 +1389,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [59],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1127",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1127",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -969,20 +1483,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [55],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            55
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            55
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1128",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1128",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -1029,20 +1577,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [59],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1129",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1129",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -1089,20 +1671,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [57],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            57
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            57
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1130",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1130",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -1149,20 +1765,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [57],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            57
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            57
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1131",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1131",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -1209,20 +1859,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [57],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            57
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            57
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1132",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1132",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -1269,20 +1953,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [58],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            58
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            58
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1133",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1133",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -1329,20 +2047,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [58],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            58
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            58
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "장소이010-1111-1134",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "장소이010-1111-1134",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "장소이",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -1389,20 +2141,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [59],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "이장훈010-1111-1135",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "이장훈010-1111-1135",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "이장훈",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -1449,20 +2235,54 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [59],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     },
     {
+      "likedInfo": [],
       "id": "이장훈010-1111-1136",
       "comment": [],
+      "bookmarkInfo": [],
+      "supermatchingInfo": [],
+      "supermatchedInfo": [],
       "employeeInfo": {
         "id": "이장훈010-1111-1136",
         "거주지": "경기도",
-        "생년월일": "경기도",
+        "생년월일": "Date(1995,2,16)",
         "성별": "여성",
         "이름": "이장훈",
         "이메일(gmail)": "123232fjdk@gmail.com",
@@ -1509,10 +2329,40 @@
       "resume": {},
       "lectureInfo": [
         {
-          "과목명": [["이런저런스쿨"]],
-          "교육 기간": [["2021.08.25-2021.10.01"]],
-          "myAttandence": [59],
-          "allAttendance": [62]
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
+        },
+        {
+          "과목명": [
+            [
+              "메가바이트스쿨 UXUI 프로젝트쉽"
+            ]
+          ],
+          "교육 기간": [
+            [
+              "2021.08.25-2021.10.01"
+            ]
+          ],
+          "myAttandence": [
+            59
+          ],
+          "allAttendance": [
+            62
+          ]
         }
       ]
     }
@@ -1520,32 +2370,70 @@
   "employer": [
     {
       "id": "em1",
-      "likedInfo": ["e1", "e2", "e3", "e4", "e25"],
+      "likedInfo": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e25"
+      ],
       "emloyerInfo": {
         "이름": "팍장훈"
       },
-      "bookmarkInfo": ["e2", "e3", "e4", "e25", "장소이010-1111-1122"],
+      "bookmarkInfo": [
+        "e2",
+        "e3",
+        "e4",
+        "e25",
+        "장소이010-1111-1122"
+      ],
       "superMachingInfo": [],
       "superMachedInfo": []
     },
     {
       "id": "em2",
-      "likedInfo": ["e1", "e2", "e3", "e4", "e25"],
+      "likedInfo": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e25"
+      ],
       "emloyerInfo": {
         "이름": "팍장훈"
       },
-      "bookmarkInfo": ["e1", "e2", "e4", "e25"],
-      "superMachingInfo": ["e1", "e25"],
+      "bookmarkInfo": [
+        "e1",
+        "e2",
+        "e4",
+        "e25"
+      ],
+      "superMachingInfo": [
+        "e1",
+        "e25"
+      ],
       "superMachedInfo": []
     },
     {
       "id": "em3",
-      "likedInfo": ["e1", "e2", "e3", "e4", "e25"],
+      "likedInfo": [
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e25"
+      ],
       "emloyerInfo": {
         "이름": "오장훈"
       },
-      "bookmarkInfo": ["e1", "e25"],
-      "superMachingInfo": ["e1", "e25"],
+      "bookmarkInfo": [
+        "e1",
+        "e25"
+      ],
+      "superMachingInfo": [
+        "e1",
+        "e25"
+      ],
       "superMachedInfo": []
     }
   ],
@@ -1555,7 +2443,11 @@
       "teacherInfo": {
         "이름": "박을수"
       },
-      "lectureInfo": ["a", "b", "e"],
+      "lectureInfo": [
+        "a",
+        "b",
+        "e"
+      ],
       "commentInfo": {
         "1": "이 학생은 good",
         "2": "이 학생은 good",
@@ -1567,7 +2459,10 @@
       "teacherInfo": {
         "이름": "정을수"
       },
-      "lectureInfo": ["d", "e"],
+      "lectureInfo": [
+        "d",
+        "e"
+      ],
       "commentInfo": {
         "1": "이 학생은 별로다",
         "2": "이 학생은 진짜 별로다",
@@ -1579,7 +2474,13 @@
       "teacherInfo": {
         "이름": "차을수"
       },
-      "lectureInfo": ["a", "b", "c", "d", "e"],
+      "lectureInfo": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
       "commentInfo": {
         "1": "이 학생은 대단하다",
         "2": "이 학생은 진짜 대단하다",
@@ -1590,13 +2491,28 @@
   "project": [
     {
       "lectureInfo": {
-        "과목명": ["이런저런스쿨"],
-        "직군": ["design"],
-        "교육 기간": ["2021.08.25-2021.10.01"],
-        "교육장소": ["지구"],
-        "교육시수": ["매니저님"],
-        "담당자": ["강지은 기획 매니저", "문세희 운영 매니저"],
-        "조교진": ["이승윤 조교님"],
+        "과목명": [
+          "메가바이트스쿨 UXUI 프로젝트쉽"
+        ],
+        "직군": [
+          "design"
+        ],
+        "교육 기간": [
+          "2021.08.25-2021.10.01"
+        ],
+        "교육장소": [
+          "패스트캠퍼스"
+        ],
+        "교육시수": [
+          "1120시간"
+        ],
+        "담당자": [
+          "강지은 기획 매니저",
+          "문세희 운영 매니저"
+        ],
+        "조교진": [
+          "이승윤 조교님"
+        ],
         "강사진": [
           "이희진 강사님",
           "최우영 강사님",
@@ -1606,8 +2522,7 @@
           "장진오 강사님",
           "홍석희 강사님",
           "허광남 강사님",
-          "백상훈 강사님",
-          "섭외 中"
+          "백상훈 강사님"
         ],
         "담당 과목": [
           "Intro to Programming",
@@ -1621,6 +2536,13 @@
           "서비스기획 특강",
           "핀테크 서비스 특강"
         ],
+        "참여 기업": [
+          "차이 코퍼레이션",
+          "번개장터",
+          "글로벌핀테크산업진흥센터"
+        ],
+        "lectureID": "1-Lqit9gBiBqapfFrv59DR5BJmsTbP6GcrU9N7Oa1OF8",
+        "lectureURL": "https://docs.google.com/spreadsheets/d/1-Lqit9gBiBqapfFrv59DR5BJmsTbP6GcrU9N7Oa1OF8/edit?usp=sharing",
         "allAttendance": 62
       },
       "studentList": [
@@ -1650,7 +2572,7 @@
         "이장훈010-1111-1135",
         "이장훈010-1111-1136"
       ],
-      "id": "이런저런스쿨"
+      "id": "메가바이트스쿨 UXUI 프로젝트쉽"
     }
   ],
   "matching": {

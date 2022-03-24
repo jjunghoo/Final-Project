@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import ProjectAdd from "./image/ProjectAdd.svg";
 
-const TeacherMyPageProjectInfoJsx = styled.div`
+const ManagerMyPageProjectInfoJsx = styled.div`
   width: 25%;
   border: 1px solid black;
   box-sizing: border-box;
@@ -15,7 +15,7 @@ const TeacherMyPageProjectInfoJsx = styled.div`
   align-items: center;
   flex-direction: column;
 `;
-export const TeacherMyPageProjectInfo = ({}) => {
+export const ManagerMyPageProjectInfo = ({}) => {
   const [bookmarkedInfo, setBookmarkedInfo] = useState(0);
   const [fontSize, setFontSize] = useState(0);
   const employerInfo = useSelector((state) => state.employerReducer);
@@ -30,5 +30,5 @@ export const TeacherMyPageProjectInfo = ({}) => {
 
   const onClickedEvent = () => {};
 
-  return <TeacherMyPageProjectInfoJsx></TeacherMyPageProjectInfoJsx>;
+  return <ManagerMyPageProjectInfoJsx></ManagerMyPageProjectInfoJsx>;
 };
