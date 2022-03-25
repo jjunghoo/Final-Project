@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 const FooterWrap = styled.div`
+  margin-top: 80px;
   width: 100%;
   max-width: 1920px;
   text-align: left;
@@ -51,7 +52,7 @@ const CompanyInfo = styled.div`
     >span: first-of-type {
       color: #fff;
       font-family: Pretendard;
-      font-size: 24px;
+      font-size: 26px;
       font-style: normal;
       font-weight: 600;
       line-height: 36px;
