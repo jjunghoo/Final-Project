@@ -31,6 +31,7 @@ const initialState = {
   marketingInfo: { initialInfo: "initial" },
   randomMatchingInfo: { initialInfo: "initial" },
   selectedCategoryInfo: "all",
+  // projectInfo: {},
   randommatchingIndex: 0,
 };
 
