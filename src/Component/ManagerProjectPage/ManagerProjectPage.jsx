@@ -389,7 +389,7 @@ export const ManagerProjectPage = () => {
       type: PROJECT_STUDEMT_DETAIL_GET_REQUEST,
       payload: studentInfo,
     });
-  }, [studentInfo]);
+  }, [lectureInfo]);
 
   return (
     <ManagerProjectPageJsx onClick={() => {}}>
@@ -598,25 +598,7 @@ export const ManagerProjectPage = () => {
               ? studentInfoDetail.map((item, index) => {
                   return (
                     <ManagerProjectPageStudentContentBoxList key={"k" + index}>
-                      {item.employeeInfo["생년월일"]
-                        .slice(5, -2)
-                        .split(",")
-                        .map((item, index) => {
-                          if (index === 0) return item;
-                          else if (index === 1) {
-                            if (item < 10) {
-                              return ".0" + item;
-                            } else {
-                              return "." + item;
-                            }
-                          } else if (index === 2) {
-                            if (item < 10) {
-                              return ".0" + item;
-                            } else {
-                              return "." + item;
-                            }
-                          }
-                        })}
+                      {item.employeeInfo["생년월일"]}
                     </ManagerProjectPageStudentContentBoxList>
                   );
                 })
@@ -680,6 +662,7 @@ export const ManagerProjectPage = () => {
           <ManagerProjectPageStudentContentBox boxWidth={265}>
             {studentInfoDetail[0]
               ? studentInfoDetail.map((item, index) => {
+                  console.log(lectureInfo, item, "아라라라라");
                   return (
                     <ManagerProjectPageStudentContentBoxList key={"k" + index}>
                       {item.lectureInfo.map((item, index2) => {
@@ -697,7 +680,6 @@ export const ManagerProjectPage = () => {
                             "%)"
                           );
                         }
-                        return "에이잉";
                       })}
                     </ManagerProjectPageStudentContentBoxList>
                   );

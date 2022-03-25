@@ -205,31 +205,31 @@ const teamEvaluate = (num, index, color) => {
     case "사회생활만렙":
       return (
         <TeamEvaluateJsx color={color} key={index}>
-          <b>사회생활_</b>만렙
+          # <b>사회생활_</b>만렙
         </TeamEvaluateJsx>
       );
     case "데이터마스터":
       return (
         <TeamEvaluateJsx color={color} key={index}>
-          <b>데이터_</b>마스터
+          #<b>데이터_</b>마스터
         </TeamEvaluateJsx>
       );
     case "디벨롭마스터":
       return (
         <TeamEvaluateJsx color={color} key={index}>
-          <b>디벨롭_</b>마스터
+          # <b>디벨롭_</b>마스터
         </TeamEvaluateJsx>
       );
     case "디자인마스터":
       return (
         <TeamEvaluateJsx color={color} key={index}>
-          <b>디자인_</b>마스터
+          # <b>디자인_</b>마스터
         </TeamEvaluateJsx>
       );
     case "마케팅마스터":
       return (
         <TeamEvaluateJsx color={color} key={index}>
-          <b>마케팅_</b>마스터
+          # <b>마케팅_</b>마스터
         </TeamEvaluateJsx>
       );
 

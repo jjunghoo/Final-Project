@@ -465,7 +465,7 @@ export const DetailPage = React.memo(() => {
                   {Math.round((data.myAttandence / data.allAttendance) * 100)}%
                 </div>
               </ListWrapDiv>
-              <ListWrapDiv>
+              {/* <ListWrapDiv>
                 <div>보유스킬</div>
                 <div>
                   {data.스킬.map((item) => (
@@ -480,7 +480,7 @@ export const DetailPage = React.memo(() => {
                     <div key={item}>{item}</div>
                   ))}
                 </div>
-              </ListWrapDiv>
+              </ListWrapDiv> */}
             </ProjectList>
           ))}
       </ProjectListWrapDiv>
