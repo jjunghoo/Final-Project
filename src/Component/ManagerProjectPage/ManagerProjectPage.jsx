@@ -46,6 +46,7 @@ const ManagerProjectPageJsx = styled.div`
   &::-webkit-scrollbar-track {
     // background-color: yellow; /*스크롤바 트랙 색상*/
   }
+  color: #222222;
 `;
 const ManagerProjectPageHeader = styled.div`
   display: flex;
@@ -53,6 +54,7 @@ const ManagerProjectPageHeader = styled.div`
   padding: 80px 0px 0px 91px;
   // height: 100px;
   // background: green;
+  color: #222222;
 `;
 
 const ManagerProjectPageTitle = styled.div`
@@ -67,6 +69,7 @@ const ManagerProjectPageTitle = styled.div`
   & > div {
     display: flex;
   }
+  color: #222222;
 `;
 
 const ManagerProjectPageTitleText = styled.div`
@@ -135,10 +138,12 @@ const ManagerProjectPageLectureDetail = styled.div`
   overflow: hidden;
   margin-left: 80px;
   margin-top: 40px;
+  color: #222222;
 `;
 const ManagerProjectPageLecture1Floor = styled.div`
   height: 100px;
   // background: red;
+  color: #222222;
 `;
 
 const ManagerProjectPageLecture1FloorTitle = styled.div`
@@ -151,6 +156,7 @@ const ManagerProjectPageLecture1FloorContent = styled.div`
   height: 102px;
   display: flex;
   align-items: center;
+  color: #222222;
 `;
 
 const ManagerProjectPageLecture1FloorTitle2 = styled.div`
@@ -163,6 +169,7 @@ const ManagerProjectPageLecture1FloorContent2 = styled.div`
   min-height: 102px;
   display: flex;
   align-items: start;
+  color: #222222;
 `;
 
 const ManagerProjectPageLecture1TitleTextBox = styled.div`
@@ -217,6 +224,7 @@ const ManagerProjectPageLecture1ContentTextBox2 = styled.div`
   }}px;
   padding-top: 42px;
   padding-bottom: 42px;
+  color: #222222;
 `;
 
 const ManagerProjectPageLecture1ContentTextBox2List = styled.div`
@@ -236,7 +244,7 @@ const ManagerProjectPageLecture1ContentTextBox2List = styled.div`
   line-height: 38px;
   text-transform: uppercase;
 
-  color: #000000;
+  color: #222222;
 `;
 
 const LogoImgWrap = styled(Link)``;
@@ -251,6 +259,7 @@ const ManagerProjectPageStudent = styled.div`
   // background: blue;
   margin-left: 116px;
   margin-top: 35px;
+  color: #222222;
 `;
 
 const ManagerProjectPageStudentTitle = styled.div`
@@ -260,6 +269,7 @@ const ManagerProjectPageStudentTitle = styled.div`
   // background: blue;
   border-bottom: 0.7px solid #cccccc;
   padding-bottom: 20px;
+  color: #222222;
 `;
 
 const ManagerProjectPageStudentTitleList = styled.div`
@@ -275,7 +285,7 @@ const ManagerProjectPageStudentTitleList = styled.div`
   letter-spacing: 0.04em;
   text-transform: uppercase;
 
-  color: #000000;
+  color: #222222;
   // background: blue;
 
   width: ${(props) => {
@@ -287,11 +297,13 @@ const ManagerProjectPageStudentContent = styled.div`
   width: 3300px;
   display: flex;
   // background: blue;
+  color: #222222;
 `;
 const ManagerProjectPageStudentContentList = styled.div`
   // height: 100px;
   width: 5000px;
   // background: blue;
+  color: #222222;
 `;
 
 const ManagerProjectPageStudentContentBox = styled.div`
@@ -305,6 +317,7 @@ const ManagerProjectPageStudentContentBox = styled.div`
     return props.boxWidth;
   }}px;
   padding: 6px 0px;
+  color: #222222;
 `;
 
 const ManagerProjectPageStudentContentBoxList = styled.div`
@@ -328,7 +341,7 @@ const ManagerProjectPageStudentContentBoxList = styled.div`
   letter-spacing: 0.04em;
   text-transform: uppercase;
 
-  color: #000000;
+  color: #222222;
   display: flex;
 `;
 const ManagerProjectPageStudentContentBoxBadgeBox = styled.div`
@@ -337,11 +350,13 @@ const ManagerProjectPageStudentContentBoxBadgeBox = styled.div`
   // background: red;
   height: 100%;
   display: flex;
+  color: #222222;
 `;
 
 const Tagimg = styled.img`
   height: 33px;
   // height: 100%;
+  color: #222222;
 `;
 
 const ManagerProjectPageStudentContentBoxListLink = styled(Link)`

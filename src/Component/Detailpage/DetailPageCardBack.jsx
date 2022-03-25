@@ -1,3 +1,5 @@
+/** @format */
+
 import styled from "@emotion/styled";
 import { AnnouncementKing } from "./TeamEvaluate/AnnouncementKing";
 import { ArtisanPpt } from "./TeamEvaluate/ArtisanPpt";
@@ -227,8 +229,8 @@ export const DetailPageCardBack = ({
       <CommentsWrapDiv>
         {comment && (
           <CommentWrapDiv>
-            <p>{comment[0].title}</p>
-            <span>{comment[0].name} 강사</span>
+            <p>{comment[0] ? comment[0].title : ""}</p>
+            <span>{comment[0] ? comment[0].name : ""} 강사</span>
           </CommentWrapDiv>
         )}
       </CommentsWrapDiv>

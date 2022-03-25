@@ -175,7 +175,7 @@ const teamEvaluate = (num, index, color) => {
     case "성장형캐릭터":
       return (
         <TeamEvaluateJsx color={color} key={index}>
-          #<b>성장</b>형_캐릭터
+          # <b>성장</b>형_캐릭터
         </TeamEvaluateJsx>
       );
     case "조용한연구자":
@@ -211,7 +211,7 @@ const teamEvaluate = (num, index, color) => {
     case "데이터마스터":
       return (
         <TeamEvaluateJsx color={color} key={index}>
-          #<b>데이터_</b>마스터
+          # <b>데이터_</b>마스터
         </TeamEvaluateJsx>
       );
     case "디벨롭마스터":
@@ -321,10 +321,10 @@ export const FlipCardBack = ({ cardInfo, cardNum, color }) => {
       </TeamEvaluateWrap>
       <CommentJsx>
         {" "}
-        {cardInfo.comment[0] ? cardInfo.comment[0][2] : ""}
+        {cardInfo.comment[0] ? cardInfo.comment[0].title : ""}
       </CommentJsx>
       <CommentNameJsx>
-        {cardInfo.comment[0] ? cardInfo.comment[0][1] : ""}
+        {cardInfo.comment[0] ? cardInfo.comment[0].name : ""}
       </CommentNameJsx>
       <BgImg src={bgimg} />
       <Link to={`/detailPage/${cardInfo.id}`}>

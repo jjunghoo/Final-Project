@@ -1,3 +1,5 @@
+/** @format */
+
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router";
@@ -450,10 +452,7 @@ export const DetailPage = React.memo(() => {
             <ProjectList key={data}>
               <ListWrapDiv>
                 <div>교육과정</div>
-                <div>
-                  {project.lectureInfo.직군[0] === "design" &&
-                    "Megabyte School : UXUI"}
-                </div>
+                <div>{project.lectureInfo.과목명[0]}</div>
               </ListWrapDiv>
               <ListWrapDiv>
                 <div>수강일자</div>

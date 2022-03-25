@@ -92,7 +92,7 @@ const MenuTextWrap = styled.div`
     if (props.menuInfo === props.menuNum) {
       return "#ff6a00";
     } else {
-      return "black";
+      return "#222222";
     }
   }};
 `;

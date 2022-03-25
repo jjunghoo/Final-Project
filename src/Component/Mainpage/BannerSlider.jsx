@@ -4,12 +4,13 @@ import { css } from "@emotion/react";
 // import { Link } from "react-router-dom";
 // import { jsx, css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { useState } from "react";
-import bannerImg1 from "./img/bannerImg1.svg";
-import bannerImg2 from "./img/bannerImg2.svg";
+import { useEffect, useState, useRef, useCallback } from "react";
+import bannerImg1 from "./img/배너1.svg";
+import bannerImg2 from "./img/배너2.svg";
+import bannerImg3 from "./img/배너3.svg";
 
 const SliderArea = styled.div`
-  height: 720px;
+  height: 770px;
   overflow: hidden;
   width: 100%;
   background-color: blue;
@@ -49,8 +50,8 @@ const SliderMoveBoxWrap = styled.div`
   position: absolute;
   // background-color: white;
   // left: ${(props) => props.sliderNum * 100}%;
-  right: 231px;
-  bottom: 40px;
+  right: 102px;
+  bottom: 45px;
   border: 0px;
   display: flex;
   box-sizing: border-box;
@@ -61,20 +62,20 @@ const SliderMoveBox1 = styled.div`
   width: ${(props) => {
     // console.log(props);
     if (props.sliderNum === props.index) {
-      return "46px";
+      return "40px";
     } else {
-      return "24px";
+      return "40px";
     }
   }};
-  margin-right: 4px;
-  border-radius: 12px;
+  // margin-right: 4px;
+  // border-radius: 12px;
   border: 0px;
   background-color: ${(props) => {
     // console.log(props);
     if (props.sliderNum === props.index) {
-      return "#999999";
+      return "#cccccc";
     } else {
-      return "#BFBFBF";
+      return "#ffffff";
     }
   }};
   box-sizing: border-box;
@@ -137,29 +138,52 @@ const Banner2Button = styled.div`
 `;
 export const BannerSlider = () => {
   const [sliderNum, setSliderNum] = useState(0);
+  const [flag, setFlag] = useState(0);
   const [contents, setContents] = useState([
     <BannerImgWrap>
       <BannerImg src={bannerImg1}></BannerImg>
-      <Banner1Button>MATCH NOW!</Banner1Button>
     </BannerImgWrap>,
     <BannerImgWrap>
       <BannerImg src={bannerImg2}></BannerImg>
-      <Banner2Button>회원가입 바로가기</Banner2Button>
     </BannerImgWrap>,
-    <div>hello3</div>,
+
+    <BannerImgWrap>
+      <BannerImg src={bannerImg3}></BannerImg>
+    </BannerImgWrap>,
   ]);
-  const ClickButtonEvent = () => {
-    if (sliderNum < 2) {
-      setSliderNum(sliderNum + 1);
-    }
-  };
+
+  const [toggle, running] = useInterval(() => {
+    // Your custom logic here
+    setSliderNum((num) => {
+      if (num === 2) {
+        return 0;
+      } else {
+        return num + 1;
+      }
+    });
+  }, 5000);
+
+  // const stop = () => {
+  //   clearInterval(start);
+  // };
+  // useEffect(() => {
+  //   const interval = setInterval(() => {}, 1000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <SliderArea className="slider-area">
       {/* <BannerImg src={bannerImg1}></BannerImg> */}
       {contents.map((item, index) => {
         return (
-          <SliderContents key={index + "a"} index={index} sliderNum={sliderNum}>
+          <SliderContents
+            onClick={() => {
+              // stop();
+            }}
+            key={index + "a"}
+            index={index}
+            sliderNum={sliderNum}
+          >
             {item}
           </SliderContents>
         );
@@ -171,6 +195,7 @@ export const BannerSlider = () => {
             <SliderMoveBox1
               key={index + "b"}
               onClick={() => {
+                setFlag(1);
                 setSliderNum(index);
               }}
               sliderNum={sliderNum}
@@ -182,3 +207,38 @@ export const BannerSlider = () => {
     </SliderArea>
   );
 };
+
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+  const intervalId = useRef(null);
+  const [currentDelay, setDelay] = useState(delay);
+
+  const toggleRunning = useCallback(
+    () => setDelay((currentDelay) => (currentDelay === null ? delay : null)),
+    [delay]
+  );
+
+  const clear = useCallback(() => clearInterval(intervalId.current), []);
+
+  // Remember the latest function.
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+
+    if (intervalId.current) clear();
+
+    if (currentDelay !== null) {
+      intervalId.current = setInterval(tick, currentDelay);
+    }
+
+    return clear;
+  }, [currentDelay, clear]);
+
+  return [toggleRunning, !!currentDelay];
+}
