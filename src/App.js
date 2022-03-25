@@ -20,6 +20,7 @@ import { Employermypage } from "./Component/Employermypage/Employermypage";
 import { EmployermypageHeader } from "./Component/Employermypage/EmployermypageHeader";
 import { ManagerMyPage } from "./Component/ManagerMyPage/ManagerMyPage";
 import { ManagerProjectPage } from "./Component/ManagerProjectPage/ManagerProjectPage";
+import { Footer } from "./Component/Mainpage/Footer";
 
 const AppDiv = styled.div`
   width: 100%;
@@ -34,20 +35,18 @@ function App() {
   return (
     <AppDiv className="App">
       <Routes>
-        <Route
-          path="/employerMyPage/:id/:menu"
-          element={<EmployermypageHeader />}
-        />
         <Route path="/manager" element={<div />} />
-
         <Route path="/manager/:id" element={<div />} />
 
         <Route path="/*" element={<MainPageHeader />} />
       </Routes>
 
       <Routes>
+        <Route
+          path="/employerMyPage/:id/:menu"
+          element={<EmployermypageHeader />}
+        />
         <Route path="/manager" element={<div />} />
-
         <Route path="/manager/:id" element={<div />} />
         <Route path="/*" element={<CategoryMenu />} />
       </Routes>
@@ -61,11 +60,13 @@ function App() {
         <Route path="/detailPage/:id" element={<DetailPage />} />
         <Route path="/employerMyPage/:id/:menu" element={<Employermypage />} />
         {/* <Route path="/resume" element={<Resume />} /> */}
-        <Route path="/resume" element={<Resume />} />
         <Route path="/test" element={<GetDataFromSpreadSheet />} />
         <Route path="/category/:id" element={<RoleCategoryPage />} />
         <Route path="/randommatching" element={<RandomMatching />} />
         <Route path="/*" element={<MainPage />} />
+      </Routes>
+      <Routes>
+        <Route path="/*" element={<Footer />} />
       </Routes>
     </AppDiv>
   );
