@@ -5,7 +5,16 @@ const FooterWrap = styled.div`
   max-width: 1920px;
   text-align: left;
   border: 1px solid;
-
+  a {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+  }
   >div: first-of-type {
     padding: 24px 162px;
     background: rgba(94, 94, 94, 1);
@@ -76,6 +85,9 @@ const FooterBottom = styled.div`
   color: #999999;
   padding: 35px 0;
   span {
+    :first-of-type {
+      margin-left: 15px;
+    }
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -84,21 +96,52 @@ const FooterBottom = styled.div`
     text-align: left;
     color: rgba(255, 255, 255, 1);
   }
+  a {
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    -webkit-text-decoration: none;
+    text-decoration: none;
+}
+
+  }
 `;
 
 const Address = styled.span`
-  margin-left: 5px;
+  margin-left: 1px;
 `;
 
 export const Footer = () => {
   return (
     <FooterWrap>
       <div>
-        <span>회사소개</span>
+        <a
+          href="https://fastcampus.co.kr/info/about"
+          rel="noreferrer"
+          target="_blank"
+        >
+          회사소개
+        </a>
         <div></div>
-        <span>이용약관</span>
+        <a
+          href="/https://fastcampus.co.kr/info/policies/service"
+          rel="noreferrer"
+          target="_blank"
+        >
+          이용약관
+        </a>
         <div></div>
-        <span>개인정보처리방침</span>
+        <a
+          href="/https://fastcampus.co.kr/info/policies/privacy"
+          rel="noreferrer"
+          target="_blank"
+        >
+          개인정보처리방침
+        </a>
       </div>
       <CompanyInfo>
         <div>
@@ -118,10 +161,17 @@ export const Footer = () => {
             </span>
           </FooterMiddleDiv>
           <FooterBottom>
-            고객지원&nbsp;&nbsp; <span>02-501-9396</span>ㆍ결제/환불/계산서 문의
-            :<Address>Help@Fastcampus.Co.Kr</Address>ㆍ기타 문의{" "}
-            <span>Help.Online@Fastcampus.Co.Kr</span>ㆍ주중 10시~19시 (점심시간
-            12~13시 / 주말 및 공휴일 제외)
+            고객지원 <span>02-501-9396</span>ㆍ결제/환불/계산서 문의 :{" "}
+            <Address>
+              <a href="mailto:help@fastcampus.co.kr">Help@Fastcampus.Co.Kr</a>
+            </Address>
+            ㆍ기타 문의{" "}
+            <span>
+              <a href="mailto:help.online@fastcampus.co.kr">
+                Help.Online@Fastcampus.Co.Kr
+              </a>
+            </span>
+            ㆍ주중 10시~19시 (점심시간 12~13시 / 주말 및 공휴일 제외)
             <br />
             통신판매업 신고번호 : 제 2017-서울강남-01977호ㆍ학원설립
             운영등록번호: 제12484호(강남), 제 2238호(성동)ㆍ원격평생교육원 :{" "}
