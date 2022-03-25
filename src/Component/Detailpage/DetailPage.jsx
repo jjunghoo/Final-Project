@@ -201,6 +201,7 @@ const MatchAndLikeWrap = styled.div`
     line-height: 38px;
     letter-spacing: 0em;
     text-align: left;
+    cursor: pointer;
 
     :first-of-type {
       border: 1px solid rgba(255, 106, 0, 1);
@@ -297,7 +298,7 @@ export const DetailPage = React.memo(() => {
     dataScience,
     design,
     employeeInfo,
-    // id,
+    id,
     marketing,
     programming,
     teamEvaluate,
@@ -395,6 +396,7 @@ export const DetailPage = React.memo(() => {
           getJob={getJob}
           comment={comment}
           liked={liked}
+          studentId={id}
         />
       </StyledCardWrap>
 

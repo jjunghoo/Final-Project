@@ -26,8 +26,13 @@ import BackRedLikeStar from "./images/backRedLikeStar.svg";
 import BackYellowLikeStar from "./images/backYellowLikeStar.svg";
 import BackGreenLikeStar from "./images/backGreenLikeStar.svg";
 import BackPurpleLikeStar from "./images/backPurpleLikeStar.svg";
+import showDetailImg from "../Card/image/show_Detail_Img.svg";
+
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 const StyledCardBack = styled.div`
+  width: 370px;
   position: relative;
   border-radius: 20.78px;
   box-shadow: 2.077683448791504px 4.155366897583008px 4.155366897583008px 0px
@@ -37,10 +42,13 @@ const StyledCardBack = styled.div`
     right: 13.5px;
     top: 13.97px;
   }
-  img {
+  > img {
     position: absolute;
     bottom: -10px;
     right: -10px;
+  }
+  > a {
+    display: contents;
   }
   ${({ state }) => {
     switch (state) {
@@ -108,7 +116,16 @@ const CommentWrapDiv = styled.div`
     letter-spacing: -0.02em;
     text-align: left;
     color: rgba(255, 255, 255, 1);
+    display: block;
   }
+`;
+
+const StyledShowDetailImg = styled.img`
+  width: 143px;
+  height: 26px;
+  position: absolute;
+  right: 40px;
+  bottom: 24.83px;
 `;
 
 export const DetailPageCardBack = ({
@@ -116,6 +133,7 @@ export const DetailPageCardBack = ({
   getJob,
   comment,
   liked,
+  studentId,
 }) => {
   // teamEvaluate 높은 순으로 정렬
   const sortTeamEvaluate = [];
@@ -132,20 +150,32 @@ export const DetailPageCardBack = ({
     if (index > 4) return;
     sortedTeamEvaluate.push(item[0]);
   });
+  const params = useParams();
+  console.log("BackCard-Params", params);
+
+  console.log("studentId", studentId);
   return (
     <StyledCardBack state={getJob[0]}>
-      {getJob[0] === "marketing" && (
-        <object data={liked ? BackRedLikeStar : BackUnlikeStar}>''</object>
-      )}
-      {getJob[0] === "design" && (
-        <object data={liked ? BackYellowLikeStar : BackUnlikeStar}>''</object>
-      )}
-      {getJob[0] === "dataScience" && (
-        <object data={liked ? BackGreenLikeStar : BackUnlikeStar}>''</object>
-      )}
-      {getJob[0] === "programming" && (
-        <object data={liked ? BackPurpleLikeStar : BackUnlikeStar}>''</object>
-      )}
+      {getJob[0] === "marketing" &&
+        params.menu !== "like" &&
+        params.menu !== "supermatching" && (
+          <object data={liked ? BackRedLikeStar : BackUnlikeStar}>''</object>
+        )}
+      {getJob[0] === "design" &&
+        params.menu !== "like" &&
+        params.menu !== "supermatching" && (
+          <object data={liked ? BackYellowLikeStar : BackUnlikeStar}>''</object>
+        )}
+      {getJob[0] === "dataScience" &&
+        params.menu !== "like" &&
+        params.menu !== "supermatching" && (
+          <object data={liked ? BackGreenLikeStar : BackUnlikeStar}>''</object>
+        )}
+      {getJob[0] === "programming" &&
+        params.menu !== "like" &&
+        params.menu !== "supermatching" && (
+          <object data={liked ? BackPurpleLikeStar : BackUnlikeStar}>''</object>
+        )}
       <TeamEvaluateWrap>
         {sortedTeamEvaluate.map((item) => {
           switch (item) {
@@ -198,11 +228,19 @@ export const DetailPageCardBack = ({
         {comment && (
           <CommentWrapDiv>
             <p>{comment[0].title}</p>
-            <span>{comment[0].name}</span>
+            <span>{comment[0].name} 강사</span>
           </CommentWrapDiv>
         )}
       </CommentsWrapDiv>
       <img src={SubtractRed} alt="스탬프 이미지" />
+      {params.menu && params.menu && (
+        <Link to={`/detailPage/${studentId && studentId}`}>
+          <StyledShowDetailImg
+            src={showDetailImg}
+            alt="상세 페이지 이동 이미지"
+          />
+        </Link>
+      )}
     </StyledCardBack>
   );
 };

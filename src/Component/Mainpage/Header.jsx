@@ -7,7 +7,7 @@ import styled from "@emotion/styled";
 import homeLogo from "./img/LOGO-CMPLTD.svg";
 import logIn from "./img/logIn.svg";
 import issue from "./img/issue.svg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { EMPLOYER_INFO_GET_REQUEST } from "../../redux/type";
 import { Link } from "react-router-dom";
 
@@ -45,6 +45,7 @@ const LoginImg = styled.img`
 `;
 export const MainPageHeader = () => {
   const dispatch = useDispatch();
+
   return (
     <HeaderDiv id="main-page-header">
       <LoginLink to="/">
@@ -52,7 +53,8 @@ export const MainPageHeader = () => {
       </LoginLink>
       <LogInWrap>
         <LoginImg src={issue} />
-        <LoginImg
+        <Link
+          to="/employerMyPage/em1/like"
           onClick={() => {
             console.log("hello");
             dispatch({
@@ -60,8 +62,9 @@ export const MainPageHeader = () => {
               payload: "em1",
             });
           }}
-          src={logIn}
-        />
+        >
+          <LoginImg src={logIn} />
+        </Link>
       </LogInWrap>
     </HeaderDiv>
   );
