@@ -5,7 +5,6 @@ const FooterWrap = styled.div`
   width: 100%;
   max-width: 1920px;
   text-align: left;
-  border: 1px solid;
   a {
     font-size: 18px;
     font-style: normal;
