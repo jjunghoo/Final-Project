@@ -16,6 +16,8 @@ import { DetailPage } from "./Component/Detailpage/DetailPage";
 import { RoleCategoryPage } from "./Component/RoleCategoryPage/RoleCategoryPage";
 import { RandomMatching } from "./Component/RandomMatching/RandomMatching";
 import { GetDataFromSpreadSheet } from "./Component/GetDataFromSpreadSheet/GetDataFromSpreadSheet";
+import { Employermypage } from "./Component/Employermypage/Employermypage";
+import { EmployermypageHeader } from "./Component/Employermypage/EmployermypageHeader";
 import { ManagerMyPage } from "./Component/ManagerMyPage/ManagerMyPage";
 import { ManagerProjectPage } from "./Component/ManagerProjectPage/ManagerProjectPage";
 
@@ -32,6 +34,10 @@ function App() {
   return (
     <AppDiv className="App">
       <Routes>
+        <Route
+          path="/employerMyPage/:id/:menu"
+          element={<EmployermypageHeader />}
+        />
         <Route path="/manager" element={<div />} />
 
         <Route path="/manager/:id" element={<div />} />
@@ -51,7 +57,10 @@ function App() {
 
         <Route path="/manager/:id" element={<ManagerProjectPage />} />
         {/* <Route path="/resume" element={<Resume />} /> */}
-        <Route path="detailPage/:id" element={<DetailPage />} />
+        {/* <Route path="/test" element={<FlipCardWrapJSX />} /> */}
+        <Route path="/detailPage/:id" element={<DetailPage />} />
+        <Route path="/employerMyPage/:id/:menu" element={<Employermypage />} />
+        {/* <Route path="/resume" element={<Resume />} /> */}
         <Route path="/resume" element={<Resume />} />
         <Route path="/test" element={<GetDataFromSpreadSheet />} />
         <Route path="/category/:id" element={<RoleCategoryPage />} />

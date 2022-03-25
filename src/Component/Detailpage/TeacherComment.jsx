@@ -37,6 +37,16 @@ const CommentWrapDiv = styled.div`
     text-align: left;
     color: rgba(66, 50, 50, 1);
   }
+  > div:first-of-type {
+    margin-top: 38px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: rgba(66, 50, 50, 1);
+  }
 `;
 
 const CommentDiv = styled.div`
@@ -72,29 +82,34 @@ const CommentDiv = styled.div`
   }
 `;
 
-export const TeacherComment = ({comment}) => {
-    return (
-        <TeacherCommentWrapDiv>
-        <TeacherCommentHeader>
-          <img src={fireImg} alt="강사 추천사 로고 이미지" />
-          <span>메가바이트 강사님 추천사에요</span>
-        </TeacherCommentHeader>
-        {comment &&
-          comment.map((item) => (
-            <CommentWrapDiv key={item}>
-              <span>{item[2]}</span>
-              <CommentDiv>
-                <img src={teacherImg} alt="강사 프로필 이미지" />
-                <div>
-                  <p>
-                    {item[1]}님{" "}
-                    <img src={teacherBadgeImg} alt="강사 인증 뱃지 이미지" />
-                  </p>
-                  <span>{`현) UI/UX 디렉터, Front-end 개발 강사`}</span>
-                </div>
-              </CommentDiv>
-            </CommentWrapDiv>
-          ))}
-      </TeacherCommentWrapDiv>
-    )
-}
+export const TeacherComment = ({ comment }) => {
+  const markUp = (text) => {
+    return { __html: text };
+  };
+
+  return (
+    <TeacherCommentWrapDiv>
+      <TeacherCommentHeader>
+        <img src={fireImg} alt="강사 추천사 로고 이미지" />
+        <span>메가바이트 강사님 추천사에요</span>
+      </TeacherCommentHeader>
+      {comment &&
+        comment.map((item) => (
+          <CommentWrapDiv key={item}>
+            <span>{item.title}</span>
+            <div dangerouslySetInnerHTML={markUp(item.text)}></div>
+            <CommentDiv>
+              <img src={teacherImg} alt="강사 프로필 이미지" />
+              <div>
+                <p>
+                  {item.name}님{" "}
+                  <img src={teacherBadgeImg} alt="강사 인증 뱃지 이미지" />
+                </p>
+                <span>{`현) UI/UX 디렉터, Front-end 개발 강사`}</span>
+              </div>
+            </CommentDiv>
+          </CommentWrapDiv>
+        ))}
+    </TeacherCommentWrapDiv>
+  );
+};

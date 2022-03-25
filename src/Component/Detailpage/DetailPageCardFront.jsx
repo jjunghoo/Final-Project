@@ -10,14 +10,28 @@ import LogoMento from "./images/LogoMento.svg";
 import LogoMinority from "./images/LogoMinority.svg";
 import LogoRecommanded from "./images/LogoRecommanded.svg";
 import LogoSnsStar from "./images/LogoSnsStar.svg";
+import FrontUnlikeStar from "./images/frontUnlikeStar.svg";
+import FrontRedLikeStar from "./images/frontRedLikeStar.svg";
+import FrontYellowLikeStar from "./images/frontYellowLikeStar.svg";
+import FrontGreenLikeStar from "./images/frontGreenLikeStar.svg";
+import FrontPurpleLikeStar from "./images/frontPurpleLikeStar.svg";
 
 const StyledCardFront = styled.div`
+  object {
+    position: absolute;
+    right: 13.5px;
+    top: 13.97px;
+    path {
+      fill: red;
+    }
+  }
   > img {
     :first-of-type {
       margin-top: 80px;
       margin-bottom: 29.19px;
     }
   }
+  position: relative;
   width: 370px;
   height: 590px;
   margin-right: 51px;
@@ -64,26 +78,47 @@ const StyledJobDiv = styled.div`
 
 const StyledBadgeWrap = styled.div`
   border-top: 1px dashed rgba(153, 153, 153, 1);
-  padding: 28px 0px 5px;
+  // padding: 28px 0px 5px;
   > div {
     :first-of-type {
+      display: flex;
+      width: fit-content;
+      justify-content: center;
+      flex-wrap: wrap;
+      height: 192px;
+      align-items: center;
+      align-content: center;
       text-align: center;
       img {
-        padding: 1px 3px;
+        // padding: 1px 3px;
+        margin: 5px 10px;
+        height: fit-content;
       }
     }
   }
 `;
 
-export const DetailPageCardFront = ({ getJob, badge, employeeInfo }) => {
+export const DetailPageCardFront = ({ getJob, badge, employeeInfo, liked }) => {
   // 뱃지 확인
   const getBadge = [];
   for (let key in badge) {
     badge[key] > 0 && getBadge.push(key);
   }
-
+  // console.log("front_getJob", getJob, liked);
   return (
     <StyledCardFront state={getJob[0]}>
+      {getJob[0] === "marketing" && (
+        <object data={liked ? FrontRedLikeStar : FrontUnlikeStar}>''</object>
+      )}
+      {getJob[0] === "design" && (
+        <object data={liked ? FrontYellowLikeStar : FrontUnlikeStar}>''</object>
+      )}
+      {getJob[0] === "dataScience" && (
+        <object data={liked ? FrontGreenLikeStar : FrontUnlikeStar}>''</object>
+      )}
+      {getJob[0] === "programming" && (
+        <object data={liked ? FrontPurpleLikeStar : FrontUnlikeStar}>''</object>
+      )}
       <img src={characterImg} alt="캐릭터 이미지" />
       <StyledNameDiv>{employeeInfo.이름}</StyledNameDiv>
       <StyledJobDiv>
