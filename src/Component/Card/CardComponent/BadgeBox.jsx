@@ -5,8 +5,8 @@ import { css } from "@emotion/react";
 // import { jsx, css } from "@emotion/react";
 
 import LogoOneFor1000 from "../image/LOGO-1-FOR-1000.svg";
-import LogoAttendance1 from "../image/LOGO-ATTENDANCE.svg";
-import LogoAttendance2 from "../image/LOGO-ATTENDANCE2.svg";
+import LogoAttendance1 from "../image/LOGO-ATTENDANCE2.svg";
+import LogoAttendance2 from "../image/LOGO-ATTENDANCE.svg";
 import LogoCollector from "../image/LOGO-COLLECTOR.svg";
 import LogoComplete from "../image/LOGO-COMPLETE.svg";
 import LogoExperienced from "../image/LOGO-EXPERIENCED.svg";

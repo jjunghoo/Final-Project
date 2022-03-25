@@ -177,7 +177,7 @@ export const FlipCard = ({ cardInfo, cardNum, color }) => {
         {returnStarColor(bookmarkedInfo, color, onClickedEvent)}
         {/* <Star src={yellowStar} /> */}
         <AvartarIconWrap>
-          <AvartarIcon IconBGColor={"white"}></AvartarIcon>
+          <AvartarIcon cardInfo={cardInfo} IconBGColor={"white"}></AvartarIcon>
         </AvartarIconWrap>
         <NameInfo>{cardInfo.employeeInfo.이름}</NameInfo>
         {roleSelect(cardInfo, color)}
@@ -186,6 +186,7 @@ export const FlipCard = ({ cardInfo, cardNum, color }) => {
         </Badge>
       </FlipCardDesign>
       <FlipCardBack
+        key={cardInfo.employeeInfo.id}
         bookmarkedInfo={bookmarkedInfo}
         color={color}
         cardInfo={cardInfo}

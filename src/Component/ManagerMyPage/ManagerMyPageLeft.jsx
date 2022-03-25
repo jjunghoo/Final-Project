@@ -12,6 +12,7 @@ import b1 from "./image/b3.svg";
 import o3 from "./image/o1.svg";
 import o2 from "./image/o2.svg";
 import o1 from "./image/o3.svg";
+import { Link } from "react-router-dom";
 
 const ManagerMyPageLeftJsx = styled.div`
   width: 20%;
@@ -47,12 +48,15 @@ const TeachetMyPageLeftMenu = styled.div`
 
   //   padding-left: ;
 `;
-
-const LogoImg = styled.img`
+const LogoImgBox = styled(Link)`
   width: 50%;
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 16px;
+`;
+
+const LogoImg = styled.img`
+  width: 100%;
 `;
 
 const MenuImg = styled.img`
@@ -112,12 +116,15 @@ export const ManagerMyPageLeft = () => {
 
   return (
     <ManagerMyPageLeftJsx>
-      <LogoImg
-        src={Logo}
-        onClick={() => {
-          setMenuInfo(0);
-        }}
-      />
+      <LogoImgBox to={`/`}>
+        <LogoImg
+          src={Logo}
+          onClick={() => {
+            setMenuInfo(0);
+          }}
+        />
+      </LogoImgBox>
+
       <TeachetMyPageLeftMenu
         menuNum={0}
         menuInfo={menuInfo}

@@ -274,9 +274,13 @@ function* projectSheetGetSaga(action) {
             cnt2 < lectureStudentRowsData[cnt].c.length - 4;
             cnt2++
           ) {
+            console.log(
+              cnt2,
+              lectureStudentInfoCategory[cnt2],
+              lectureStudentRowsData[cnt].c
+            );
             studentInfoWrap[lectureStudentInfoCategory[cnt2]] =
               lectureStudentRowsData[cnt].c[cnt2].v;
-            // console.log(cnt2, lectureStudentInfoCategory[cnt2]);
           }
           studentInfoWrap[
             lectureStudentInfoCategory[lectureStudentRowsData[cnt].c.length - 4]
@@ -409,7 +413,7 @@ function* projectSheetGetSaga(action) {
       }
     }
     // console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa", allAttendance);
-    console.log(attendanceDataForm); //////학생 각 출석 확인 정보
+    console.log(attendanceDataForm, "attandance"); //////학생 각 출석 확인 정보
     console.log(lectureStudentsInfo); //////// 학생정보들 취합
     console.log(lectureInfoObject); ////강의 정보 취합
     let lastStudentInfo = [];
@@ -441,9 +445,8 @@ function* projectSheetGetSaga(action) {
     // console.log(lastLectureInfo); ////프로젝트 서버로 갱신 완료
     //프로젝트 정보수정 끝
     // console.log("waiting");
-
-    // console.log("ttttttttttttttttttttttt", attendanceDataForm); //////학생 각 출석 확인 정보
-    // console.log("ttttttttttttttttttttttt", lectureStudentsInfo); //////// 학생정보들 취합
+    console.log("ttttttttttttttttttttttt", attendanceDataForm); //////학생 각 출석 확인 정보
+    console.log("ttttttttttttttttttttttt", lectureStudentsInfo); //////// 학생정보들 취합
     for (let cnt = 0; cnt < lectureStudentsInfo.length; cnt++) {
       let info = lectureStudentsInfo[cnt];
       let studentForm = {
@@ -463,28 +466,29 @@ function* projectSheetGetSaga(action) {
           "이메일(gmail)": info["이메일(gmail)"],
           "이메일(제출)": info["이메일(제출)"],
           전화번호: "010-1111-1137",
+          profileNum: Math.floor(Math.random() * 13),
         },
         teamEvaluate: {
-          능숙한발표왕: 0,
-          피피티장인: 0,
-          유창한말솜씨: 0,
-          아이디어부자: 0,
-          시간약속정확: 0,
-          자기주도학습자: 0,
-          우리조장님: 0,
-          린앤애자일: 0,
-          팀의백과사전: 0,
-          멀티플래이어: 0,
-          성장형캐릭터: 0,
-          조용한연구자: 0,
-          친화력대박: 0,
-          온화한조정자: 0,
-          무한긍정_에너지: 0,
-          사회생활만렙: 0,
-          데이터마스터: 0,
-          디벨롭마스터: 0,
-          디자인마스터: 0,
-          마케팅마스터: 0,
+          능숙한발표왕: Math.floor(Math.random() * 100),
+          피피티장인: Math.floor(Math.random() * 100),
+          유창한말솜씨: Math.floor(Math.random() * 100),
+          아이디어부자: Math.floor(Math.random() * 100),
+          시간약속정확: Math.floor(Math.random() * 100),
+          자기주도학습자: Math.floor(Math.random() * 100),
+          우리조장님: Math.floor(Math.random() * 100),
+          린앤애자일: Math.floor(Math.random() * 100),
+          팀의백과사전: Math.floor(Math.random() * 100),
+          멀티플래이어: Math.floor(Math.random() * 100),
+          성장형캐릭터: Math.floor(Math.random() * 100),
+          조용한연구자: Math.floor(Math.random() * 100),
+          친화력대박: Math.floor(Math.random() * 100),
+          온화한조정자: Math.floor(Math.random() * 100),
+          무한긍정_에너지: Math.floor(Math.random() * 100),
+          사회생활만렙: Math.floor(Math.random() * 100),
+          데이터마스터: Math.floor(Math.random() * 100),
+          디벨롭마스터: Math.floor(Math.random() * 100),
+          디자인마스터: Math.floor(Math.random() * 100),
+          마케팅마스터: Math.floor(Math.random() * 100),
         },
         programming: "0",
         design: "0",
@@ -519,20 +523,32 @@ function* projectSheetGetSaga(action) {
           studentForm
         ); //특정부분 ID 확인용
         /////아잉
-        // console.log(studentPost.data);
+        console.log(studentPost.data, "오오오오오옷!!!!"); /// 특정 값을 집어넣는다. 근데 특정 값이 없더라...
       } catch (e) {
         // console.log(e);
         const projectGet = yield call(
           axiosProjectStudentDataGetSaga,
           studentForm
-        );
+        ); // 값을 일단 받아오자
+        console.log(projectGet.data, "오오오오");
         let check = 0;
         if (projectGet.data.lectureInfo !== []) {
           projectGet.data.lectureInfo.map((item, index, array) => {
             console.log(item);
-            if (item["과목명"][0] === lectureInfoObject.과목명[0]) {
+            console.log(
+              item["과목명"][0],
+              "체크중입니다.",
+              lectureInfoObject.과목명[0]
+            );
+            if (item["과목명"][0][0] === lectureInfoObject.과목명[0]) {
+              console.log("체크중입니다.");
               check = 1;
-              array[index] = lectureInfoObject;
+              array[index] = {
+                과목명: [lectureInfoObject.과목명],
+                "교육 기간": [lectureInfoObject["교육 기간"]],
+                myAttandence: [attendanceDataForm[lectureStudentsInfo[cnt].id]],
+                allAttendance: [allAttendance],
+              }; //너구나!!!!
 
               // console.log("adadadadadadwwww", array);
               // console.log("wwwwwww", array[index]);
@@ -540,6 +556,7 @@ function* projectSheetGetSaga(action) {
           });
           // console.log("kkk", projectGet.data, studentForm);
           if (check !== 1) {
+            //만약에 같은 값이 없다면 push 한다
             projectGet.data.lectureInfo.push(studentForm.lectureInfo[0]);
           }
         }
@@ -550,7 +567,7 @@ function* projectSheetGetSaga(action) {
           projectGetObject
         );
 
-        // console.log(projectStudentPut.data);
+        console.log(projectStudentPut.data, "오오오오오");
       }
 
       console.log("학생 갱신 완료");
@@ -594,8 +611,8 @@ const axiosProjectStudentDetailGetSaga = (action) => {
       url = url + "&id=" + item;
     }
   });
-  console.log(url);
-  return axios.get(`/employee?${action}`);
+  console.log(url, "url입니다요오오오오");
+  return axios.get(`/employee?${url}`);
 };
 
 function* projectStudentDetailGetSaga(action) {
@@ -605,7 +622,7 @@ function* projectStudentDetailGetSaga(action) {
     console.log("try");
     console.log("action.payload", action.payload);
     const posts = yield call(axiosProjectStudentDetailGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
-    yield console.log(posts.data);
+    yield console.log(posts.data, "받은값입니다요오오오오");
     // yield console.log(action.payload);
     yield put({
       type: PROJECT_STUDEMT_DETAIL_GET_SUCCESS,
