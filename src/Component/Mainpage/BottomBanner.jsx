@@ -11,7 +11,7 @@ import bottomBannerImg3 from "./img/bottomBanner3.svg";
 
 const BottomBannerJsx = styled.div`
   min-height: 100px;
-  background-color: blue;
+  // background-color: blue;
   display: flex;
 
   box-sizing: border-box;
@@ -24,14 +24,17 @@ const BottomBannerJsx = styled.div`
 const BannerImg1 = styled.img`
   width: 100%;
 `;
-const BannerImg2 = styled.img``;
+const BannerImg2 = styled.img`
+  display: block;
+  width: 49%;
+`;
 
 const BannerImg2Wrap = styled.div`
   margin-top: 40px;
   width: 100%;
   display: flex;
-  background-color: red;
   justify-content: space-between;
+  // background-color: red;
 `;
 
 export const BottomBanner = () => {
@@ -43,7 +46,7 @@ export const BottomBanner = () => {
 
       <BannerImg2Wrap>
         <BannerImg2 src={bottomBannerImg1}></BannerImg2>
-        <BannerImg2 src={bottomBannerImg2}></BannerImg2>,
+        <BannerImg2 src={bottomBannerImg2}></BannerImg2>
       </BannerImg2Wrap>
     </BottomBannerJsx>
   );
