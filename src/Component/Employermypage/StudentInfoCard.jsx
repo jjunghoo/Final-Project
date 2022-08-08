@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 import { useParams } from "react-router";
-import { EMPLOYEE_INFO_GET } from "../../redux/type";
 import { DetailPageCardBack } from "../Detailpage/DetailPageCardBack";
 import characterImg from "../Detailpage/images/character1_img.png";
 
@@ -17,9 +15,9 @@ import LogoRecommanded from "../Detailpage/images/LogoRecommanded.svg";
 import LogoSnsStar from "../Detailpage/images/LogoSnsStar.svg";
 
 const WrapDiv = styled.div`
-  // 카드 작업중...
   position: relative;
   perspective: 1000px;
+  margin: 0 8px 22px;
 
   &:hover > div:first-of-type {
     transform: rotateY(180deg);
@@ -76,7 +74,6 @@ const CardWrap = styled.div`
     height: 28px;
     width: 28px;
     background: #fff;
-    // border: 2px #ddd solid;
     margin-right: 4px;
     border: 4px solid rgba(255, 106, 0, 1);
     border-radius: 10px;
@@ -99,7 +96,7 @@ const CardWrap = styled.div`
         return `border: 10px solid rgba(255, 80, 80, 1);
                 color: rgba(255, 80, 80, 1)`;
       case "programming":
-        return `border: 10px solid rgba(186, 109, 246, 1)
+        return `border: 10px solid rgba(186, 109, 246, 1);
                 color: rgba(186, 109, 246, 1)`;
       default:
         return;
@@ -129,7 +126,6 @@ const JobDiv = styled.div`
 
 const StyledBadgeWrap = styled.div`
   border-top: 1px dashed rgba(153, 153, 153, 1);
-  // padding: 28px 0px 5px;
   > div {
     :first-of-type {
       display: flex;
@@ -141,7 +137,6 @@ const StyledBadgeWrap = styled.div`
       align-content: center;
       text-align: center;
       img {
-        // padding: 1px 3px;
         margin: 5px 10px;
         height: fit-content;
       }
@@ -150,23 +145,13 @@ const StyledBadgeWrap = styled.div`
 `;
 
 export const StudentInfoCard = ({ studentId, check, checkStudent }) => {
-  const dispatch = useDispatch();
-
-  const selector = useSelector((state) => state.employeeReducer);
-  console.log("selectorId", selector.id);
-
-  useEffect(() => {
-    studentId && dispatch({ type: EMPLOYEE_INFO_GET, paload: studentId });
-  }, [studentId, dispatch]);
-
   // job 확인
   const selectJob = {
-    dataScience: selector.dataScience,
-    design: selector.design,
-    marketing: selector.marketing,
-    programming: selector.programming,
+    dataScience: studentId.dataScience,
+    design: studentId.design,
+    marketing: studentId.marketing,
+    programming: studentId.programming,
   };
-  // console.log("selectJob", selectJob);
 
   // job 확인
   const getJob = [];
@@ -176,29 +161,19 @@ export const StudentInfoCard = ({ studentId, check, checkStudent }) => {
 
   // 뱃지 확인
   const getBadge = [];
-  for (let key in selector.badge) {
-    selector.badge[key] > 0 && getBadge.push(key);
+  for (let key in studentId.badge) {
+    studentId.badge[key] > 0 && getBadge.push(key);
   }
+
+  const params = useParams();
 
   //   체크박스
   const [isChecked, setIsChecked] = useState(
-    checkStudent.includes(selector.id) ? true : false
+    checkStudent.includes(studentId.id) ? true : false
   );
 
-  const params = useParams();
-  console.log("params.menu", params.menu);
-
   // 카드 뒷면 작업중....
-  const {
-    badge,
-    comment,
-    dataScience,
-    design,
-    // id,
-    marketing,
-    programming,
-    teamEvaluate,
-  } = selector;
+  const { comment, teamEvaluate } = studentId;
 
   return (
     <WrapDiv>
@@ -210,7 +185,9 @@ export const StudentInfoCard = ({ studentId, check, checkStudent }) => {
               type="checkbox"
               onChange={(event) => {
                 setIsChecked(!isChecked);
-                event.target.checked ? check(selector.id) : check(selector.id);
+                event.target.checked
+                  ? check(studentId.id)
+                  : check(studentId.id);
               }}
             />
             <svg
@@ -229,7 +206,7 @@ export const StudentInfoCard = ({ studentId, check, checkStudent }) => {
         )}
 
         <img src={characterImg} alt="아바타 이미지" />
-        <NameDiv>{selector.employeeInfo.이름}</NameDiv>
+        <NameDiv>{studentId.employeeInfo.이름}</NameDiv>
         <JobDiv>
           {getJob[0] === "dataScience" && "데이터 엔지니어"}
           {getJob[0] === "design" && "UXUI 디자이너"}
@@ -322,7 +299,6 @@ export const StudentInfoCard = ({ studentId, check, checkStudent }) => {
         getJob={getJob}
         comment={comment}
         studentId={studentId}
-        //   liked={liked}
       />
     </WrapDiv>
   );
