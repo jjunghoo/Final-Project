@@ -39,19 +39,14 @@ const axiosEmployerInfoGetSaga = (action) => {
 };
 
 function* employerInfoGetSaga(action) {
-  //   console.log("saga진입");
-  //    action.payload는 기업측 id 입력 필요
   try {
-    // console.log("try");
     const posts = yield call(axiosEmployerInfoGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
-    // yield console.log(posts.data);
-    // yield console.log(action.payload);
     yield put({
       type: EMPLOYER_INFO_GET_SUCCESS,
       payload: posts.data,
     }); // 성공 액션 디스패치
   } catch (e) {
-    // console.log(e);
+    console.log(e);
     yield put({
       type: EMPLOYER_INFO_GET_FAILURE,
       error: true,
@@ -71,19 +66,14 @@ const axiosEmployerLikedGetSaga = (action) => {
 };
 
 function* employerLikedGetSaga(action) {
-  //   console.log("saga진입");
-  //    action.payload는 기업측 id 입력 필요
   try {
-    // console.log("try");
     const posts = yield call(axiosEmployerLikedGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
-    yield console.log(posts.data.likedInfo);
-    // yield console.log(action.payload);
     yield put({
       type: EMPLOYER_LIKED_GET_SUCCESS,
       payload: { likedInfo: posts.data.likedInfo },
     }); // 성공 액션 디스패치
   } catch (e) {
-    // console.log(e);
+    console.log(e);
     yield put({
       type: EMPLOYER_LIKED_GET_FAILURE,
       error: true,
@@ -103,20 +93,14 @@ const axiosEmployerBookmarkGetSaga = (action) => {
 };
 
 function* employerBookmarkGetSaga(action) {
-  //   console.log("saga진입");
-  //    action.payload는 기업측 id 입력 필요
   try {
-    // console.log("try");
     const posts = yield call(axiosEmployerBookmarkGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
-    yield console.log(posts.data);
-    console.log("bookmarkget");
-    // yield console.log(action.payload);
     yield put({
       type: EMPLOYER_BOOKMARK_GET_SUCCESS,
       payload: { bookmarkInfo: posts.data.bookmarkInfo },
     }); // 성공 액션 디스패치
   } catch (e) {
-    // console.log(e);
+    console.log(e);
     yield put({
       type: EMPLOYER_BOOKMARK_GET_FAILURE,
       error: true,
@@ -131,30 +115,36 @@ function* watchEmployerBookmarkGet() {
 
 ///BOOKMARK EDIT////
 
+const axiosEmployeeInfoGet = (action) => {
+  return axios.get(`/employee/${action}`);
+};
+
 const axiosEmployerBookmarkEditSaga = (action) => {
-  console.log("action", action);
-  // return 0;
   return axios.put(`/employer/${action.id}`, action);
 };
 function* employerBookmarkEditSaga(action) {
-  //   console.log("saga진입");
-  //    action.payload는 기업측 id 입력 필요
   try {
-    console.log(action.payload);
     let posts = yield call(axiosEmployerBookmarkGetSaga, action.payload.id); //특정부분 ID 확인용
-    yield console.log(posts.data.bookmarkInfo);
-    let index = yield posts.data.bookmarkInfo.indexOf(action.payload.userID);
+    let employeeData = yield call(axiosEmployeeInfoGet, action.payload.userID);
+    let index;
+    try {
+      posts.data.bookmarkInfo.forEach((data, i) => {
+        index = -1;
+        if (data["id"] === action.payload.userID) {
+          index = i;
+          throw new Error("stop loop");
+        }
+      });
+    } catch (error) {}
+
     if (index > -1) {
       posts.data.bookmarkInfo.splice(index, 1);
     } else {
-      posts.data.bookmarkInfo.push(action.payload.userID);
+      posts.data.bookmarkInfo.push(employeeData.data);
     }
-    console.log(posts.data.bookmarkInfo);
-    console.log(posts.data);
 
     posts = yield call(axiosEmployerBookmarkEditSaga, posts.data);
-    // console.log("bookmarkget");
-    yield console.log(posts.data);
+
     yield put({
       type: EMPLOYER_BOOKMARK_EDIT_SUCCESS,
       payload: { bookmarkInfo: posts.data.bookmarkInfo },
@@ -176,36 +166,34 @@ function* watchEmployerBookmarkEdit() {
 //// SUPERMATCHING EDIT
 
 const axiosEmployerSupermatchingEditSaga = (action) => {
-  console.log(action);
-  // return 0;
   return axios.put(`/employer/${action.id}`, action);
 };
 
 function* employerSupermatchingEditSaga(action) {
-  //   console.log("saga진입");
-  //    action.payload는 기업측 id 입력 필요
   try {
-    console.log(action.payload);
     let posts = yield call(
       axiosEmployerSupermatchingGetSaga,
       action.payload.id
-    ); //특정부분 ID 확인용
-    yield console.log(posts.data);
-    yield console.log(posts.data.superMachingInfo);
-    let index = yield posts.data.superMachingInfo.indexOf(
-      action.payload.userID
     );
+    let employeeData = yield call(axiosEmployeeInfoGet, action.payload.userID);
+    let index;
+    try {
+      posts.data.superMachingInfo.forEach((data, i) => {
+        index = -1;
+        if (data["id"] === action.payload.userID) {
+          index = i;
+          throw new Error("stop loop");
+        }
+      });
+    } catch (error) {}
+
     if (index > -1) {
       posts.data.superMachingInfo.splice(index, 1);
     } else {
-      posts.data.superMachingInfo.push(action.payload.userID);
+      posts.data.superMachingInfo.push(employeeData.data);
     }
-    console.log(posts.data.superMachingInfo);
-    console.log(posts.data);
 
     posts = yield call(axiosEmployerSupermatchingEditSaga, posts.data);
-    // console.log("Supermatchingget");
-    yield console.log(posts.data);
     yield put({
       type: EMPLOYER_SUPERMATCHING_EDIT_SUCCESS,
       payload: { superMachingInfo: posts.data.superMachingInfo },
@@ -234,21 +222,16 @@ const axiosEmployerSupermatchingGetSaga = (action) => {
 };
 
 function* employerSupermatchingGetSaga(action) {
-  //   console.log("saga진입");
-  //    action.payload는 기업측 id 입력 필요
   try {
     console.log("try");
     const posts = yield call(axiosEmployerSupermatchingGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
     // 위에서 서버 값을 받아옴
-    yield console.log(posts.data);
-    console.log("bookmarkget");
-    // yield console.log(action.payload);
     yield put({
       type: EMPLOYER_SUPERMATCHING_GET_SUCCESS,
       payload: { superMachingInfo: posts.data.superMachingInfo },
     }); // 성공 액션 디스패치
   } catch (e) {
-    // console.log(e);
+    console.log(e);
     yield put({
       type: EMPLOYER_SUPERMATCHING_GET_FAILURE,
       error: true,
