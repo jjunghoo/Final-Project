@@ -66,7 +66,6 @@ const StyledCardWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  // border: 1px solid black;
   margin-bottom: 40px;
 `;
 
@@ -271,7 +270,6 @@ const AlarmDiv = styled.div`
   border-radius: 52px;
   position: absolute;
   left: 42.5%;
-  // top: -22px;
   top: -118px;
   opacity: 0;
   animation: ${floating} 2.5s linear;
@@ -280,19 +278,15 @@ const AlarmDiv = styled.div`
 export const DetailPage = React.memo(() => {
   const params = useParams();
   const selector = useSelector((state) => state.employeeReducer);
-  // console.log("selector", selector);
 
   const className =
     selector.lectureInfo && selector.lectureInfo[0].과목명[0][0];
 
   // 프로젝트 리듀서 확인
   const project = useSelector((state) => state.projectReducer);
-  // console.log("project", project);
-  // console.log("직군", project.lectureInfo.직군 && project.lectureInfo.직군[0]);
 
   const studentCheck =
     project.studentList && project.studentList.includes(selector.id);
-  // console.log("studentCheck", studentCheck);
 
   const {
     badge,
@@ -313,7 +307,6 @@ export const DetailPage = React.memo(() => {
     marketing: marketing,
     programming: programming,
   };
-  // console.log("selectJob", selectJob);
 
   // job 확인
   const getJob = [];
@@ -323,13 +316,32 @@ export const DetailPage = React.memo(() => {
 
   // 기업 정보
   const employer = useSelector((state) => state.employerReducer);
-  // console.log("employer", employer);
 
-  const liked = employer.id && employer.bookmarkInfo.includes(params.id);
-  const supermatch =
-    employer.id && employer.superMachingInfo.includes(params.id);
+  let liked;
+  if (employer.id) {
+    try {
+      employer.bookmarkInfo.forEach((data) => {
+        liked = false;
+        if (data["id"] === params.id) {
+          liked = true;
+          throw new Error("stop loop");
+        }
+      });
+    } catch (error) {}
+  }
 
-  // console.log("supermatch", supermatch);
+  let supermatch;
+  if (employer.id) {
+    try {
+      employer.superMachingInfo.forEach((data) => {
+        supermatch = false;
+        if (data["id"] === params.id) {
+          supermatch = true;
+          throw new Error("stop loop");
+        }
+      });
+    } catch (error) {}
+  }
 
   const { pathname } = useLocation();
 
@@ -403,7 +415,6 @@ export const DetailPage = React.memo(() => {
       </StyledCardWrap>
 
       {/* MATCH & LIKE */}
-      {console.log("liked", employer.id && liked)}
       <MatchAndLikeWrap
         liked={
           employer.id && liked
@@ -423,13 +434,6 @@ export const DetailPage = React.memo(() => {
         <span onClick={addLike}>좋아요</span>
         <span onClick={addSuperMachingInfo}>채용 제안</span>
       </MatchAndLikeWrap>
-      {/* {employer.id && liked && supermatch ? (
-        <p>해당 수강생에게 입사제안을 전달했어요!</p>
-      ) : employer.id && liked ? (
-        <p>해당 수강생에게 취업제안을 하고싶으시다면 MATCH를 클릭해주세요!</p>
-      ) : (
-        <p>수강생에게 LIKE 혹은 MATCH를 해서 상세정보를 확인해보세요</p>
-      )} */}
 
       {/* 강사 추천사 */}
       <TeacherComment comment={comment} />
@@ -464,22 +468,6 @@ export const DetailPage = React.memo(() => {
                   {Math.round((data.myAttandence / data.allAttendance) * 100)}%
                 </div>
               </ListWrapDiv>
-              {/* <ListWrapDiv>
-                <div>보유스킬</div>
-                <div>
-                  {data.스킬.map((item) => (
-                    <div key={item}>{item}</div>
-                  ))}
-                </div>
-              </ListWrapDiv>
-              <ListWrapDiv>
-                <div>교육내용</div>
-                <div>
-                  {data.교육내용.map((item) => (
-                    <div key={item}>{item}</div>
-                  ))}
-                </div>
-              </ListWrapDiv> */}
             </ProjectList>
           ))}
       </ProjectListWrapDiv>
