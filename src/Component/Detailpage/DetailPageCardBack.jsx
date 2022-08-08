@@ -137,6 +137,7 @@ export const DetailPageCardBack = ({
   liked,
   studentId,
 }) => {
+  console.log(studentId);
   // teamEvaluate 높은 순으로 정렬
   const sortTeamEvaluate = [];
   for (let key in teamEvaluate) {
@@ -152,10 +153,9 @@ export const DetailPageCardBack = ({
     if (index > 4) return;
     sortedTeamEvaluate.push(item[0]);
   });
-  const params = useParams();
-  console.log("BackCard-Params", params);
 
-  console.log("studentId", studentId);
+  const params = useParams();
+
   return (
     <StyledCardBack state={getJob[0]}>
       {getJob[0] === "marketing" &&
@@ -236,7 +236,7 @@ export const DetailPageCardBack = ({
       </CommentsWrapDiv>
       <img src={SubtractRed} alt="스탬프 이미지" />
       {params.menu && params.menu && (
-        <Link to={`/detailPage/${studentId && studentId}`}>
+        <Link to={`/detailPage/${studentId && studentId["id"]}`}>
           <StyledShowDetailImg
             src={showDetailImg}
             alt="상세 페이지 이동 이미지"
