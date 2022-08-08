@@ -1,17 +1,10 @@
 /** @format */
-// import styled from "@emotion/styled";
-import { css } from "@emotion/react";
-// import { Link } from "react-router-dom";
-// import { jsx, css } from "@emotion/react";
 import blueStar from "./image/blue-star.svg";
 import yellowStar from "./image/yellow-star.svg";
-import greyStar from "./image/grey-star.svg";
 import redStar from "./image/red-star.svg";
 import purpleStar from "./image/purple-star.svg";
 import whiteStar from "./image/white-star.svg";
 import styled from "@emotion/styled";
-import { AvartarIcon } from "./CardComponent/AvatarIcon";
-import { BadgeBox } from "./CardComponent/BadgeBox";
 import { useEffect, useState } from "react";
 
 import bgimg from "./image/card-back-bgimg.svg";
@@ -25,13 +18,10 @@ const FlipCardBackJsx = styled.div`
   width: 372px;
   min-width: 372px;
   padding-left: 33px;
-  //   display: flex;
-  //   flex-direction:column
 
   background-color: ${(props) => props.color};
   margin: 0px 5px 0px 5px;
   box-sizing: border-box;
-  //   border: 10px solid ${(props) => props.color};
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   display: flex;
@@ -50,12 +40,9 @@ const BgImg = styled.img`
   z-index: 3;
   top: 290px;
   left: 70px;
-  //   right: 20px;
-  //   top: 20px;
   opacity: 0.25;
 `;
 const TeamEvaluateWrap = styled.div`
-  //   background-color: black;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -114,7 +101,6 @@ const StyledShowDetailImg = styled.img`
   bottom: 24.83px;
 `;
 const teamEvaluate = (num, index, color) => {
-  //   console.log(num);
   switch (num) {
     case "능숙한발표왕":
       return (
@@ -242,7 +228,6 @@ const Star = styled.img`
   position: absolute;
   right: 20px;
   top: 20px;
-  // background: tomato;
 `;
 const returnStarColor = (bookmarkedInfo, color, onClickedEvent) => {
   if (bookmarkedInfo === 0) {
@@ -260,9 +245,6 @@ const returnStarColor = (bookmarkedInfo, color, onClickedEvent) => {
 export const FlipCardBack = ({ cardInfo, cardNum, color }) => {
   const [bookmarkedInfo, setBookmarkedInfo] = useState(0);
   const [testArray, setTestArray] = useState([]);
-  const cardBookmarkInfo = useSelector(
-    (state) => state.employerReducer.bookmarkInfo
-  );
   const employer = useSelector((state) => state.employerReducer);
 
   const employerInfo = useSelector((state) => state.employerReducer);
@@ -288,13 +270,16 @@ export const FlipCardBack = ({ cardInfo, cardNum, color }) => {
     });
   };
   useEffect(() => {
-    // console.log(employerInfo.bookmarkInfo);
     if (employerInfo.bookmarkInfo) {
-      if (employerInfo.bookmarkInfo.indexOf(cardInfo.id) > -1) {
-        setBookmarkedInfo(1);
-      } else {
-        setBookmarkedInfo(0);
-      }
+      try {
+        employerInfo.bookmarkInfo.forEach((data, i) => {
+          setBookmarkedInfo(0);
+          if (data["id"] === cardInfo.id) {
+            setBookmarkedInfo(1);
+            throw new Error("stop loop");
+          }
+        });
+      } catch (error) {}
     }
   }, [employerInfo.bookmarkInfo]);
 
@@ -314,8 +299,7 @@ export const FlipCardBack = ({ cardInfo, cardNum, color }) => {
           } else {
             textColor = "#8b0000";
           }
-          // console.log(item);
-          // return "";
+
           return teamEvaluate(item[0], index, textColor);
         })}
       </TeamEvaluateWrap>

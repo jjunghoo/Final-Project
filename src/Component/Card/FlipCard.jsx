@@ -1,8 +1,4 @@
 /** @format */
-// import styled from "@emotion/styled";
-import { css } from "@emotion/react";
-// import { Link } from "react-router-dom";
-// import { jsx, css } from "@emotion/react";
 import blueStar from "./image/blue-star.svg";
 import yellowStar from "./image/yellow-star.svg";
 import greyStar from "./image/grey-star.svg";
@@ -114,30 +110,19 @@ const Badge = styled.div`
 export const FlipCard = ({ cardInfo, cardNum, color }) => {
   const [bookmarkedInfo, setBookmarkedInfo] = useState(0);
   const employerInfo = useSelector((state) => state.employerReducer);
-  const cardBookmarkInfo = useSelector(
-    (state) => state.employerReducer.bookmarkInfo
-  );
   const employer = useSelector((state) => state.employerReducer);
-
   const dispatch = useDispatch();
 
   const roleSelect = (cardInfo, color) => {
-    // console.log(cardInfo, color);
-    // console.log(cardInfo.programming);
     if (parseInt(cardInfo.programming) === 1) {
-      // console.log("1");
       return <Role color={color}>프로그래머</Role>;
     } else if (parseInt(cardInfo.marketing) === 1) {
-      // console.log("2");
       return <Role color={color}>온라인 마케터</Role>;
     } else if (parseInt(cardInfo.design) === 1) {
-      // console.log("3");
       return <Role color={color}>UX/UI 디자이너</Role>;
     } else if (parseInt(cardInfo.dataScience) === 1) {
-      // console.log("4");
       return <Role color={color}>데이터 사이언스</Role>;
     } else {
-      // console.log(cardInfo);
       return 0;
     }
   };
@@ -150,29 +135,21 @@ export const FlipCard = ({ cardInfo, cardNum, color }) => {
   };
 
   useEffect(() => {
-    // console.log(employerInfo.bookmarkInfo);
     if (employerInfo.bookmarkInfo) {
-      if (employerInfo.bookmarkInfo.indexOf(cardInfo.id) > -1) {
-        // console.log(employerInfo.bookmarkInfo);
-        // console.log(cardInfo.id);
-        // console.log("안에 들어있는데 음 왜지??");
-        setBookmarkedInfo(1);
-      } else {
-        // console.log(employerInfo.bookmarkInfo);
-        // console.log("안에 없음");
-        setBookmarkedInfo(0);
-      }
-      // console.log("test");
+      try {
+        employerInfo.bookmarkInfo.forEach((data, i) => {
+          setBookmarkedInfo(0);
+          if (data["id"] === cardInfo.id) {
+            setBookmarkedInfo(1);
+            throw new Error("stop loop");
+          }
+        });
+      } catch (error) {}
     }
   }, [employerInfo.bookmarkInfo]);
 
   return (
-    <FlipCardcase
-      onClick={() => {
-        // console.log(cardInfo);
-        // console.log(bookmarkedInfo);
-      }}
-    >
+    <FlipCardcase>
       <FlipCardDesign color={color} className="flip-card-inner">
         {returnStarColor(bookmarkedInfo, color, onClickedEvent)}
         {/* <Star src={yellowStar} /> */}
