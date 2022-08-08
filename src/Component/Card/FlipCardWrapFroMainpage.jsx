@@ -1,29 +1,11 @@
 /** @format */
-
-import { arrayMove } from "@dnd-kit/sortable";
 import styled from "@emotion/styled";
 import { useDispatch, useSelector } from "react-redux";
-
-import { store } from "../../index";
-
-import bgimg from "./image/card-back-bgimg.svg";
-import {
-  EMPLOYER_BOOKMARK_EDIT,
-  EMPLOYER_BOOKMARK_EDIT_REQUEST,
-  EMPLOYER_INFO_GET_REQUEST,
-  MATCHING_LIST_ARRAY_GET_REQUEST,
-  MATCHING_RANDOM_MATCHING_GET_FAILURE,
-  MATCHING_RANDOM_MATCHING_GET_REQUEST,
-} from "../../redux/type";
 import { FlipCard } from "./FlipCard";
 import { useEffect, useState } from "react";
-//
-//
-//
-//
+
 const FlipCardWrap = styled.div`
   max-width: 1920px;
-  // background-color: yellow;
   display: flex;
   position: relative;
   justify-content: start;
@@ -53,12 +35,9 @@ export const FlipCardWrapJSX = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(cardArrayInfo);
     let localColorArray = [];
     for (let cnt = 0; cnt < cardArrayInfo.length; cnt++) {
       let color = "#000000";
-      // console.log(cardArrayInfo[cnt]);
-      console.log(cardArrayInfo[cnt]);
       if (cardArrayInfo[cnt].design === "1") {
         color = "#FFA800";
       } else if (cardArrayInfo[cnt].marketing === "1") {
@@ -71,11 +50,8 @@ export const FlipCardWrapJSX = () => {
       }
       localColorArray.push(color);
     }
-    console.log(localColorArray);
     setColorArray(localColorArray);
   }, [cardArrayInfo]);
-
-  // const dispatch=useDispatch();
 
   return (
     <FlipCardWrap>

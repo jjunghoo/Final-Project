@@ -53,25 +53,18 @@ function* watchEmployeeIDGet() {
 //
 //
 const axiosEmployeeInfoGet = (action) => {
-  console.log("action", action.paload);
   return axios.get(`/employee/${action.paload}`);
 };
 
 function* employeeInfoGetSaga(action) {
-  console.log("saga진입");
-  console.log("action.paload", action.paload);
   try {
-    // console.log("try");
     const posts = yield call(axiosEmployeeInfoGet, action); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
-    // yield console.log(posts);
-    // yield console.log(action.payload);
-    console.log("posts", posts.data);
     yield put({
       type: EMPLOYEE_INFO_SUCCESS,
       payload: posts.data,
     }); // 성공 액션 디스패치
   } catch (e) {
-    // console.log(e);
+    console.log(e);
     yield put({
       type: EMPLOYEE_INFO_FAILURE,
       error: true,
@@ -89,18 +82,15 @@ const axiosEmployeeResumeGet = (action) => {
 };
 
 function* employeeResumeGetSaga(action) {
-  //   console.log("saga진입");
   try {
-    console.log("try");
     const posts = yield call(axiosEmployeeResumeGet, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
     yield console.log(posts.data.resume);
-    // yield console.log(action.payload);
     yield put({
       type: EMPLOYEE_RESUME_SUCCESS,
       payload: { resume: posts.data.resume },
     }); // 성공 액션 디스패치
   } catch (e) {
-    // console.log(e);
+    console.log(e);
     yield put({
       type: EMPLOYEE_RESUME_FAILURE,
       error: true,

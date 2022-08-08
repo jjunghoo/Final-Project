@@ -37,20 +37,14 @@ const axiosProjectStudentGetSaga = (action) => {
 };
 
 function* projectStudentGetSaga(action) {
-  //   console.log("saga진입");
-  //    action.payload는 기업측 id 입력 필요
   try {
-    console.log("try");
     const posts = yield call(axiosProjectStudentGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
-    yield console.log(posts.data);
-    console.log("Comment");
-    // yield console.log(action.payload);
     yield put({
       type: PROJECT_STUDENT_GET_SUCCESS,
       payload: { studentInfo: posts.data.studentInfo },
     }); // 성공 액션 디스패치
   } catch (e) {
-    // console.log(e);
+    console.log(e);
     yield put({
       type: PROJECT_STUDENT_GET_FAILURE,
       error: true,
@@ -70,20 +64,14 @@ const axiosProjectStageGetSaga = (action) => {
 };
 
 function* ProjectStageGetSaga(action) {
-  //   console.log("saga진입");
-  //    action.payload는 기업측 id 입력 필요
   try {
-    console.log("try");
     const posts = yield call(axiosProjectStageGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
-    yield console.log(posts.data);
-    console.log("Comment");
-    // yield console.log(action.payload);
     yield put({
       type: PROJECT_STAGE_GET_SUCCESS,
       payload: { stageInfo: posts.data.stageInfo },
     }); // 성공 액션 디스패치
   } catch (e) {
-    // console.log(e);
+    console.log(e);
     yield put({
       type: PROJECT_STAGE_GET_FAILURE,
       error: true,
@@ -103,20 +91,14 @@ const axiosProjectInfoGetSaga = (action) => {
 };
 
 function* projectInfoGetSaga(action) {
-  //   console.log("saga진입");
-  //    action.payload는 기업측 id 입력 필요
   try {
-    console.log("try");
     const posts = yield call(axiosProjectInfoGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
-    yield console.log(posts.data);
-    console.log("teacher all Info");
-    // yield console.log(action.payload);
     yield put({
       type: PROJECT_INFO_GET_SUCCESS,
       payload: posts.data,
     }); // 성공 액션 디스패치
   } catch (e) {
-    // console.log(e);
+    console.log(e);
     yield put({
       type: PROJECT_INFO_GET_FAILURE,
       error: true,
@@ -131,48 +113,35 @@ function* watchProjectInfoGet() {
 ////// 시트로부터 데이터 받아오기
 
 const axiosProjectPostSaga = (action) => {
-  console.log(action);
-  // return 0;
   return axios.post(`/project`, action);
 };
 const axiosProjectPutSaga = (action) => {
-  console.log(action);
-  // return 0;
   return axios.put(`/project/${action.id}`, action);
 };
 
 const axiosProjectStudentPutSaga = (action) => {
-  console.log(action);
-  // return 0;
   return axios.put(`/employee/${action.id}`, action);
 };
 
 const axiosProjectStudentPostSaga = (action) => {
-  // console.log(action);
-  // return 0;
   return axios.post(`/employee`, action);
 };
 
 const axiosProjectStudentDataGetSaga = (action) => {
-  // console.log(action);
-  // return 0;
   return axios.get(`/employee/${action.id}`);
 };
 
 const axiosProjectSheetGetSaga = (action) => {
-  console.log(action.payload);
   const sheetId = action.payload.urlKey;
   const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
   const sheetName = action.sheetName;
   const query = encodeURIComponent("Select *");
   const url = `${base}&sheet=${sheetName}&tq=${query}`;
-  console.log(url);
 
   return axios.get(url);
 };
 
 function* projectSheetGetSaga(action) {
-  //    action.payload는 기업측 id 입력 필요
   try {
     const posts = yield call(axiosProjectSheetGetSaga, {
       sheetName: "교육정보",
@@ -180,7 +149,6 @@ function* projectSheetGetSaga(action) {
     }); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
 
     let jsonData = JSON.parse(posts.data.substring(47).slice(0, -2));
-    yield console.log(jsonData.table, "아하하하");
     let lectureInfoCategory = []; // 강의 정보 카테고리?? 하튼 그런 것
     let lectureInfo = []; // 본격적 강의 카테고리 아래 정보
     let lectureInfoObject = {};
@@ -203,7 +171,6 @@ function* projectSheetGetSaga(action) {
         // 각 행의 길이만큼?
         if (dataRows[cnt].c[cnt2] !== null) {
           if (dataRows[cnt].c[cnt2].v !== null) {
-            // console.log(cnt2, dataRows[cnt].c.length, dataRows[cnt].c[cnt2].v);
             lectureInfo[cnt2].push(dataRows[cnt].c[cnt2].v);
           }
         }
@@ -213,9 +180,6 @@ function* projectSheetGetSaga(action) {
       lectureInfoObject[lectureInfoCategory[index]] = lectureInfo[index];
       return 0;
     });
-    console.log(lectureInfoCategory, "kaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-    // console.log(lectureInfo);
-    // yield console.log("lectureInfo", lectureInfoObject);
     const studentPosts = yield call(axiosProjectSheetGetSaga, {
       sheetName: "학생목록",
       payload: action.payload,
@@ -223,9 +187,7 @@ function* projectSheetGetSaga(action) {
     let jsonStudentData = JSON.parse(
       studentPosts.data.substring(47).slice(0, -2)
     );
-    // console.log(jsonStudentData.table.cols);
 
-    // console.log(jsonStudentData.table.rows);
     ///Student Info
 
     let lectureStudentInfoCategory = [
@@ -248,37 +210,17 @@ function* projectSheetGetSaga(action) {
       "LogoMinority",
     ]; // 강의 정보 카테고리?? 하튼 그런 것
     let lectureStudentsInfo = []; // 전체 학생 정보
-    let lectureStudentInfoObject = {};
     let lectureStudentRowsData = jsonStudentData.table.rows;
-    // console.log(jsonStudentData.table.rows);
 
-    // console.log(lectureStudentInfoCategory);
-    // console.log(lectureStudentRowsData);
     for (let cnt = 0; cnt < lectureStudentRowsData.length; cnt++) {
-      // console.log(
-      //   cnt,
-      //   lectureStudentRowsData.length,
-      //   lectureStudentRowsData[cnt].c
-      // );
-      // console.log();
-
-      // console.log()
       let studentInfoWrap = {};
-      // console.log("dedede", lectureStudentRowsData[cnt].c);
       if (lectureStudentRowsData[cnt].c[0] !== null) {
         if (cnt < lectureStudentRowsData[cnt].c[0].v) {
-          // console.log(cnt, lectureStudentRowsData[cnt].c[0].v);
-          // console.log(cnt < lectureStudentRowsData[cnt].c[0].v);
           for (
             let cnt2 = 0;
             cnt2 < lectureStudentRowsData[cnt].c.length - 4;
             cnt2++
           ) {
-            console.log(
-              cnt2,
-              lectureStudentInfoCategory[cnt2],
-              lectureStudentRowsData[cnt].c
-            );
             studentInfoWrap[lectureStudentInfoCategory[cnt2]] =
               lectureStudentRowsData[cnt].c[cnt2].v;
           }
@@ -303,14 +245,10 @@ function* projectSheetGetSaga(action) {
             ].v;
           studentInfoWrap.id = studentInfoWrap.이름 + studentInfoWrap.전화번호;
           lectureStudentsInfo.push(studentInfoWrap);
-          console.log(lectureStudentsInfo, "koko");
         }
       }
-      console.log(cnt, studentInfoWrap);
-      console.log(lectureStudentsInfo);
     }
-    // console.log(lectureStudentsInfo); //////// 학생정보들 취합
-    // console.log(lectureInfoObject); ////강의 정보 취합
+
     lectureInfoObject.lectureID = action.payload.urlKey;
     lectureInfoObject.lectureURL = action.payload.url;
     let lectureDate = lectureInfoObject["교육 기간"][0].split("-");
@@ -319,17 +257,13 @@ function* projectSheetGetSaga(action) {
     let now = new Date();
     let nowYear = now.getFullYear();
     let nowMonth = now.getMonth() + 1;
-    // console.log(lectureDate);
     let monthToSearch = [];
     if (parseInt(nowYear) > parseInt(lectureDate[1][0])) {
-      // console.log("hello");
-      // console.log(parseInt(lectureDate[0][1]), parseInt(lectureDate[1][1]));
       for (
         let cnt = parseInt(lectureDate[0][1]);
         cnt <= parseInt(lectureDate[1][1]);
         cnt++
       ) {
-        // console.log(`${cnt}월`);
         monthToSearch.push(`${cnt}월`);
       }
     } else if (parseInt(nowYear) === parseInt(lectureDate[1][0])) {
@@ -343,12 +277,11 @@ function* projectSheetGetSaga(action) {
           initialYear++;
           initialMonth = 1;
         }
-        // console.log(initialYear, initialMonth, nowYear, nowMonth);
       }
 
       monthToSearch.push(`${nowMonth}월`);
     }
-    // console.log(nowYear + nowMonth);
+
     let attendanceInfo = [];
     for (let cnt = 0; cnt < monthToSearch.length; cnt++) {
       let info = yield call(axiosProjectSheetGetSaga, {
@@ -362,47 +295,33 @@ function* projectSheetGetSaga(action) {
     let attendanceDataForm = {};
     let allAttendance = 0;
     for (let attcnt = 0; attcnt < attendanceInfo.length; attcnt++) {
-      // let Allattendance = 0;
-      // console.log(attendanceInfo[attcnt]);
       let attandanceData = JSON.parse(
         attendanceInfo[attcnt].data.substring(47).slice(0, -2)
       );
       let attandanceDataRows = attandanceData.table.rows;
-      // console.log("aaaaaaaaaaaaaaaaaaaa", attandanceDataRows[1].c);
       for (let cnt3 = 0; cnt3 < attandanceDataRows[1].c.length; cnt3++) {
         if (attandanceDataRows[1].c[cnt3] !== null) {
           if (attandanceDataRows[1].c[cnt3].v === 1) {
             allAttendance++;
-            // console.log("bbbbbbbbbbbbbbbbbbbbb", cnt3, allAttendance);
           }
         }
       }
 
-      // console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", attandanceDataRows[1].c);
-
-      // console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa", allAttendance);
-      // console.log(attandanceDataRows);
       for (let cnt = 2; cnt < attandanceDataRows.length; cnt++) {
         if (attandanceDataRows[cnt].c[1] !== null) {
           let id =
             attandanceDataRows[cnt].c[1].v + attandanceDataRows[cnt].c[2].v;
           let attandanceCounter = 0;
 
-          // console.log(id);
-          // console.log(attandanceDataRows[cnt].c);
           for (let cnt2 = 0; cnt2 < attandanceDataRows[cnt].c.length; cnt2++) {
             if (attandanceDataRows[cnt].c[cnt2] !== null) {
-              // console.log("test", attandanceDataRows[cnt].c[cnt2].v);
               if (attandanceDataRows[cnt].c[cnt2].v == 1) {
-                // console.log("hello");
                 if (cnt2 > 2) {
                   attandanceCounter++;
                 }
               }
             }
           }
-          // if(id="")
-          // console.log(id, attandanceCounter);
           if (attendanceDataForm[id] === undefined) {
             attendanceDataForm[id] = parseInt(attandanceCounter);
           } else {
@@ -412,41 +331,29 @@ function* projectSheetGetSaga(action) {
         }
       }
     }
-    // console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa", allAttendance);
-    console.log(attendanceDataForm, "attandance"); //////학생 각 출석 확인 정보
-    console.log(lectureStudentsInfo); //////// 학생정보들 취합
-    console.log(lectureInfoObject); ////강의 정보 취합
+
     let lastStudentInfo = [];
     lectureStudentsInfo.map((item) => {
       lastStudentInfo.push(item.id);
     });
     lectureInfoObject.allAttendance = allAttendance;
-    // console.log("adadadad", lectureInfoObject);
+
     let lastLectureInfo = {
       lectureInfo: lectureInfoObject,
       studentList: lastStudentInfo,
       id: lectureInfoObject.과목명[0],
     };
-    // console.log(lastLectureInfo);
-    // console.log("ccccccccccccccccccc", lectureInfoObject);
-    // 프로젝트 정보 수정
+
     try {
       const projectPost = yield call(axiosProjectPostSaga, lastLectureInfo); //특정부분 ID 확인용
-      // console.log(projectPost.data);
       lastLectureInfo = projectPost.data;
     } catch (e) {
-      // console.log("there already have");
-      // console.log(e);
       const projectPut = yield call(axiosProjectPutSaga, lastLectureInfo); //특정부분 ID 확인용
-      // console.log("well done");
-      // console.log(projectPut.data);
       lastLectureInfo = projectPut.data;
     }
-    // console.log(lastLectureInfo); ////프로젝트 서버로 갱신 완료
+
     //프로젝트 정보수정 끝
-    // console.log("waiting");
-    console.log("ttttttttttttttttttttttt", attendanceDataForm); //////학생 각 출석 확인 정보
-    console.log("ttttttttttttttttttttttt", lectureStudentsInfo); //////// 학생정보들 취합
+
     for (let cnt = 0; cnt < lectureStudentsInfo.length; cnt++) {
       let info = lectureStudentsInfo[cnt];
       let studentForm = {
@@ -837,33 +744,22 @@ function* projectSheetGetSaga(action) {
           },
         ],
       };
-      // console.log(studentForm);
 
       try {
         const studentPost = yield call(
           axiosProjectStudentPostSaga,
           studentForm
         ); //특정부분 ID 확인용
-        /////아잉
-        console.log(studentPost.data, "오오오오오옷!!!!"); /// 특정 값을 집어넣는다. 근데 특정 값이 없더라...
       } catch (e) {
-        // console.log(e);
+        console.log(e);
         const projectGet = yield call(
           axiosProjectStudentDataGetSaga,
           studentForm
         ); // 값을 일단 받아오자
-        console.log(projectGet.data, "오오오오");
         let check = 0;
         if (projectGet.data.lectureInfo !== []) {
           projectGet.data.lectureInfo.map((item, index, array) => {
-            console.log(item);
-            console.log(
-              item["과목명"][0],
-              "체크중입니다.",
-              lectureInfoObject.과목명[0]
-            );
             if (item["과목명"][0][0] === lectureInfoObject.과목명[0]) {
-              console.log("체크중입니다.");
               check = 1;
               array[index] = {
                 과목명: [lectureInfoObject.과목명],
@@ -871,12 +767,9 @@ function* projectSheetGetSaga(action) {
                 myAttandence: [attendanceDataForm[lectureStudentsInfo[cnt].id]],
                 allAttendance: [allAttendance],
               }; //너구나!!!!
-
-              // console.log("adadadadadadwwww", array);
-              // console.log("wwwwwww", array[index]);
             }
           });
-          // console.log("kkk", projectGet.data, studentForm);
+
           if (check !== 1) {
             //만약에 같은 값이 없다면 push 한다
             projectGet.data.lectureInfo.push(studentForm.lectureInfo[0]);
@@ -888,11 +781,7 @@ function* projectSheetGetSaga(action) {
           axiosProjectStudentPutSaga,
           projectGetObject
         );
-
-        console.log(projectStudentPut.data, "오오오오오");
       }
-
-      console.log("학생 갱신 완료");
     }
     yield put({
       type: PROJECT_SHEET_INFO_GET_SUCCESS,
@@ -933,25 +822,18 @@ const axiosProjectStudentDetailGetSaga = (action) => {
       url = url + "&id=" + item;
     }
   });
-  console.log(url, "url입니다요오오오오");
   return axios.get(`/employee?${url}`);
 };
 
 function* projectStudentDetailGetSaga(action) {
-  //   console.log("saga진입");
-  //    action.payload는 기업측 id 입력 필요
   try {
-    console.log("try");
-    console.log("action.payload", action.payload);
     const posts = yield call(axiosProjectStudentDetailGetSaga, action.payload); // call 을 사용하면 특정 함수를 호출하고, 결과물이 반환 될 때까지 기다려줄 수 있습니다.
-    yield console.log(posts.data, "받은값입니다요오오오오");
-    // yield console.log(action.payload);
     yield put({
       type: PROJECT_STUDEMT_DETAIL_GET_SUCCESS,
       payload: { studentInfoDetail: posts.data },
     }); // 성공 액션 디스패치
   } catch (e) {
-    // console.log(e);
+    console.log(e);
     yield put({
       type: PROJECT_STUDEMT_DETAIL_GET_FAILURE,
       error: true,

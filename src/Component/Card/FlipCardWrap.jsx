@@ -1,26 +1,9 @@
 /** @format */
-
-import { arrayMove } from "@dnd-kit/sortable";
 import styled from "@emotion/styled";
 import { useDispatch, useSelector } from "react-redux";
-
-import { store } from "../../index";
-
-import bgimg from "./image/card-back-bgimg.svg";
-import {
-  EMPLOYER_BOOKMARK_EDIT,
-  EMPLOYER_BOOKMARK_EDIT_REQUEST,
-  EMPLOYER_INFO_GET_REQUEST,
-  MATCHING_LIST_ARRAY_GET_REQUEST,
-  MATCHING_RANDOM_MATCHING_GET_FAILURE,
-  MATCHING_RANDOM_MATCHING_GET_REQUEST,
-} from "../../redux/type";
 import { FlipCard } from "./FlipCard";
 import { useEffect, useState } from "react";
-//
-//
-//
-//
+
 const FlipCardWrap = styled.div`
   max-width: 1920px;
   background-color: yellow;
@@ -45,16 +28,9 @@ const GetStudendInfo = styled.div`
 
 export const FlipCardWrapJSX = () => {
   const cardArrayInfo = useSelector((state) => state.matchingReducer.allInfo);
-  const cardBookmarkInfo = useSelector(
-    (state) => state.employerReducer.bookmarkInfo
-  );
-
   const [colorArray, setColorArray] = useState([]);
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(cardArrayInfo.length);
-    console.log("helloworld");
     let localColorArray = [];
     for (let cnt = 0; cnt < cardArrayInfo.length; cnt++) {
       let rand = Math.floor(Math.random() * 4);
@@ -75,8 +51,6 @@ export const FlipCardWrapJSX = () => {
 
     setColorArray(localColorArray);
   }, [cardArrayInfo]);
-
-  // const dispatch=useDispatch();
 
   return (
     <FlipCardWrap>

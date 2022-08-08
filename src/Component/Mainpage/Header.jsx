@@ -1,13 +1,9 @@
 /** @format */
-// import styled from "@emotion/styled";
-import { css } from "@emotion/react";
-// import { Link } from "react-router-dom";
-// import { jsx, css } from "@emotion/react";
 import styled from "@emotion/styled";
 import homeLogo from "./img/LOGO-CMPLTD.svg";
 import logIn from "./img/logIn.svg";
 import issue from "./img/issue.svg";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { EMPLOYER_INFO_GET_REQUEST } from "../../redux/type";
 import { Link } from "react-router-dom";
 
@@ -56,7 +52,6 @@ export const MainPageHeader = () => {
         <Link
           to="/employerMyPage/em1/like"
           onClick={() => {
-            console.log("hello");
             dispatch({
               type: EMPLOYER_INFO_GET_REQUEST,
               payload: "em1",

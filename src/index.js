@@ -5,12 +5,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import rootReducer, { rootSage } from "./redux/reducers/index";
+import rootReducer from "./redux/reducers/index";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension"; // 리덕스 개발자 도구
 import createSagaMiddleware from "redux-saga";
-import rootSaga, { helloSaga } from "./redux/sagas/index";
+import rootSaga from "./redux/sagas/index";
 import { BrowserRouter } from "react-router-dom";
 
 const sagaMiddleware = createSagaMiddleware();
@@ -20,8 +20,6 @@ export const store = createStore(
 );
 
 sagaMiddleware.run(rootSaga);
-
-console.log(store.getState());
 
 ReactDOM.render(
   <React.StrictMode>

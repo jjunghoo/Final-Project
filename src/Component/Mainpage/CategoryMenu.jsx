@@ -1,25 +1,16 @@
 /** @format */
-// import styled from "@emotion/styled";
-import { css } from "@emotion/react";
-// import { Link } from "react-router-dom";
-// import { jsx, css } from "@emotion/react";
 import styled from "@emotion/styled";
-import homeLogo from "./img/LOGO-CMPLTD.svg";
-import logIn from "./img/logIn.svg";
-import issue from "./img/issue.svg";
 import { useParams } from "react-router";
 
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { MATCHING_LIST_ARRAY_GET_REQUEST } from "../../redux/type";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 const CategoryMenuJsx = styled.div`
   width: 100%;
   max-width: 1920px;
   height: 178px;
   display: flex;
   align-items: center;
-  //   background-color: tomato;
 `;
 
 const CategoryJsx = styled.div`
@@ -50,7 +41,6 @@ const LinkDiv = styled(Link)`
   text-transform: uppercase;
   text-decoration: none;
   color: ${(props) => {
-    // console.log(props.param["*"], props.category);
     if (props.param["*"] === props.category) {
       return "#FF6A00";
     } else {
@@ -82,8 +72,7 @@ export const CategoryMenu = () => {
   // const
 
   useEffect(() => {
-    var link = document.location.href.split("/");
-    console.log(realParams);
+    let link = document.location.href.split("/");
   }, []);
 
   return (
