@@ -17,6 +17,7 @@ const StyledWrapDiv = styled.div`
 
   padding: 22px 127px 301px;
   display: flex;
+  flex-wrap: wrap;
   box-sizing: border-box;
   border: 1px solid;
   position: relative;
@@ -81,7 +82,6 @@ const AlarmDiv = styled.div`
   border-radius: 52px;
   position: absolute;
   left: 42.5%;
-  // top: -22px;
   bottom: -90px;
   opacity: 0;
   animation: ${floating} 2.5s linear;
@@ -89,32 +89,17 @@ const AlarmDiv = styled.div`
 
 export const Employermypage = () => {
   const selector = useSelector((state) => state.employerReducer);
-  console.log("selector", selector);
-
   const params = useParams();
-  console.log("params", params);
-
   const dispatch = useDispatch();
 
-  // const checkStudent = [];
   let [checkStudent, setCheckStudent] = useState([]);
 
   useEffect(() => {
     dispatch({ type: EMPLOYER_INFO_GET_REQUEST, payload: params.id });
   }, [dispatch, params.id]);
-  // const [state, setState] = useState(
-  //   selector.bookmarkInfo && {
-  //     menu: "like",
-  //     value: selector.bookmarkInfo,
-  //   }
-  // );
-  // console.log(selector.bookmarkInfo && state);
-
-  console.log("checkStudent", checkStudent);
 
   const check = (studentId) => {
     let index = checkStudent.indexOf(studentId);
-    console.log("index", index);
     if (checkStudent.length > 0 && index > -1) {
       const filterCheckStudent = checkStudent.filter(
         (item) => item !== studentId
@@ -158,9 +143,9 @@ export const Employermypage = () => {
     <StyledWrapDiv>
       {params.menu === "like" &&
         selector.bookmarkInfo &&
-        selector.bookmarkInfo.map((data) => (
+        selector.bookmarkInfo.map((data, i) => (
           <StudentInfoCard
-            key={data}
+            key={i}
             studentId={data}
             check={check}
             checkStudent={checkStudent}
@@ -168,9 +153,9 @@ export const Employermypage = () => {
         ))}
       {params.menu === "supermatching" &&
         selector.superMachingInfo &&
-        selector.superMachingInfo.map((data) => (
+        selector.superMachingInfo.map((data, i) => (
           <StudentInfoCard
-            key={data}
+            key={i}
             studentId={data}
             check={check}
             checkStudent={checkStudent}
